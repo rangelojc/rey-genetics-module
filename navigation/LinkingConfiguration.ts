@@ -6,19 +6,23 @@ export default {
     screens: {
       Root: {
         screens: {
-          TabOne: {
+          Lesson: {
             screens: {
-              TabOneScreen: 'one',
+              LessonScreen: 'lesson',
             },
           },
-          TabTwo: {
+          Quiz: {
             screens: {
-              TabTwoScreen: 'two',
+              QuizScreen: 'quiz',
             },
           },
+          Setting: {
+            screens: {
+              SettingScreen: 'setting',
+            },
+          }
         },
-      },
-      NotFound: '*',
+      }
     },
   },
 };

@@ -1,12 +1,12 @@
 import React from 'react';
 import { StyleSheet } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { BottomNavigation, BottomNavigationTab } from '@ui-kitten/components';
+import { Icon, BottomNavigation, BottomNavigationTab } from '@ui-kitten/components';
 
 // Components
 import CustomText from '../components/primitive/CustomText';
 
-// Tabs Screens
+// Tab Screens
 import LessonScreen from "../screens/LessonScreen"
 import QuizScreen from "../screens/QuizScreen"
 import SettingScreen from "../screens/SettingScreen"
@@ -25,6 +25,13 @@ const styles = StyleSheet.create({
 
 const { Navigator, Screen } = createBottomTabNavigator();
 
+//Icons
+const Icons = {
+    Book: (props: any) => <Icon name='book-outline' {...props} />,
+    Setting: (props: any) => <Icon name='settings-outline' {...props} />,
+    Pen:  (props: any) => <Icon name='edit-outline' {...props} />,
+}
+
 // Bottom Navigations
 const TabBar = ({ navigation, state }: any) => (
     <BottomNavigation
@@ -32,15 +39,9 @@ const TabBar = ({ navigation, state }: any) => (
         appearance='noIndicator'
         selectedIndex={state.index}
         onSelect={index => navigation.navigate(state.routeNames[index])}>
-        <BottomNavigationTab
-            title={() => <CustomText text="Lessons" style={styles.text} />}
-            icon={state.routeNames[state.index] === "TYPE" ? "" : ""} />
-        <BottomNavigationTab
-            title={() => <CustomText text="Quizzes" style={styles.text} />}
-            icon={state.routeNames[state.index] === "TYPE" ? "" : ""} />
-        <BottomNavigationTab
-            title={() => <CustomText text="Settings" style={styles.text} />}
-            icon={state.routeNames[state.index] === "TYPE" ? "" : ""} />
+        <BottomNavigationTab icon={Icons.Book} title="Lessons"/>
+        <BottomNavigationTab icon={Icons.Setting} title="Quizzes" />
+        <BottomNavigationTab icon={Icons.Pen} title="Settings" />
     </BottomNavigation>
 );
 
