@@ -2,11 +2,13 @@ import * as React from 'react';
 import { StyleSheet } from 'react-native';
 
 import { Text, View } from '../components/Themed';
+import HTMLViewer from '../components/HTMLViewer';
 
 export default function LessonScreen() {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Lesson</Text>
+      <Text style={styles.title}>Lessons</Text>
+      <HTMLViewer fileName="lesson1"/>
     </View>
   );
 }
@@ -17,6 +19,5 @@ const styles = StyleSheet.create({
     paddingTop: 25
   },
   title: {
-    fontSize: 20,
   },
 });

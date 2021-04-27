@@ -40,8 +40,8 @@ const TabBar = ({ navigation, state }: any) => (
         selectedIndex={state.index}
         onSelect={index => navigation.navigate(state.routeNames[index])}>
         <BottomNavigationTab icon={Icons.Book} title="Lessons"/>
-        <BottomNavigationTab icon={Icons.Setting} title="Quizzes" />
-        <BottomNavigationTab icon={Icons.Pen} title="Settings" />
+        <BottomNavigationTab icon={Icons.Pen} title="Quizzes" />
+        <BottomNavigationTab icon={Icons.Setting} title="Settings" />
     </BottomNavigation>
 );
 
