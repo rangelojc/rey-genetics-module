@@ -45,12 +45,25 @@ const TabBar = ({ navigation, state }: any) => (
     </BottomNavigation>
 );
 
-// Tabs Screen Navigations
+// Tabs Screen Navigation
+const ScreenOptions = (title: string) => {
+    return {
+        title,
+        headerStyle: {
+          backgroundColor: '#eee',
+        },
+        headerTintColor: '#fff',
+        headerTitleStyle: {
+          fontWeight: 'bold',
+        },
+    }
+}
+
 const TabNavigation = () => (
     <Navigator tabBar={(props) => <TabBar {...props} />}>
-        <Screen name='Lessons' component={LessonScreen} />
-        <Screen name='Quizzes' component={QuizScreen} />
-        <Screen name='Settings' component={SettingScreen} />
+        <Screen name='Lessons' component={LessonScreen} options={ScreenOptions("Lessons")} />
+        <Screen name='Quizzes' component={QuizScreen}  options={ScreenOptions("Quizzes")}/>
+        <Screen name='Settings' component={SettingScreen}  options={ScreenOptions("Settings")}/>
     </Navigator>
 );
 

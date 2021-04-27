@@ -7,7 +7,6 @@ export default function LessonScreen() {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Lesson</Text>
-      <View style={styles.separator} />
     </View>
   );
 }
@@ -15,16 +14,9 @@ export default function LessonScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
+    paddingTop: 25
   },
   title: {
     fontSize: 20,
-    fontWeight: 'bold',
-  },
-  separator: {
-    marginVertical: 30,
-    height: 1,
-    width: '80%',
   },
 });

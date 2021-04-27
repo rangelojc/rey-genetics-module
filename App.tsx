@@ -10,7 +10,7 @@ import * as eva from '@eva-design/eva';
 import { EvaIconsPack } from '@ui-kitten/eva-icons';
 import { ApplicationProvider, IconRegistry } from '@ui-kitten/components';
 
-import Navigation from './navigation';
+import Router from './navigation/Router';
 
 export default function App() {
   const isLoadingComplete = useCachedResources();
@@ -23,8 +23,8 @@ export default function App() {
       <>
         <IconRegistry icons={EvaIconsPack} />
         <ApplicationProvider {...eva} theme={eva.light}>
-          <Navigation colorScheme={colorScheme} />
           <StatusBar />
+          <Router />
         </ApplicationProvider>
       </>
     );

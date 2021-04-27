@@ -9,7 +9,7 @@ const { Navigator, Screen } = createStackNavigator();
 
 // If you are not familiar with React Navigation, we recommend going through the
 // "Fundamentals" guide: https://reactnavigation.org/docs/getting-started
-export default function Navigation() {
+export default function() {
   return (
     <NavigationContainer linking={LinkingConfiguration}>
       <Navigator screenOptions={{ headerShown: false }}>
