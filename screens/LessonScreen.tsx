@@ -1,18 +1,9 @@
-import * as React from 'react';
+import React, {Component} from 'react';
 import { StyleSheet } from 'react-native';
 
 import { Text, View } from '../components/Themed';
 import HTMLViewer from '../components/HTMLViewer';
 import LessonList from '../components/LessonList';
-
-export default function LessonScreen() {
-  return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Lessons</Text>
-      <LessonList></LessonList>
-    </View>
-  );
-}
 
 const styles = StyleSheet.create({
   container: {
@@ -22,3 +13,18 @@ const styles = StyleSheet.create({
   title: {
   },
 });
+
+export default class LessonScreen extends Component{
+  constructor(props: any){
+    super(props);
+  }
+ 
+  public render(){
+    return (
+      <View style={styles.container}>
+        <Text style={styles.title}>Lessons</Text>
+        <LessonList></LessonList>
+      </View>
+    );
+  }
+}

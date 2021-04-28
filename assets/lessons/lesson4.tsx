@@ -9,7 +9,7 @@ const styles = {
 
     }
 }
-export default class Lesson1 extends Component{
+export default class Lesson4 extends Component{
     constructor(props: any){
       super(props);
     }
@@ -17,7 +17,7 @@ export default class Lesson1 extends Component{
     public render(){
       return (
         <View style={styles.container}>
-          <Text style={styles.title}>Lesson 1 content</Text>
+          <Text style={styles.title}>Lesson 4 content</Text>
         </View>
       );
     }
