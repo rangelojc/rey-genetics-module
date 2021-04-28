@@ -1,30 +1,18 @@
-import * as React from 'react';
-import { StyleSheet } from 'react-native';
+import React, {Component} from 'react';
 
 import { Text, View } from '../components/Themed';
 
-export default function LessonScreen() {
-  return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Settings</Text>
-      <View style={styles.separator}  />
-    </View>
-  );
+import GlobalStyles from "../styles/GlobalStyles";
+export default class SettingScreen extends Component{
+  constructor(props: any){
+    super(props);
+  }
+ 
+  public render(){
+    return (
+      <View style={GlobalStyles.container}>
+        <Text>Setting</Text>
+      </View>
+    );
+  }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  title: {
-    fontSize: 20,
-    fontWeight: 'bold',
-  },
-  separator: {
-    marginVertical: 30,
-    height: 1,
-    width: '80%',
-  },
-});

@@ -4,12 +4,14 @@ import { StyleSheet, Dimensions, Platform, StatusBar } from 'react-native';
 //     return <Text {...props} style={[props.style, { fontFamily: 'space-mono' }]} />;
 //   }
 
-export const GlobalStyles = StyleSheet.create({
+export default StyleSheet.create({
     header: {
         borderBottomWidth: 1,
         borderBottomColor: "#e4e6e8"
     },
     container: {
+        flex: 1,
+        paddingTop: 25,
         paddingHorizontal: 15,
         paddingVertical: 15,
         backgroundColor: "#f6f6f6"
