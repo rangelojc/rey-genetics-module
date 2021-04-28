@@ -3,12 +3,13 @@ import { StyleSheet } from 'react-native';
 
 import { Text, View } from '../components/Themed';
 import HTMLViewer from '../components/HTMLViewer';
+import LessonList from '../components/LessonList';
 
 export default function LessonScreen() {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Lessons</Text>
-      <HTMLViewer fileName="lesson1"/>
+      <LessonList></LessonList>
     </View>
   );
 }

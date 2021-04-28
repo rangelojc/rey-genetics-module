@@ -14,7 +14,6 @@ const styles =  StyleSheet.create({
 });
 
 const staticHtml = require('../assets/lessons/lesson1.tsx').default;
-console.log(staticHtml);
 
 export default function HTMLViewer(props: any){
     const {fileName} = props;
@@ -25,7 +24,7 @@ export default function HTMLViewer(props: any){
             <WebView
                 automaticallyAdjustContentInsets={false}
                 originWhitelist={["*"]}
-                source={ { html: staticHtml, baseUrl: ''} }
+                source={ { html: relativePath, baseUrl: ''} }
                 style={styles.webView}
                 scalesPageToFit={true}
             />
