@@ -2,8 +2,8 @@ import { NavigationContainer } from '@react-navigation/native';
 import React, { Component } from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 
-import TabNavigator from './TabNavigator';
 import LinkingConfiguration from './LinkingConfiguration';
+import TabNavigator from './TabNavigator';
 
 const { Navigator, Screen } = createStackNavigator();
 export default class Router extends Component {

@@ -1,13 +1,16 @@
 import React, { Component } from 'react';
 import { StyleSheet } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { Icon, BottomNavigation, BottomNavigationTab } from '@ui-kitten/components';
+import { BottomNavigation, BottomNavigationTab } from '@ui-kitten/components';
 
 // Tab Screens
 import LessonScreen from "../screens/LessonScreen"
 import QuizScreen from "../screens/QuizScreen"
 import SettingScreen from "../screens/SettingScreen"
 import LessonViewScreen from '../screens/LessonViewScreen';
+
+//Icons
+import Icons from "../components/Icons";
 
 // Custom Styles
 const styles = StyleSheet.create({
@@ -20,16 +23,6 @@ const styles = StyleSheet.create({
         marginTop: 4
     }
 });
-
-const { Navigator, Screen } = createBottomTabNavigator();
-
-//Icons
-const Icons = {
-    Book: (props: any) => <Icon name='book-outline' {...props} />,
-    Setting: (props: any) => <Icon name='settings-outline' {...props} />,
-    Pen: (props: any) => <Icon name='edit-outline' {...props} />,
-}
-
 class TabBar extends Component {
     navigation: any;
     state: any;
@@ -58,24 +51,27 @@ class TabBar extends Component {
 }
 
 // Tabs Screen Navigation
-const ScreenOptions = (title: string) => {
-    return {
-        title,
-        headerStyle: {
-            backgroundColor: '#eee',
-        },
-        headerTintColor: '#fff',
-        headerTitleStyle: {
-            fontWeight: 'bold',
-        },
-    }
-}
 class TabNavigation extends Component {
     constructor(props: any) {
         super(props)
     }
 
     public render() {
+        const ScreenOptions = (title: string) => {
+            return {
+                title,
+                headerStyle: {
+                    backgroundColor: '#eee',
+                },
+                headerTintColor: '#fff',
+                headerTitleStyle: {
+                    fontWeight: 'bold',
+                },
+            }
+        }
+
+        const { Navigator, Screen } = createBottomTabNavigator();
+
         return (
             <Navigator tabBar={(props) => <TabBar {...props} />}>
                 <Screen name='Lessons' component={LessonScreen} options={ScreenOptions("Lessons")} />

@@ -1,18 +1,18 @@
 [
     {
-        "name": "Lesson 1",
-        "fileName": "lesson1"
+        "title": "Lesson 1",
+        "name": "lesson1"
     },
     {
-        "name": "Lesson 2",
-        "fileName": "lesson2"
+        "title": "Lesson 2",
+        "name": "lesson2"
     },
     {
-        "name": "Lesson 3",
-        "fileName": "lesson3"
+        "title": "Lesson 3",
+        "name": "lesson3"
     },
     {
-        "name": "Lesson 4",
-        "fileName": "lesson4"
+        "title": "Lesson 4",
+        "name": "lesson4"
     }
 ]
