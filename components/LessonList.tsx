@@ -13,26 +13,26 @@ const styles = StyleSheet.create({
 interface LessonListProps {
     styles: any;
 }
-
-
 export default class LessonList extends Component<LessonListProps>{
-    items: any;
     style: any;
 
     constructor(props: any) {
         super(props);
 
         this.style = props.style;
-        this.items = lessonList.map(l => {
-            let text = `${l.name} - ${l.fileName}.tsx`;
-
-            return <Link to={`/LessonViewScreen`}>{text}</Link>
-        })
     }
 
     public render() {
+        let lessonItems = lessonList.map(l => {
+            let text = `${l.title}: ${l.name}.tsx`;
+
+            return <Link key={l.name} to={`/LessonView?lessonName=${l.name}`}>{text}</Link>
+        })
+
         return (
-            <View style={this.style.lessonList}>{this.items}</View>
+            <View style={this.style.lessonList}>
+                { lessonItems}
+            </View>
         )
     }
 }
