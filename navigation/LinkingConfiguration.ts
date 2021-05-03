@@ -8,8 +8,7 @@ export default {
         screens: {
           Lesson: {
             screens: {
-              LessonScreen: 'Lessons',
-              LessonViewScreen: 'LessonView'
+              LessonScreen: 'Lessons'
             },
           },
           Quiz: {
@@ -21,6 +20,11 @@ export default {
             screens: {
               SettingScreen: 'Settings',
             },
+          },
+          LessonView: {
+            screens: {
+              LessonViewScreen: 'LessonView'
+            }
           }
         },
       }

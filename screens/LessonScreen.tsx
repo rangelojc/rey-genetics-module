@@ -5,14 +5,14 @@ import { Text, View } from '../components/Themed';
 
 import GlobalStyles from "../styles/GlobalStyles";
 
-import HTMLViewer from '../components/HTMLViewer';
 import LessonList from '../components/LessonList';
 
 const styles = StyleSheet.create({
-  lessonList: {
+  listContainer: {
+    flex: 1,
     marginTop: 20
-  }
-})
+  },
+});
 export default class LessonScreen extends Component {
   constructor(props: any) {
     super(props);
@@ -22,7 +22,7 @@ export default class LessonScreen extends Component {
     return (
       <View style={GlobalStyles.container}>
         <Text>Lessons</Text>
-        <LessonList style={styles.lessonList}></LessonList>
+        <LessonList style={styles.listContainer}></LessonList>
       </View>
     );
   }

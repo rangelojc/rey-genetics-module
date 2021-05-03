@@ -3,13 +3,6 @@ import { StyleSheet, View } from 'react-native';
 import { Link } from '@react-navigation/native';
 
 import lessonList from '../assets/lessons/lessonList.json';
-
-const styles = StyleSheet.create({
-    listContainer: {
-        flex: 1,
-    },
-});
-
 interface LessonListProps {
     style: any;
 }
@@ -23,15 +16,20 @@ export default class LessonList extends Component<LessonListProps>{
     }
 
     public render() {
-        let lessonItems = lessonList.map(l => {
-            let text = `${l.title}: ${l.name}.tsx`;
+        let lessonCount = 0;
+        let lessonItems = lessonList.map(lesson => {
+            lessonCount++;
 
-            return <Link key={l.name} to={`/LessonView?lessonName=${l.name}`}>{text}</Link>
+            return (
+                <Link key={lesson.name} to={`/LessonView?lessonName=${lesson.name}`}>
+                    {`${lessonCount}. ${lesson.title}`}
+                </Link>
+            )
         })
 
         return (
-            <View style={this.style.lessonList}>
-                { lessonItems}
+            <View style={this.style}>
+                {lessonItems}
             </View>
         )
     }

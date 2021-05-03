@@ -16,6 +16,12 @@ export default StyleSheet.create({
         paddingVertical: 15,
         backgroundColor: "#f6f6f6"
     },
+    empty: {
+        flex: 1,
+        flexDirection: 'row',
+        justifyContent: 'center',
+        alignItems: 'center'
+    },
     background: {
         backgroundColor: "#f6f6f6"
     },
