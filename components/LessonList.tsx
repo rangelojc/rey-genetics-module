@@ -11,7 +11,7 @@ const styles = StyleSheet.create({
 });
 
 interface LessonListProps {
-    styles: any;
+    style: any;
 }
 export default class LessonList extends Component<LessonListProps>{
     style: any;
