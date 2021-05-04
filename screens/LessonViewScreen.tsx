@@ -15,15 +15,15 @@ const EmptyLessonView = () => {
 }
 
 export default function LessonViewScreen({ route }: any) {
-  let title = route.params.params.lessonTitle;
-  let name = route.params.params.lessonName;
-
   let targetLesson = null;
   let lessonTitle = null;
 
   const isFocused = useIsFocused();
 
   if (isFocused) {
+    let title = route.params.params.lessonTitle;
+    let name = route.params.params.lessonName;
+
     switch (name) {
       case "lesson1": targetLesson = <Lessons.Lesson1 />; break;
       case "lesson2": targetLesson = <Lessons.Lesson2 />; break;
