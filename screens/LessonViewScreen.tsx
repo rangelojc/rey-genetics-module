@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
+import { StyleSheet, Text, View } from 'react-native';
+import { useIsFocused } from '@react-navigation/native';
 
 import GlobalStyles from "../styles/GlobalStyles";
-import { Text, View } from '../components/Themed';
 
 import * as Lessons from "../assets/lessons/lessonModule";
 
@@ -12,48 +13,34 @@ const EmptyLessonView = () => {
     </View>
   )
 }
-export default class LessonViewScreen extends Component {
-  lessonName: string;
-  lessonTitle: string;
+export default function LessonViewScreen({ route }: any) {
+  let title = route.params.params.lessonTitle;
+  let name = route.params.params.lessonName;
 
-  constructor(props: any) {
-    super(props);
+  let targetLesson = null;
+  let lessonTitle = null;
 
-    console.log();
+  const isFocused = useIsFocused();
 
-    this.lessonName = props.route.params.params.lessonName;
-    this.lessonTitle = props.route.params.params.lessonTitle;
-  }
+  if (isFocused) {
+    console.log(name);
 
-  getTargetLesson() {
-    let target = null;
-
-    switch (this.lessonName) {
-      case "lesson1": target = <Lessons.Lesson1 />;
-      case "lesson2": target = <Lessons.Lesson2 />;
-      case "lesson3": target = <Lessons.Lesson3 />;
-      case "lesson4": target = <Lessons.Lesson4 />;
-
-      default: target = <EmptyLessonView />;
+    switch (name) {
+      case "lesson1": targetLesson = <Lessons.Lesson1 />; break;
+      case "lesson2": targetLesson = <Lessons.Lesson2 />; break;
+      case "lesson3": targetLesson = <Lessons.Lesson3 />; break;
+      case "lesson4": targetLesson = <Lessons.Lesson4 />; break;
+      default: targetLesson = <EmptyLessonView />;
     }
 
-    return target;
+    lessonTitle = title ? <Text style={GlobalStyles.title}>{title}</Text> : null;
   }
 
-  componentDidMount() {
-    console.log(this.lessonName);
-  }
-
-  public render() {
-    let targetLesson = this.getTargetLesson();
-    let lessonTitle = this.lessonTitle ? <Text>{this.lessonTitle}</Text> : null;
-
-    return (
-      <View style={GlobalStyles.container}>
-        {lessonTitle}
-        {targetLesson}
-      </View>
-    );
-  }
+  return (
+    <View style={GlobalStyles.container}>
+      {lessonTitle}
+      {targetLesson}
+    </View>
+  );
 }
 

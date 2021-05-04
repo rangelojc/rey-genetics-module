@@ -3,10 +3,7 @@ import { StyleSheet, View } from 'react-native';
 import { Link } from '@react-navigation/native';
 
 import lessonList from '../assets/lessons/lessonList.json';
-interface LessonListProps {
-    style: any;
-}
-export default class LessonList extends Component<LessonListProps>{
+export default class LessonList extends Component {
     style: any;
 
     constructor(props: any) {
@@ -21,7 +18,7 @@ export default class LessonList extends Component<LessonListProps>{
             lessonCount++;
 
             return (
-                <Link key={lesson.name} to={`/LessonView?lessonName=${lesson.name}`}>
+                <Link key={lesson.name} to={`/LessonView?lessonName=${lesson.name}&lessonTitle=${lesson.title}`}>
                     {`${lessonCount}. ${lesson.title}`}
                 </Link>
             )

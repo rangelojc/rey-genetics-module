@@ -1,17 +1,17 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 
-import { Text, View } from '../components/Themed';
+import { StyleSheet, Text, View } from 'react-native';
 
 import GlobalStyles from "../styles/GlobalStyles";
-export default class QuizScreen extends Component{
-  constructor(props: any){
+export default class QuizScreen extends Component {
+  constructor(props: any) {
     super(props);
   }
- 
-  public render(){
+
+  public render() {
     return (
       <View style={GlobalStyles.container}>
-        <Text>Quiz</Text>
+        <Text style={GlobalStyles.title}>Quiz</Text>
       </View>
     );
   }

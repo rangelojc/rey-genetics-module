@@ -16,6 +16,9 @@ export default StyleSheet.create({
         paddingVertical: 15,
         backgroundColor: "#f6f6f6"
     },
+    title: {
+        marginBottom: 20,
+    },
     empty: {
         flex: 1,
         flexDirection: 'row',
