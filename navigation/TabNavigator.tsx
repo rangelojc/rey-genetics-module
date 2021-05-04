@@ -23,65 +23,49 @@ const styles = StyleSheet.create({
         marginTop: 4
     }
 });
-class TabBar extends Component {
-    navigation: any;
-    state: any;
 
-    constructor(props: any) {
-        super(props);
+function TabBar({ state, navigation }: any) {
+    return (
+        <BottomNavigation
+            style={styles.navigation}
+            appearance='noIndicator'
+            selectedIndex={state.index}
+            onSelect={index => navigation.navigate(state.routeNames[index])}>
 
-        this.navigation = props.navigation;
-        this.state = props.state;
-    }
-
-    public render() {
-        return (
-            <BottomNavigation
-                style={styles.navigation}
-                appearance='noIndicator'
-                selectedIndex={this.state.index}
-                onSelect={index => this.navigation.navigate(this.state.routeNames[index])}>
-
-                <BottomNavigationTab icon={Icons.Book} title="Lessons" />
-                <BottomNavigationTab icon={Icons.Pen} title="Quizzes" />
-                <BottomNavigationTab icon={Icons.Setting} title="Settings" />
-            </BottomNavigation>
-        )
-    }
+            <BottomNavigationTab icon={Icons.Book} title="Lessons" />
+            <BottomNavigationTab icon={Icons.Pen} title="Quizzes" />
+            <BottomNavigationTab icon={Icons.Setting} title="Settings" />
+        </BottomNavigation>
+    )
 }
 
 // Tabs Screen Navigation
-class TabNavigation extends Component {
-    constructor(props: any) {
-        super(props)
-    }
+function TabNavigation() {
 
-    public render() {
-        const ScreenOptions = (title: string) => {
-            return {
-                title,
-                headerStyle: {
-                    backgroundColor: '#eee',
-                },
-                headerTintColor: '#fff',
-                headerTitleStyle: {
-                    fontWeight: 'bold',
-                },
-            }
+    const ScreenOptions = (title: string) => {
+        return {
+            title,
+            headerStyle: {
+                backgroundColor: '#eee',
+            },
+            headerTintColor: '#fff',
+            headerTitleStyle: {
+                fontWeight: 'bold',
+            },
         }
-
-        const { Navigator, Screen } = createBottomTabNavigator();
-
-        return (
-            <Navigator tabBar={(props) => <TabBar {...props} />}>
-                <Screen name='Lessons' component={LessonScreen} options={ScreenOptions("Lessons")} />
-                <Screen name='Quizzes' component={QuizScreen} options={ScreenOptions("Quizzes")} />
-                <Screen name='Settings' component={SettingScreen} options={ScreenOptions("Settings")} />
-
-                <Screen name='LessonView' component={LessonViewScreen} options={ScreenOptions("LessonView")} />
-            </Navigator>
-        )
     }
+
+    const BottomTab = createBottomTabNavigator();
+
+    return (
+        <BottomTab.Navigator tabBar={(props) => <TabBar {...props} />}>
+            <BottomTab.Screen name='Lessons' component={LessonScreen} options={ScreenOptions("Lessons")} />
+            <BottomTab.Screen name='Quizzes' component={QuizScreen} options={ScreenOptions("Quizzes")} />
+            <BottomTab.Screen name='Settings' component={SettingScreen} options={ScreenOptions("Settings")} />
+
+            <BottomTab.Screen name='LessonView' component={LessonViewScreen} options={ScreenOptions("LessonView")} />
+        </BottomTab.Navigator>
+    )
 }
 
 

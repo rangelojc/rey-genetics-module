@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React from 'react';
+import { Text, View } from 'react-native';
 import { useIsFocused } from '@react-navigation/native';
 
 import GlobalStyles from "../styles/GlobalStyles";
@@ -13,6 +13,7 @@ const EmptyLessonView = () => {
     </View>
   )
 }
+
 export default function LessonViewScreen({ route }: any) {
   let title = route.params.params.lessonTitle;
   let name = route.params.params.lessonName;
@@ -23,8 +24,6 @@ export default function LessonViewScreen({ route }: any) {
   const isFocused = useIsFocused();
 
   if (isFocused) {
-    console.log(name);
-
     switch (name) {
       case "lesson1": targetLesson = <Lessons.Lesson1 />; break;
       case "lesson2": targetLesson = <Lessons.Lesson2 />; break;
