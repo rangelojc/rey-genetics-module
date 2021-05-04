@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StyleSheet, View } from 'react-native';
+import { View } from 'react-native';
 import { Link } from '@react-navigation/native';
 
 import lessonList from '../assets/lessons/lessonList.json';
