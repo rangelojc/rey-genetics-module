@@ -1,13 +1,15 @@
 import { StyleSheet, Dimensions, Platform, StatusBar } from 'react-native';
 
-// export function MonoText(props: TextProps) {
-//     return <Text {...props} style={[props.style, { fontFamily: 'space-mono' }]} />;
-//   }
-
 export default StyleSheet.create({
     header: {
         borderBottomWidth: 1,
         borderBottomColor: "#e4e6e8"
+    },
+    bottomNavigation: {
+        height: 40,
+        minHeight: 40,
+        borderTopColor: "#d8d8d8",
+        borderTopWidth: .3,
     },
     container: {
         flex: 1,

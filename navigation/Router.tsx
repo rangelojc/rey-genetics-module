@@ -3,9 +3,12 @@ import React, { Component } from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 
 import LinkingConfiguration from './LinkingConfiguration';
-import TabNavigator from './TabNavigator';
 
-const { Navigator, Screen } = createStackNavigator();
+//Screens
+import Main from './Main';
+import LessonViewScreen from '../screens/LessonViewScreen';
+
+const Stack = createStackNavigator();
 export default class Router extends Component {
   constructor(props: any) {
     super(props)
@@ -14,9 +17,10 @@ export default class Router extends Component {
   public render() {
     return (
       <NavigationContainer linking={LinkingConfiguration}>
-        <Navigator screenOptions={{ headerShown: false }}>
-          <Screen name="Root" component={TabNavigator} />
-        </Navigator>
+        <Stack.Navigator screenOptions={{ headerShown: false }}>
+          <Stack.Screen name="Main" component={Main} />
+          <Stack.Screen name="LessonView" component={LessonViewScreen} />
+        </Stack.Navigator>
       </NavigationContainer>
     )
   }

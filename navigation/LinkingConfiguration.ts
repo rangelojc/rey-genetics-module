@@ -4,7 +4,7 @@ export default {
   prefixes: [Linking.makeUrl('/')],
   config: {
     screens: {
-      Root: {
+      Main: {
         screens: {
           Lesson: {
             screens: {
@@ -20,13 +20,13 @@ export default {
             screens: {
               SettingScreen: 'Settings',
             },
-          },
-          LessonView: {
-            screens: {
-              LessonViewScreen: 'LessonView'
-            }
           }
         },
+      },
+      LessonView: {
+        screens: {
+          LessonViewScreen: 'LessonView'
+        }
       }
     },
   },
