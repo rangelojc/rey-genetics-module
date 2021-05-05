@@ -2,6 +2,7 @@ import { StatusBar } from 'expo-status-bar';
 
 import React from 'react';
 import 'react-native-gesture-handler';
+import { Text } from "react-native"
 
 import useCachedResources from './hooks/useCachedResources';
 import useColorScheme from './hooks/useColorScheme';
@@ -23,7 +24,7 @@ export default function App() {
       <>
         <IconRegistry icons={EvaIconsPack} />
         <ApplicationProvider {...eva} theme={eva.light}>
-          <StatusBar />
+          <StatusBar style="dark" />
           <Router />
         </ApplicationProvider>
       </>
