@@ -13,7 +13,7 @@ export default StyleSheet.create({
     },
     mainContainer: {
         flex: 1,
-        paddingTop: 25,
+        paddingTop: 0,
         backgroundColor: "#ffffff",
     },
     container: {
