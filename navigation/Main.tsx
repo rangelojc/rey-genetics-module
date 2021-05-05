@@ -24,9 +24,9 @@ function TabBar({ state, navigation }: any) {
                 }
             }>
 
-            <BottomNavigationTab icon={Icons.Book} />
-            <BottomNavigationTab icon={Icons.Pen} />
-            <BottomNavigationTab icon={Icons.Setting} />
+            <BottomNavigationTab icon={Icons.Book} title="Lessons" />
+            <BottomNavigationTab icon={Icons.Pen} title="Activities" />
+            <BottomNavigationTab icon={Icons.Setting} title="Settings" />
         </BottomNavigation>
     )
 }

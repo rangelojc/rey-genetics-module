@@ -6,20 +6,43 @@ export default StyleSheet.create({
         borderBottomColor: "#e4e6e8"
     },
     bottomNavigation: {
-        height: 40,
-        minHeight: 40,
+        height: 60,
+        minHeight: 60,
         borderTopColor: "#d8d8d8",
         borderTopWidth: .3,
     },
+    mainContainer: {
+        flex: 1,
+        paddingTop: 25,
+        backgroundColor: "#ffffff",
+    },
     container: {
+        flex: 1,
+        paddingHorizontal: 0,
+        paddingVertical: 0,
+        backgroundColor: "#f6f6f6"
+    },
+    containerWhite: {
         flex: 1,
         paddingTop: 25,
         paddingHorizontal: 15,
         paddingVertical: 15,
-        backgroundColor: "#f6f6f6"
+        backgroundColor: "#ffffff"
     },
     title: {
-        marginBottom: 20,
+        paddingLeft: 10,
+        height: 40,
+        minHeight: 40,
+        maxHeight: 40,
+        marginBottom: 1,
+        fontSize: 28,
+        fontWeight: "bold",
+        backgroundColor: "#ffffff"
+    },
+    topNavTitle: {
+        fontSize: 28,
+        fontWeight: "bold",
+        backgroundColor: "#ffffff"
     },
     empty: {
         flex: 1,

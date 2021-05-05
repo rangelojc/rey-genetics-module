@@ -6,6 +6,8 @@ import GlobalStyles from "../styles/GlobalStyles";
 
 import * as Lessons from "../assets/lessons/lessonModule";
 
+import Header from "../components/Header";
+
 const EmptyLessonView = () => {
   return (
     <View style={GlobalStyles.empty}>
@@ -15,30 +17,33 @@ const EmptyLessonView = () => {
 }
 
 export default function LessonViewScreen({ route }: any) {
-  let targetLesson = null;
-  let lessonTitle = null;
+  let jsxTargetLesson = null;
+  let jsxLessonTitle = null;
 
   const isFocused = useIsFocused();
 
   if (isFocused) {
-    let title = route.params.params.lessonTitle;
-    let name = route.params.params.lessonName;
+    let lessonTitle = route.params.params.lessonTitle;
+    let lessonName = route.params.params.lessonName;
 
-    switch (name) {
-      case "lesson1": targetLesson = <Lessons.Lesson1 />; break;
-      case "lesson2": targetLesson = <Lessons.Lesson2 />; break;
-      case "lesson3": targetLesson = <Lessons.Lesson3 />; break;
-      case "lesson4": targetLesson = <Lessons.Lesson4 />; break;
-      default: targetLesson = <EmptyLessonView />;
+    switch (lessonName) {
+      case "lesson1": jsxTargetLesson = <Lessons.Lesson1 />; break;
+      case "lesson2": jsxTargetLesson = <Lessons.Lesson2 />; break;
+      case "lesson3": jsxTargetLesson = <Lessons.Lesson3 />; break;
+      case "lesson4": jsxTargetLesson = <Lessons.Lesson4 />; break;
+      default: jsxTargetLesson = <EmptyLessonView />;
     }
 
-    lessonTitle = title ? <Text style={GlobalStyles.title}>{title}</Text> : null;
+    jsxLessonTitle = lessonTitle ? <Header title={lessonTitle} backAction="true" /> : null;
   }
 
   return (
-    <View style={GlobalStyles.container}>
-      {lessonTitle}
-      {targetLesson}
+    <View style={GlobalStyles.mainContainer}>
+      {jsxLessonTitle}
+
+      <View style={GlobalStyles.containerWhite}>
+        {jsxTargetLesson}
+      </View>
     </View>
   );
 }

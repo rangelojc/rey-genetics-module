@@ -1,33 +1,42 @@
 import React, { Component } from 'react';
-import { View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import { Link } from '@react-navigation/native';
 
 import lessonList from '../assets/lessons/lessonList.json';
-export default class LessonList extends Component {
-    style: any;
+import { Button } from '@ui-kitten/components';
 
-    constructor(props: any) {
-        super(props);
-
-        this.style = props.style;
-    }
-
-    public render() {
-        let lessonCount = 0;
-        let lessonItems = lessonList.map(lesson => {
-            lessonCount++;
-
-            return (
-                <Link key={lesson.name} to={`/LessonView?lessonName=${lesson.name}&lessonTitle=${lesson.title}`}>
-                    {`${lessonCount}. ${lesson.title}`}
-                </Link>
-            )
-        })
+export default function LessonList(props: any) {
+    let lessonCount = 0;
+    let lessonItems = lessonList.map(lesson => {
+        lessonCount++;
 
         return (
-            <View style={this.style}>
-                {lessonItems}
+            <View style={styles.links} key={lesson.name}>
+                <Link to={`/LessonView?lessonName=${lesson.name}&lessonTitle=${lesson.title}`}>
+                    {`${lesson.title}`}
+                </Link>
+
+                {/* <Button>Read</Button> */}
             </View>
         )
-    }
+    })
+
+    return (
+        <View style={props.style}>
+            {lessonItems}
+        </View>
+    )
 }
+
+
+const styles = StyleSheet.create({
+    links: {
+        flex: 1,
+        justifyContent: "center",
+        height: 50,
+        minHeight: 50,
+        backgroundColor: "#ffffff",
+        marginVertical: 1,
+        paddingLeft: 10
+    }
+})

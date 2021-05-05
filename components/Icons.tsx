@@ -9,4 +9,5 @@ export default {
   Book: (props: any) => <Icon name='book-outline' {...props} />,
   Setting: (props: any) => <Icon name='settings-outline' {...props} />,
   Pen: (props: any) => <Icon name='edit-outline' {...props} />,
+  Back: (props: any) => (<Icon {...props} name='arrow-back' />)
 }
