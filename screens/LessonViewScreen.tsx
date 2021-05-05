@@ -3,18 +3,18 @@ import { Text, View } from 'react-native';
 import { useIsFocused } from '@react-navigation/native';
 
 import GlobalStyles from "../styles/GlobalStyles";
+import Icons from "../components/Icons";
 
 import * as Lessons from "../assets/lessons/lessonModule";
 
 import Header from "../components/Header";
 
-const EmptyLessonView = () => {
-  return (
-    <View style={GlobalStyles.empty}>
-      <Text>Content not found.</Text>
-    </View>
-  )
-}
+const EmptyLessonView = () => (
+  <View style={{ ...GlobalStyles.column, ...GlobalStyles.center, ...GlobalStyles.flex }}>
+    <Icons.Question style={{ height: 30, width: 30 }} />
+    <Text style={{ fontSize: 22 }}>Content not found.</Text>
+  </View>
+)
 
 export default function LessonViewScreen({ route }: any) {
   let jsxTargetLesson = null;
@@ -41,10 +41,10 @@ export default function LessonViewScreen({ route }: any) {
     <View style={GlobalStyles.mainContainer}>
       {jsxLessonTitle}
 
-      <View style={GlobalStyles.containerWhite}>
+      <View style={GlobalStyles.containerWrapper}>
         {jsxTargetLesson}
       </View>
-    </View>
+    </View >
   );
 }
 
