@@ -1,9 +1,26 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { StyleSheet, View } from 'react-native';
-import { Link } from '@react-navigation/native';
+import { Link, useLinkProps } from '@react-navigation/native';
 
+import { Text, Button } from '@ui-kitten/components';
+
+import GlobalStyles from '../styles/GlobalStyles';
 import lessonList from '../assets/lessons/lessonList.json';
-import { Button } from '@ui-kitten/components';
+
+const LinkButton = ({ to, children }: any) => {
+    const { onPress } = useLinkProps({ to });
+
+    return (
+        <Button
+            onPress={onPress}
+            style={styles.btnOpen}
+            size='small'
+        >
+            {children}
+        </Button>
+    )
+
+}
 
 export default function LessonList(props: any) {
     let lessonCount = 0;
@@ -11,15 +28,21 @@ export default function LessonList(props: any) {
         lessonCount++;
 
         return (
-            <View style={styles.links} key={lesson.name}>
-                <Link to={`/LessonView?lessonName=${lesson.name}&lessonTitle=${lesson.title}`}>
-                    {`${lesson.title}`}
-                </Link>
+            <View style={styles.listItem} key={lesson.name}>
+                <Text style={styles.title}>{`${lesson.title}`}</Text>
 
-                {/* <Button>Read</Button> */}
-            </View>
+                <Text style={styles.description}>
+                    {lesson.description}
+                </Text>
+
+                <LinkButton to={`/LessonView?lessonName=${lesson.name}&lessonTitle=${lesson.title}`}>
+                    Study
+                </LinkButton>
+            </ View >
         )
-    })
+    });
+
+
 
     return (
         <View style={props.style}>
@@ -30,13 +53,26 @@ export default function LessonList(props: any) {
 
 
 const styles = StyleSheet.create({
-    links: {
+    listItem: {
         flex: 1,
         justifyContent: "center",
-        height: 50,
-        minHeight: 50,
+        minHeight: 100,
         backgroundColor: "#ffffff",
         marginVertical: 1,
-        paddingLeft: 10
-    }
+        paddingHorizontal: 20,
+        paddingVertical: 30
+    },
+    title: {
+        ...GlobalStyles.text,
+        fontSize: 22,
+        fontWeight: "500",
+    },
+    description: {
+        ...GlobalStyles.text,
+        color: "#949292"
+    },
+    btnOpen: {
+        marginTop: 10,
+        width: 60,
+    },
 })

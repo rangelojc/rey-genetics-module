@@ -1,4 +1,5 @@
 import { StyleSheet, Dimensions, Platform, StatusBar } from 'react-native';
+import Colors from "../styles/colors.json";
 
 export default StyleSheet.create({
     header: {
@@ -22,39 +23,32 @@ export default StyleSheet.create({
         paddingVertical: 0,
         backgroundColor: "#f6f6f6"
     },
-    containerWhite: {
+    containerWrapper: {
         flex: 1,
-        paddingTop: 25,
-        paddingHorizontal: 15,
-        paddingVertical: 15,
-        backgroundColor: "#ffffff"
+        paddingHorizontal: 20,
+        paddingVertical: 20,
+        backgroundColor: "#fff"
     },
     title: {
-        paddingLeft: 10,
         height: 40,
         minHeight: 40,
         maxHeight: 40,
         marginBottom: 1,
         fontSize: 28,
         fontWeight: "bold",
-        backgroundColor: "#ffffff"
+        backgroundColor: "#ffffff",
+        color: "#141414"
     },
     topNavTitle: {
         fontSize: 28,
         fontWeight: "bold",
-        backgroundColor: "#ffffff"
+        backgroundColor: "#ffffff",
+        color: "#141414",
+        paddingLeft: 10,
     },
-    empty: {
-        flex: 1,
-        flexDirection: 'row',
-        justifyContent: 'center',
-        alignItems: 'center'
-    },
-    background: {
-        backgroundColor: "#f6f6f6"
-    },
-    wrapper: {
-        backgroundColor: "#FFFFFF"
+    text: {
+        fontSize: 16,
+        color: "#141414"
     },
     safearea: {
         flex: 1,
@@ -75,6 +69,10 @@ export default StyleSheet.create({
     flex: {
         flex: 1
     },
+    end: {
+        alignItems: 'center',
+        justifyContent: 'flex-end'
+    },
     center: {
         alignItems: 'center',
         justifyContent: 'center'
@@ -83,41 +81,4 @@ export default StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'flex-start'
     },
-    hyperlink: {
-        textDecorationLine: "underline",
-    },
-    paragraph: {
-        fontSize: 16,
-        lineHeight: 21
-    },
-    backdrop: {
-        backgroundColor: 'rgba(0, 0, 0, 0.4)' // Modal Backdrop Color
-    },
-    input: {
-        borderRadius: 6,
-        backgroundColor: '#FFFFFF',
-        // borderColor: '#cccccc'
-    },
-    inputText: {
-        height: 32,
-        fontSize: 18,
-        fontFamily: 'sf-pro-regular'
-    },
-    fontRegular: {
-        fontFamily: 'sf-pro-regular'
-    },
-    fontMedium: {
-        fontFamily: 'sf-pro-medium'
-    },
-    fontBold: {
-        fontFamily: 'sf-pro-bold'
-    },
-    fontSemiBold: {
-        fontFamily: 'sf-pro-semibold'
-    },
-    statement: {
-        fontSize: 14,
-        color: "#666666",
-        marginTop: 12
-    }
 });
