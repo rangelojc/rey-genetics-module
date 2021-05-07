@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-import { Text, View } from 'react-native';
+import { View } from 'react-native';
 
 import GlobalStyles from "../styles/GlobalStyles";
 import Header from "../components/Header";

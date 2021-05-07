@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { ScrollView, View } from 'react-native';
 
 import GlobalStyles from "../../styles/GlobalStyles";
