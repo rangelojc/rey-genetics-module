@@ -2,12 +2,12 @@ import React from 'react';
 import { Text, View } from 'react-native';
 import { useIsFocused } from '@react-navigation/native';
 
-import GlobalStyles from "../styles/GlobalStyles";
-import Icons from "../components/Icons";
+import GlobalStyles from "../../styles/GlobalStyles";
+import Icons from "../../components/Icons";
 
-import * as Lessons from "../assets/lessons/lessonModule";
+import * as Lessons from "../../assets/lessons/lessonModule";
 
-import Header from "../components/Header";
+import Header from "../../components/Header";
 
 const EmptyLessonView = () => (
   <View style={{ ...GlobalStyles.column, ...GlobalStyles.center, ...GlobalStyles.flex }}>

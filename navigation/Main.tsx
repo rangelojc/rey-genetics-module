@@ -4,8 +4,8 @@ import { BottomNavigation, BottomNavigationTab } from '@ui-kitten/components';
 import GlobalStyles from "../styles/GlobalStyles";
 
 // Tab Screens
-import LessonScreen from "../screens/LessonScreen"
-import ActivityScreen from "../screens/ActivityScreen"
+import LessonScreen from "../screens/Lesson/LessonScreen"
+import ActivityScreen from "../screens/Activity/ActivityScreen"
 import SettingScreen from "../screens/SettingScreen"
 
 //Icons

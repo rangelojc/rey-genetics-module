@@ -9,7 +9,7 @@ import GlobalStyles from "../styles/GlobalStyles";
 
 //Screens
 import Main from './Main';
-import LessonViewScreen from '../screens/LessonViewScreen';
+import LessonViewScreen from '../screens/Lesson/LessonViewScreen';
 
 const Stack = createStackNavigator();
 export default class Router extends Component {
