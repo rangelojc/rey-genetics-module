@@ -5,7 +5,7 @@ import GlobalStyles from "../styles/GlobalStyles";
 
 // Tab Screens
 import LessonScreen from "../screens/LessonScreen"
-import QuizScreen from "../screens/QuizScreen"
+import ActivityScreen from "../screens/ActivityScreen"
 import SettingScreen from "../screens/SettingScreen"
 
 //Icons
@@ -52,7 +52,7 @@ function TabNavigation() {
     return (
         <BottomTab.Navigator tabBar={(props) => <TabBar {...props} />}  >
             <BottomTab.Screen name='Lessons' component={LessonScreen} options={ScreenOptions("Lessons")} />
-            <BottomTab.Screen name='Quizzes' component={QuizScreen} options={ScreenOptions("Quizzes")} />
+            <BottomTab.Screen name='Activities' component={ActivityScreen} options={ScreenOptions("Activities")} />
             <BottomTab.Screen name='Settings' component={SettingScreen} options={ScreenOptions("Settings")} />
 
             {/* <BottomTab.Screen name='LessonView' component={LessonViewScreen} options={ScreenOptions("LessonView")} /> */}

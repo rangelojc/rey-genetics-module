@@ -11,9 +11,9 @@ export default {
               LessonScreen: 'Lessons'
             },
           },
-          Quiz: {
+          Activities: {
             screens: {
-              QuizScreen: 'Quizzes',
+              ActivityScreen: 'Activities',
             },
           },
           Setting: {
