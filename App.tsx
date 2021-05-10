@@ -19,7 +19,8 @@ export default function App() {
 
   if (!isLoadingComplete) {
     return null;
-  } else {
+  }
+  else {
     return (
       <>
         <IconRegistry icons={EvaIconsPack} />

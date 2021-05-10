@@ -12,7 +12,6 @@ import SettingScreen from "../screens/SettingScreen"
 import Icons from "../components/Icons";
 
 function TabBar({ state, navigation }: any) {
-
     return (
         <BottomNavigation
             style={GlobalStyles.bottomNavigation}
