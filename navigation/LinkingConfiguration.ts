@@ -27,6 +27,11 @@ export default {
         screens: {
           LessonViewScreen: 'LessonView'
         }
+      },
+      ActivityOpen: {
+        screens: {
+          ActivityOpenScreen: 'ActivityOpen'
+        }
       }
     },
   },

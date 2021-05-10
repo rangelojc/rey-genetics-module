@@ -2,7 +2,7 @@ import React from 'react';
 
 import { View, StyleSheet } from 'react-native';
 
-import { Text, Input } from '@ui-kitten/components';
+import { Text, Input, Button } from '@ui-kitten/components';
 
 import AsyncStorage from "../helpers/AsyncStorage"
 import GlobalStyles from "../styles/GlobalStyles";
@@ -20,6 +20,11 @@ export default class SettingScreen extends React.Component {
     super(props);
 
     this.state = {
+      formInput: {
+        firstName: '',
+        lastName: ''
+      },
+      applyButtonState: 'noChange', //noChange, hasChange, saved
       firstName: '',
       lastName: ''
     }
@@ -31,24 +36,47 @@ export default class SettingScreen extends React.Component {
     this.setState({ firstName, lastName });
   }
 
-  async setData(key: string, val: string) {
+  async setFormInput(key: string, val: string) {
     await AsyncStorage.set(key, val)
-    this.setState({ [key]: val });
+    this.setState({
+      formInput: {
+        ...this.state.formInput,
+        [key]: val,
+      }
+    });
+
+    this.setState({ applyButtonState: 'hasChange' })
+  }
+
+  async applySettings() {
+    this.state.formInput.keys.forEach((key: any) => {
+      this.setState({ [key]: this.state.formInput[key] })
+    })
+
+    this.setState({ applyButtonState: 'saved' })
   }
 
   public render() {
+    let applyButton = null;
+
+    switch (this.state.applyButtonState) {
+      case "noChange": applyButton = <Button disabled={true}>Apply</Button>; break;
+      case "hasChange": applyButton = <Button disabled={false}>Apply</Button>; break;
+      case "saved": applyButton = <Button disabled={true}>Applied</Button>; break;
+    }
+
     return (
       <View style={GlobalStyles.mainContainer}>
         <Header title="Settings" />
 
-        <View style={{ ...GlobalStyles.containerWrapper, ...styles.container }}>
+        <View style={{ ...GlobalStyles.containerWrapper }}>
 
           <Text>First Name</Text>
           <Input
             placeholder='First Name'
             value={this.state.firstName}
             style={styles.inputBox}
-            onChangeText={val => this.setData('firstName', val)}
+            onChangeText={val => this.setFormInput('firstName', val)}
           />
 
           <Text>Last Name</Text>
@@ -56,8 +84,10 @@ export default class SettingScreen extends React.Component {
             placeholder='Last Name'
             value={this.state.lastName}
             style={styles.inputBox}
-            onChangeText={val => this.setData('lastName', val)}
+            onChangeText={val => this.setFormInput('lastName', val)}
           />
+
+          {applyButton}
 
         </View>
       </View>
@@ -70,10 +100,11 @@ export default class SettingScreen extends React.Component {
 }
 
 let styles = StyleSheet.create({
-  container: {
-  },
   inputBox: {
     marginTop: 5,
     marginBottom: 10
+  },
+  applyButton: {
+    marginTop: 20
   }
 })

@@ -3,7 +3,7 @@ import { ScrollView, View } from 'react-native';
 
 import GlobalStyles from "../../styles/GlobalStyles";
 
-import LessonList from '../../components/LessonList';
+import LessonList from './LessonList';
 import Header from "../../components/Header";
 
 export default function LessonScreen(props: any) {

@@ -1,9 +1,11 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
+const STORE_NAME = '@RGMStore:';
+
 export default {
   set: async function (key: string, value: string) {
     try {
-      await AsyncStorage.setItem(key, value)
+      await AsyncStorage.setItem(STORE_NAME + key, value)
     }
     catch (ex) {
       console.error(ex)
@@ -11,7 +13,7 @@ export default {
   },
   get: async function (key: string, defaultValue?: string) {
     try {
-      const value = await AsyncStorage.getItem(key)
+      const value = await AsyncStorage.getItem(STORE_NAME + key)
       return value || defaultValue;
 
     }
