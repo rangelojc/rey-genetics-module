@@ -7,12 +7,6 @@ import { Text, Input, Button } from '@ui-kitten/components';
 import AsyncStorage from "../helpers/AsyncStorage"
 import GlobalStyles from "../styles/GlobalStyles";
 import Header from "../components/Header";
-
-async function getUser() {
-  let user = await AsyncStorage.get('rgm_USERNAME', 'USER');
-  if (user) return user;
-}
-
 export default class SettingScreen extends React.Component {
   state: any;
 
