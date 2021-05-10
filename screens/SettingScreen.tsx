@@ -49,20 +49,24 @@ export default class SettingScreen extends React.Component {
   }
 
   async applySettings() {
-    this.state.formInput.keys.forEach((key: any) => {
+    for (var key in this.state.formInput) {
       this.setState({ [key]: this.state.formInput[key] })
-    })
+    }
 
-    this.setState({ applyButtonState: 'saved' })
+    this.setState({ applyButtonState: 'saved' });
+  }
+
+  async componentDidMount() {
+    await this.initState();
   }
 
   public render() {
     let applyButton = null;
 
     switch (this.state.applyButtonState) {
-      case "noChange": applyButton = <Button disabled={true}>Apply</Button>; break;
-      case "hasChange": applyButton = <Button disabled={false}>Apply</Button>; break;
-      case "saved": applyButton = <Button disabled={true}>Applied</Button>; break;
+      case "noChange": applyButton = <Button disabled={true} onPress={() => this.applySettings()}>Apply</Button>; break;
+      case "hasChange": applyButton = <Button disabled={false} onPress={() => this.applySettings()}>Apply</Button>; break;
+      case "saved": applyButton = <Button disabled={true} onPress={() => this.applySettings()}>Applied</Button>; break;
     }
 
     return (
@@ -74,7 +78,7 @@ export default class SettingScreen extends React.Component {
           <Text>First Name</Text>
           <Input
             placeholder='First Name'
-            value={this.state.firstName}
+            defaultValue={this.state.firstName}
             style={styles.inputBox}
             onChangeText={val => this.setFormInput('firstName', val)}
           />
@@ -82,21 +86,17 @@ export default class SettingScreen extends React.Component {
           <Text>Last Name</Text>
           <Input
             placeholder='Last Name'
-            value={this.state.lastName}
+            defaultValue={this.state.lastName}
             style={styles.inputBox}
             onChangeText={val => this.setFormInput('lastName', val)}
           />
 
           {applyButton}
-
         </View>
       </View>
     )
   }
 
-  async componentDidMount() {
-    await this.initState();
-  }
 }
 
 let styles = StyleSheet.create({
