@@ -25,13 +25,12 @@ export default class SettingScreen extends React.Component {
   }
 
   async initState() {
-    let firstName = await AsyncStorage.get('rgm_firstName', 'USER');
-    let lastName = await AsyncStorage.get('rgm_lastName', '');
+    let firstName = await AsyncStorage.get('rgm_firstName', 'User');
+    let lastName = await AsyncStorage.get('rgm_lastName', 'User');
     this.setState({ firstName, lastName });
   }
 
   async setFormInput(key: string, val: string) {
-    await AsyncStorage.set(key, val)
     this.setState({
       formInput: {
         ...this.state.formInput,
@@ -45,6 +44,7 @@ export default class SettingScreen extends React.Component {
   async applySettings() {
     for (var key in this.state.formInput) {
       this.setState({ [key]: this.state.formInput[key] })
+      await AsyncStorage.set('rgm_' + key, this.state.formInput[key]);
     }
 
     this.setState({ applyButtonState: 'saved' });
