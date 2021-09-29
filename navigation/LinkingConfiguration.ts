@@ -4,6 +4,16 @@ export default {
   prefixes: [Linking.makeUrl('/')],
   config: {
     screens: {
+      Start: {
+        screens: {
+          StartScreen: 'Start'
+        }
+      },
+      Menu: {
+        screens: {
+          MenuScreen: 'Menu'
+        }
+      },
       Main: {
         screens: {
           Lesson: {
