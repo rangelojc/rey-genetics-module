@@ -35,7 +35,7 @@ export default function VideoList(props: any) {
           {vid.description}
         </Text>
 
-        <LinkButton to={`/VideoOpen?videoTitle=${vid.title}`}>
+        <LinkButton to={`/VideoOpen?videoTitle=${vid.title}&videoFileName=${vid.name}`}>
           Open
         </LinkButton>
       </ View >
