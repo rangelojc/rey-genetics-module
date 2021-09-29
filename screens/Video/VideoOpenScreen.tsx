@@ -45,9 +45,9 @@ const VideoComponent = (props: any) => {
       ref={video}
       style={styles.video}
       source={props.video}
-      useNativeControls
+      useNativeControls={true}
       resizeMode="contain"
-      isLooping
+      isLooping={false}
     //onPlaybackStatusUpdate={status => setStatus(status)}
     />
   )
