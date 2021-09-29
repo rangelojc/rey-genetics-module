@@ -6,7 +6,7 @@ import { ScrollView, View, Text } from 'react-native';
 import GlobalStyles from "../../styles/GlobalStyles";
 import Header from "../../components/Header";
 
-export default function VideoOpenScreen({ route }: any) {
+export default function VideoOpenScreen({ route, navigation }: any) {
   let videoTitle = '';
 
   const isFocused = useIsFocused();
@@ -17,7 +17,7 @@ export default function VideoOpenScreen({ route }: any) {
 
   return (
     <View style={GlobalStyles.mainContainer}>
-      <Header title={videoTitle} backAction="true" />
+      <Header title={videoTitle} backAction="true" navigation={navigation} />
 
       <View style={{ ...GlobalStyles.column, ...GlobalStyles.center, ...GlobalStyles.flex }}>
         <Text>No content</Text>

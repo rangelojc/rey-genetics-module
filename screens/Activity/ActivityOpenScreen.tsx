@@ -6,7 +6,7 @@ import { ScrollView, View, Text } from 'react-native';
 import GlobalStyles from "../../styles/GlobalStyles";
 import Header from "../../components/Header";
 
-export default function ActivityScreen({ route }: any) {
+export default function ActivityScreen({ route, navigation }: any) {
   let activityTitle = '';
 
   const isFocused = useIsFocused();
@@ -17,7 +17,7 @@ export default function ActivityScreen({ route }: any) {
 
   return (
     <View style={GlobalStyles.mainContainer}>
-      <Header title={activityTitle} backAction="true" />
+      <Header title={activityTitle} backAction="true" navigation={navigation} />
 
       <View style={{ ...GlobalStyles.column, ...GlobalStyles.center, ...GlobalStyles.flex }}>
         <Text>No content</Text>

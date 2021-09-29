@@ -16,7 +16,7 @@ const EmptyLessonView = () => (
   </View>
 )
 
-export default function LessonViewScreen({ route }: any) {
+export default function LessonViewScreen({ route, navigation }: any) {
   let jsxTargetLesson = null;
   let jsxLessonTitle = null;
 
@@ -34,7 +34,9 @@ export default function LessonViewScreen({ route }: any) {
       default: jsxTargetLesson = <EmptyLessonView />;
     }
 
-    jsxLessonTitle = lessonTitle ? <Header title={lessonTitle} backAction="true" /> : null;
+    jsxLessonTitle = lessonTitle ?
+      <Header title={lessonTitle} backAction="true" navigation={navigation} />
+      : null;
   }
 
   return (
