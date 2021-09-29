@@ -26,6 +26,11 @@ export default {
               ActivityScreen: 'Activities',
             },
           },
+          Videos: {
+            screens: {
+              VideoScreen: 'Videos',
+            },
+          },
           Setting: {
             screens: {
               SettingScreen: 'Settings',
@@ -41,6 +46,11 @@ export default {
       ActivityOpen: {
         screens: {
           ActivityOpenScreen: 'ActivityOpen'
+        }
+      },
+      VideoOpen: {
+        screens: {
+          ActivityOpenScreen: 'VideoOpen'
         }
       }
     },

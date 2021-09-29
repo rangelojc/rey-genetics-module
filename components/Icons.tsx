@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { StyleSheet } from 'react-native';
 
-
 import { Icon } from '@ui-kitten/components';
 
 
@@ -11,4 +10,6 @@ export default {
   Pen: (props: any) => <Icon name='edit-outline' {...props} />,
   Back: (props: any) => (<Icon {...props} name='arrow-back' />),
   Question: (props: any) => (<Icon {...props} name='question-mark-outline' />),
+  Video: (props: any) => (<Icon {...props} name='film-outline' />),
+
 }

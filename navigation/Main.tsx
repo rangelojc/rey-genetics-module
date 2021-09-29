@@ -7,6 +7,7 @@ import GlobalStyles from "../styles/GlobalStyles";
 import LessonScreen from "../screens/Lesson/LessonScreen"
 import ActivityScreen from "../screens/Activity/ActivityScreen"
 import SettingScreen from "../screens/SettingScreen"
+import VideoScreen from "../screens/Video/VideoScreen"
 
 //Icons
 import Icons from "../components/Icons";
@@ -25,6 +26,7 @@ function TabBar({ state, navigation }: any) {
 
             <BottomNavigationTab icon={Icons.Book} title="Lessons" />
             <BottomNavigationTab icon={Icons.Pen} title="Activities" />
+            <BottomNavigationTab icon={Icons.Video} title="Videos" />
             <BottomNavigationTab icon={Icons.Setting} title="Settings" />
         </BottomNavigation>
     )
@@ -52,9 +54,8 @@ function TabNavigation() {
         <BottomTab.Navigator tabBar={(props) => <TabBar {...props} />}  >
             <BottomTab.Screen name='Lessons' component={LessonScreen} options={ScreenOptions("Lessons")} />
             <BottomTab.Screen name='Activities' component={ActivityScreen} options={ScreenOptions("Activities")} />
+            <BottomTab.Screen name='Videos' component={VideoScreen} options={ScreenOptions("Videos")} />
             <BottomTab.Screen name='Settings' component={SettingScreen} options={ScreenOptions("Settings")} />
-
-            {/* <BottomTab.Screen name='LessonView' component={LessonViewScreen} options={ScreenOptions("LessonView")} /> */}
         </BottomTab.Navigator>
     )
 }

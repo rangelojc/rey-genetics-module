@@ -11,6 +11,7 @@ import GlobalStyles from "../styles/GlobalStyles";
 import Main from './Main';
 import LessonViewScreen from '../screens/Lesson/LessonViewScreen';
 import ActivityOpenScreen from '../screens/Activity/ActivityOpenScreen';
+import VideoOpenScreen from '../screens/Video/VideoOpenScreen';
 import StartScreen from '../screens/StartScreen';
 import MenuScreen from '../screens/MenuScreen';
 
@@ -30,6 +31,7 @@ export default class Router extends Component {
             <Stack.Screen name="Main" component={Main} />
             <Stack.Screen name="LessonView" component={LessonViewScreen} />
             <Stack.Screen name="ActivityOpen" component={ActivityOpenScreen} />
+            <Stack.Screen name="VideoOpen" component={VideoOpenScreen} />
           </Stack.Navigator>
         </NavigationContainer>
       </SafeAreaView>
