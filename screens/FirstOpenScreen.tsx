@@ -35,13 +35,12 @@ export default function StartScreen({ navigation }: any) {
     stateSetter(val);
   }
 
-  const firstOpen = async () => {
-    return await AsyncStorage.get('firstOpen');
+  const evaluateFirstOpen = async () => {
+    const firstOpen = await AsyncStorage.get('firstOpen');
+    if (firstOpen === "true") navigation.navigate('Start');
   }
 
-  if (!firstOpen) {
-    navigation.navigate('Start');
-  }
+  evaluateFirstOpen();
 
   return (
     <View style={GlobalStyles.mainContainer}>
