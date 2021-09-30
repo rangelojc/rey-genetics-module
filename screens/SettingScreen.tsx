@@ -32,7 +32,7 @@ export default () => {
 
     setDefaultForm({
       firstName: fn,
-      lastName: fn
+      lastName: ln
     });
   }
 
@@ -76,7 +76,7 @@ export default () => {
         <Text>Last Name</Text>
         <Input
           placeholder='Last Name'
-          defaultValue={defaultForm?.lastName!}
+          defaultValue={defaultForm?.lastName}
           style={styles.inputBox}
           onChangeText={val => onInput(setLastName, val)}
         />
