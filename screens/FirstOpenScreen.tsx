@@ -22,11 +22,12 @@ export default function StartScreen({ navigation }: any) {
 
   const [firstName, setFirstName] = React.useState("");
   const [lastName, setlastName] = React.useState("");
+  const [firstOpen, setFirstOpen] = React.useState("");
 
   const submit = async () => {
     await AsyncStorage.set('firstName', firstName);
     await AsyncStorage.set('lastName', lastName);
-    await AsyncStorage.set('firstOpen', "true");
+    await AsyncStorage.set('firstOpen', "false");
 
     navigation.navigate('Start');
   }
@@ -37,13 +38,19 @@ export default function StartScreen({ navigation }: any) {
 
   const evaluateFirstOpen = async () => {
     const firstOpen = await AsyncStorage.get('firstOpen');
-    if (firstOpen === "true") navigation.navigate('Start');
+    if (firstOpen === "false") {
+      setFirstOpen("false");
+      navigation.navigate('Start');
+    }
+    else {
+      setFirstOpen("true");
+    }
   }
 
   evaluateFirstOpen();
 
-  return (
-    <View style={GlobalStyles.mainContainer}>
+  const _content = (
+    <View>
       <Text>Hi! Welcome to the App.</Text>
       <Text>Tell us who you are:</Text>
 
@@ -64,6 +71,14 @@ export default function StartScreen({ navigation }: any) {
       />
 
       <Button onPress={submit}>Submit</Button>
+    </View>
+  )
+
+  return (
+    <View style={GlobalStyles.mainContainer}>
+      {
+        firstOpen === "true" ? _content : <></>
+      }
     </View>
   )
 }
