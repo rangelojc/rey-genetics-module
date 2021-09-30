@@ -27,8 +27,8 @@ export default () => {
   const [applyButtonState, setApplyButtonState] = React.useState('noChange'); //noChange, hasChange, saved
 
   const initState = async function () {
-    let fn: any = await AsyncStorage.get('firstName', 'User');
-    let ln: any = await AsyncStorage.get('lastName', 'User');
+    let fn: any = await AsyncStorage.get('firstName');
+    let ln: any = await AsyncStorage.get('lastName');
 
     setDefaultForm({
       firstName: fn,
