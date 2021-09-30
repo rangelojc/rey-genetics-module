@@ -19,7 +19,7 @@ export default {
   },
   get: async function (key: string, defaultValue?: string) {
     try {
-      const value = await AsyncStorage.getItem(STORE_NAME + STORE_KEYS[key] + key)
+      const value = await AsyncStorage.getItem(STORE_NAME + STORE_KEYS[key])
       return value || defaultValue;
 
     }
