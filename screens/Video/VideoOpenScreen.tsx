@@ -79,8 +79,6 @@ export default function VideoOpenScreen({ route, navigation }: any) {
     videoFile = videoFiles?.find(v => v.name === videoFileName) || {};
   }
 
-  console.log(videoFile, videoFileName)
-
   return (
     <View style={GlobalStyles.mainContainer}>
       <Header title={videoTitle} backAction="true" navigation={navigation} />
