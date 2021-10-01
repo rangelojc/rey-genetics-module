@@ -21,7 +21,7 @@ const styles = StyleSheet.create({
 export default function StartScreen({ navigation }: any) {
 
   const [firstName, setFirstName] = React.useState("");
-  const [lastName, setlastName] = React.useState("");
+  const [lastName, setLastName] = React.useState("");
   const [firstOpen, setFirstOpen] = React.useState("");
 
   const submit = async () => {
@@ -37,17 +37,19 @@ export default function StartScreen({ navigation }: any) {
   }
 
   const evaluateFirstOpen = async () => {
-    const firstOpen = await AsyncStorage.get('firstOpen');
-    if (firstOpen === "false") {
+    const res = await AsyncStorage.get('firstOpen');
+    if (res === "true") {
+      setFirstOpen("true");
+    }
+    else {
       setFirstOpen("false");
       navigation.navigate('Start');
     }
-    else {
-      setFirstOpen("true");
-    }
   }
 
-  evaluateFirstOpen();
+  React.useEffect(() => {
+    evaluateFirstOpen();
+  })
 
   const _content = (
     <View>
@@ -67,7 +69,7 @@ export default function StartScreen({ navigation }: any) {
         placeholder='Last Name'
         defaultValue={lastName}
         style={styles.inputBox}
-        onChangeText={val => onInput(setlastName, val)}
+        onChangeText={val => onInput(setLastName, val)}
       />
 
       <Button onPress={submit}>Submit</Button>

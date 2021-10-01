@@ -1,7 +1,6 @@
 import React from 'react';
 
 import { View, StyleSheet } from 'react-native';
-
 import { Text, Input, Button } from '@ui-kitten/components';
 
 import AsyncStorage from "../helpers/AsyncStorage"
@@ -16,15 +15,26 @@ let styles = StyleSheet.create({
   },
   applyButton: {
     marginTop: 20
+  },
+  btnReset: {
+    marginTop: 10,
+    backgroundColor: '#d94b41',
+    borderColor: '#d94b41',
+    color: '#fff'
   }
 })
 
-export default () => {
+export default ({ navigation }: any) => {
   const [defaultForm, setDefaultForm]: any = React.useState({});
   const [firstName, setFirstName]: any = React.useState('');
   const [lastName, setLastName]: any = React.useState('');
 
   const [applyButtonState, setApplyButtonState] = React.useState('noChange'); //noChange, hasChange, saved
+
+  const onInput = function (stateSetter: any, val: string) {
+    stateSetter(val);
+    setApplyButtonState('hasChange');
+  }
 
   const initState = async function () {
     let fn: any = await AsyncStorage.get('firstName');
@@ -42,12 +52,24 @@ export default () => {
     setApplyButtonState('saved');
   }
 
-  const onInput = function (stateSetter: any, val: string) {
-    stateSetter(val);
-    setApplyButtonState('hasChange');
+  const resetSettings = async function () {
+    await AsyncStorage.set('firstName', "");
+    await AsyncStorage.set('lastName', "");
+    await AsyncStorage.set('firstOpen', "true");
+
+    setDefaultForm({
+      firstName: "",
+      lastName: ""
+    });
+
+    setFirstName("");
+    setLastName("");
   }
 
-  initState();
+  React.useEffect(() => {
+    initState();
+  }, [])
+
 
   let applyButton = null;
   switch (applyButtonState) {
