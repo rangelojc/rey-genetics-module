@@ -3,18 +3,29 @@ import React from 'react';
 import { View, StyleSheet } from 'react-native';
 import { Text, Input, Button } from '@ui-kitten/components';
 
+import theme from "../theme/theme.json";
+
 import AsyncStorage from "../helpers/AsyncStorage"
 import GlobalStyles from "../styles/GlobalStyles";
-import Header from "../components/Header";
+import CoverHeader from "../components/CoverHeader";
 
 
 let styles = StyleSheet.create({
+  container: {
+    backgroundColor: '#fff',
+    width: '100%',
+    padding: 20,
+    borderRadius: 10,
+    elevation: 10
+  },
   inputBox: {
     marginTop: 5,
     marginBottom: 10
   },
   applyButton: {
-    marginTop: 20
+    marginTop: 50
+  },
+  label: {
   },
   btnReset: {
     marginTop: 10,
@@ -83,27 +94,28 @@ export default ({ navigation }: any) => {
 
   return (
     <View style={GlobalStyles.mainContainer}>
-      <Header title="Settings" backAction="true" navigation={navigation} />
+      <CoverHeader title={"Settings"} navigation={navigation} />
 
-      <View style={{ ...GlobalStyles.containerWrapper }}>
+      <View style={GlobalStyles.mainWrapper}>
+        <View style={styles.container}>
+          <Text style={styles.label}>First Name</Text>
+          <Input
+            placeholder='First Name'
+            defaultValue={defaultForm?.firstName}
+            style={styles.inputBox}
+            onChangeText={val => onInput(setFirstName, val)}
+          />
 
-        <Text>First Name</Text>
-        <Input
-          placeholder='First Name'
-          defaultValue={defaultForm?.firstName}
-          style={styles.inputBox}
-          onChangeText={val => onInput(setFirstName, val)}
-        />
+          <Text style={styles.label}>Last Name</Text>
+          <Input
+            placeholder='Last Name'
+            defaultValue={defaultForm?.lastName}
+            style={styles.inputBox}
+            onChangeText={val => onInput(setLastName, val)}
+          />
 
-        <Text>Last Name</Text>
-        <Input
-          placeholder='Last Name'
-          defaultValue={defaultForm?.lastName}
-          style={styles.inputBox}
-          onChangeText={val => onInput(setLastName, val)}
-        />
-
-        {applyButton}
+          {applyButton}
+        </View>
       </View>
     </View>
   )

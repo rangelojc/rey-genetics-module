@@ -27,12 +27,6 @@ export default StyleSheet.create({
         paddingVertical: 0,
         backgroundColor: "#f6f6f6"
     },
-    containerWrapper: {
-        flex: 1,
-        paddingHorizontal: 20,
-        paddingVertical: 20,
-        backgroundColor: "#fff"
-    },
     title: {
         height: 40,
         minHeight: 40,

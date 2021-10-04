@@ -7,22 +7,17 @@ import { useIsFocused } from '@react-navigation/native';
 import { Video, AVPlaybackStatus } from 'expo-av';
 
 import GlobalStyles from "../../styles/GlobalStyles";
-import Header from "../../components/Header";
-import { FlexViewCrossStyleProps } from '@ui-kitten/components/devsupport';
+import CoverHeader from "../../components/CoverHeader";
 
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'flex-start',
-    backgroundColor: '#000',
-  },
   video: {
     alignSelf: 'center',
     width: "100%",
     height: 360,
-    backgroundColor: '#000',
+    backgroundColor: '#fff',
+    borderRadius: 10,
+    elevation: 4,
   },
   buttons: {
     flexDirection: 'row',
@@ -33,6 +28,11 @@ const styles = StyleSheet.create({
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
+    backgroundColor: '#fff',
+    borderRadius: 10,
+    elevation: 4,
+    width: "100%",
+    marginBottom: 20
   }
 });
 
@@ -55,7 +55,7 @@ const VideoComponent = (props: any) => {
 
 const NoVideoFound = (props: any) => {
   return (
-    <View style={styles.notFound}>
+    <View style={{ ...GlobalStyles.mainWrapper, ...styles.notFound }}>
       <Text>Video not found</Text>
     </View>
   )
@@ -81,12 +81,14 @@ export default function VideoOpenScreen({ route, navigation }: any) {
 
   return (
     <View style={GlobalStyles.mainContainer}>
-      <Header title={videoTitle} backAction="true" navigation={navigation} />
+      <CoverHeader title={videoTitle} navigation={navigation} />
 
-      <View style={{ ...GlobalStyles.column, ...GlobalStyles.center, ...GlobalStyles.flex }}>
-        {
-          Object.keys(videoFile).length ? <VideoComponent video={videoFile} /> : <NoVideoFound />
-        }
+      <View style={GlobalStyles.mainWrapper}>
+        <View style={{ ...GlobalStyles.column, ...GlobalStyles.center, ...GlobalStyles.flex }}>
+          {
+            Object.keys(videoFile).length ? <VideoComponent video={videoFile} /> : <NoVideoFound />
+          }
+        </View>
       </View>
     </View>
   );

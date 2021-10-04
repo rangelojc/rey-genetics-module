@@ -1,10 +1,25 @@
 import React from 'react';
 import { useIsFocused } from '@react-navigation/native';
 
-import { ScrollView, View, Text } from 'react-native';
+import { StyleSheet, View, Text } from 'react-native';
 
 import GlobalStyles from "../../styles/GlobalStyles";
-import Header from "../../components/Header";
+import CoverHeader from "../../components/CoverHeader";
+
+const styles = StyleSheet.create({
+  container: {
+    paddingHorizontal: 10,
+    paddingVertical: 10,
+    backgroundColor: '#fff',
+    elevation: 4,
+    borderRadius: 10,
+    marginBottom: 20,
+
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center'
+  }
+})
 
 export default function ActivityScreen({ route, navigation }: any) {
   let activityTitle = '';
@@ -17,10 +32,12 @@ export default function ActivityScreen({ route, navigation }: any) {
 
   return (
     <View style={GlobalStyles.mainContainer}>
-      <Header title={activityTitle} backAction="true" navigation={navigation} />
+      <CoverHeader title={activityTitle} navigation={navigation} />
 
-      <View style={{ ...GlobalStyles.column, ...GlobalStyles.center, ...GlobalStyles.flex }}>
-        <Text>No content</Text>
+      <View style={GlobalStyles.mainWrapper}>
+        <View style={styles.container}>
+          <Text>No content</Text>
+        </View>
       </View>
     </View>
   );

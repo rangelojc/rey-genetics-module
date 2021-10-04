@@ -1,13 +1,14 @@
 import React from 'react';
-import { Text, View } from 'react-native';
+import { View, StyleSheet } from 'react-native';
 import { useIsFocused } from '@react-navigation/native';
+import { Text } from '@ui-kitten/components';
 
 import GlobalStyles from "../../styles/GlobalStyles";
 import Icons from "../../components/Icons";
 
 import * as Lessons from "../../assets/lessons/lessonModule";
 
-import Header from "../../components/Header";
+import CoverHeader from "../../components/CoverHeader";
 
 const EmptyLessonView = () => (
   <View style={{ ...GlobalStyles.column, ...GlobalStyles.center, ...GlobalStyles.flex }}>
@@ -16,9 +17,20 @@ const EmptyLessonView = () => (
   </View>
 )
 
+const styles = StyleSheet.create({
+  container: {
+    paddingHorizontal: 10,
+    paddingVertical: 10,
+    backgroundColor: '#fff',
+    elevation: 4,
+    borderRadius: 10,
+    fontSize: 20,
+  }
+})
+
 export default function LessonViewScreen({ route, navigation }: any) {
   let jsxTargetLesson = null;
-  let jsxLessonTitle = null;
+  let jsxHeader = null;
 
   const isFocused = useIsFocused();
 
@@ -34,17 +46,17 @@ export default function LessonViewScreen({ route, navigation }: any) {
       default: jsxTargetLesson = <EmptyLessonView />;
     }
 
-    jsxLessonTitle = lessonTitle ?
-      <Header title={lessonTitle} backAction="true" navigation={navigation} />
-      : null;
+    jsxHeader = <CoverHeader title={lessonTitle} navigation={navigation} />
   }
 
   return (
     <View style={GlobalStyles.mainContainer}>
-      {jsxLessonTitle}
+      {jsxHeader}
 
-      <View style={GlobalStyles.containerWrapper}>
-        {jsxTargetLesson}
+      <View style={GlobalStyles.mainWrapper}>
+        <View style={styles.container}>
+          {jsxTargetLesson}
+        </View>
       </View>
     </View >
   );
