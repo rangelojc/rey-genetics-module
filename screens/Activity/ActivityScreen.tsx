@@ -9,12 +9,12 @@ import ActivityList from './ActivityList';
 
 export default function ActivityScreen(props: any) {
   return (
-    <View style={GlobalStyles.mainContainer}>
+    <ScrollView style={GlobalStyles.mainContainer}>
       <Cover />
 
-      <ScrollView style={GlobalStyles.mainWrapper}>
+      <View style={GlobalStyles.mainWrapper}>
         <ActivityList style={{ marginTop: 10 }}></ActivityList>
-      </ScrollView>
-    </View>
+      </View>
+    </ScrollView>
   );
 }

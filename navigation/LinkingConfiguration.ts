@@ -35,11 +35,6 @@ export default {
             screens: {
               VideoScreen: 'Videos',
             },
-          },
-          Setting: {
-            screens: {
-              SettingScreen: 'Settings',
-            },
           }
         },
       },
@@ -56,6 +51,11 @@ export default {
       VideoOpen: {
         screens: {
           ActivityOpenScreen: 'VideoOpen'
+        }
+      },
+      Setting: {
+        screens: {
+          SettingScreen: 'Setting'
         }
       }
     },

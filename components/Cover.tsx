@@ -25,6 +25,7 @@ const styles = StyleSheet.create({
     height: 90,
     width: 90,
     marginTop: 20,
+    marginBottom: 5,
     backgroundColor: 'transparent',
     borderRadius: 50,
   },
@@ -37,6 +38,13 @@ const styles = StyleSheet.create({
     fontSize: 30,
     fontWeight: 'bold',
     color: '#f1f1f1'
+  },
+  setting: {
+    position: "absolute",
+    top: 10,
+    right: 10,
+    height: 10,
+    width: 10
   }
 })
 
@@ -56,15 +64,17 @@ export default function Cover(props: any) {
     initState();
   }, [])
 
+
   return (
     <React.Fragment>
-
       <View style={props.flat ? styles.containerFlat : styles.container}>
+        {/* <Icons.Setting fill='#fff' styles={styles.setting}
+          onPress={() => { props.navigation.navigate('Settings') }}
+        /> */}
         <Image style={styles.avatar} source={require('../assets/images/avatars/avatar1.png')} />
         <Text style={styles.textHello}>Welcome back,</Text>
         <Text style={styles.textName}>{`${firstName}!`}</Text>
       </View>
-
     </React.Fragment>
   )
 }

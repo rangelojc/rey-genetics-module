@@ -9,12 +9,12 @@ import VideoList from './VideoList';
 
 export default function VideoScreen(props: any) {
   return (
-    <View style={GlobalStyles.mainContainer}>
+    <ScrollView style={GlobalStyles.mainContainer}>
       <Cover />
 
-      <ScrollView style={GlobalStyles.mainWrapper}>
+      <View style={GlobalStyles.mainWrapper}>
         <VideoList style={{ marginTop: 10 }}></VideoList>
-      </ScrollView>
-    </View>
+      </View>
+    </ScrollView>
   );
 }

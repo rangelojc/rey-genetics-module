@@ -38,7 +38,7 @@ const styles = StyleSheet.create({
 export default function MenuScreen({ navigation }: any) {
   return (
     <View style={GlobalStyles.mainContainer}>
-      <Cover flat="true" />
+      <Cover flat="true" navigation={navigation} />
 
       <View style={{ ...GlobalStyles.mainWrapper, ...styles.container }}>
 
@@ -56,7 +56,7 @@ export default function MenuScreen({ navigation }: any) {
             onPress={() => navigation.navigate('Main', { screen: 'Videos' })}
           >Videos</Button>
           <Button style={styles.buttons} status='primary'
-            onPress={() => navigation.navigate('Main', { screen: 'Settings' })}
+            onPress={() => navigation.navigate('Settings')}
           >Settings</Button>
         </View>
 

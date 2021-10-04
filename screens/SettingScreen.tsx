@@ -83,7 +83,7 @@ export default ({ navigation }: any) => {
 
   return (
     <View style={GlobalStyles.mainContainer}>
-      <Header title="Settings" />
+      <Header title="Settings" backAction="true" navigation={navigation} />
 
       <View style={{ ...GlobalStyles.containerWrapper }}>
 

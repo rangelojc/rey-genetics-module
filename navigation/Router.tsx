@@ -21,6 +21,7 @@ import VideoOpenScreen from '../screens/Video/VideoOpenScreen';
 import StartScreen from '../screens/StartScreen';
 import MenuScreen from '../screens/MenuScreen';
 import FirstOpenScreen from '../screens/FirstOpenScreen';
+import SettingScreen from '../screens/SettingScreen';
 
 const Stack = createStackNavigator();
 export default class Router extends Component {
@@ -41,6 +42,8 @@ export default class Router extends Component {
             <Stack.Screen name="LessonView" component={LessonViewScreen} />
             <Stack.Screen name="ActivityOpen" component={ActivityOpenScreen} />
             <Stack.Screen name="VideoOpen" component={VideoOpenScreen} />
+            <Stack.Screen name="Settings" component={SettingScreen} />
+
           </Stack.Navigator>
         </NavigationContainer>
       </SafeAreaView>

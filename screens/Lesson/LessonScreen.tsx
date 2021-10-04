@@ -8,12 +8,11 @@ import Cover from "../../components/Cover";
 
 export default function LessonScreen(props: any) {
   return (
-    <View style={GlobalStyles.mainContainer}>
-      <Cover />
-
-      <ScrollView style={GlobalStyles.mainWrapper}>
+    <ScrollView style={GlobalStyles.mainContainer}>
+      <Cover navigation={props.navigation} />
+      <View style={GlobalStyles.mainWrapper}>
         <LessonList style={{ marginTop: 10 }}></LessonList>
-      </ScrollView>
-    </View>
+      </View>
+    </ScrollView>
   );
 }
