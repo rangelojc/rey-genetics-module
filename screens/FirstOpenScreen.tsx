@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { registerRootComponent } from 'expo';
+import { StackActions } from '@react-navigation/native';
 import { StyleSheet, View } from 'react-native';
 import { Text, Input, Button } from '@ui-kitten/components';
 
@@ -43,7 +43,7 @@ export default function StartScreen({ navigation }: any) {
     }
     else {
       setFirstOpen("false");
-      navigation.navigate('Menu');
+      navigation.replace('Menu');
     }
   }
 
