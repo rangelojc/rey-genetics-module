@@ -43,7 +43,7 @@ export default function StartScreen({ navigation }: any) {
     }
     else {
       setFirstOpen("false");
-      navigation.navigate('Start');
+      navigation.navigate('Menu');
     }
   }
 

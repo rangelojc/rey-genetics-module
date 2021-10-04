@@ -42,8 +42,6 @@ export default function LessonList(props: any) {
     )
   });
 
-
-
   return (
     <View style={props.style}>
       {lessonItems}
@@ -56,11 +54,12 @@ const styles = StyleSheet.create({
   listItem: {
     flex: 1,
     justifyContent: "center",
-    minHeight: 100,
+    minHeight: 90,
     backgroundColor: "#ffffff",
-    marginVertical: 1,
+    marginVertical: 5,
     paddingHorizontal: 20,
-    paddingVertical: 30
+    paddingVertical: 20,
+    borderRadius: 5,
   },
   title: {
     ...GlobalStyles.text,
@@ -69,11 +68,11 @@ const styles = StyleSheet.create({
   },
   description: {
     ...GlobalStyles.text,
-    color: "#949292"
+    color: "#949292",
   },
   btnOpen: {
     marginTop: 10,
     width: 100,
-    alignSelf: "flex-end"
+    alignSelf: "flex-end",
   },
 })

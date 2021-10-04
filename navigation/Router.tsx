@@ -7,6 +7,12 @@ import { SafeAreaView } from 'react-native'
 import LinkingConfiguration from './LinkingConfiguration';
 import GlobalStyles from "../styles/GlobalStyles";
 
+//Theme
+import { ApplicationProvider, } from '@ui-kitten/components';
+import * as eva from '@eva-design/eva';
+import { default as theme } from '../styles/theme.json'; // <-- Import app theme
+
+
 //Screens
 import Main from './Main';
 import LessonViewScreen from '../screens/Lesson/LessonViewScreen';
@@ -24,6 +30,7 @@ export default class Router extends Component {
 
   public render() {
     return (
+      // <ApplicationProvider {...eva} theme={{ ...eva, ...theme }}>
       <SafeAreaView style={GlobalStyles.safearea}>
         <NavigationContainer linking={LinkingConfiguration}>
           <Stack.Navigator screenOptions={{ headerShown: false }}>
@@ -37,6 +44,8 @@ export default class Router extends Component {
           </Stack.Navigator>
         </NavigationContainer>
       </SafeAreaView>
+      // </ApplicationProvider>
+
     )
   }
 }

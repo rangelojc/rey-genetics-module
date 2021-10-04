@@ -36,7 +36,7 @@ export default function ActivityList(props: any) {
         </Text>
 
         <LinkButton to={`/ActivityOpen?activityTitle=${act.title}`}>
-          Open
+          Take
         </LinkButton>
       </ View >
     )
@@ -58,9 +58,10 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     minHeight: 90,
     backgroundColor: "#ffffff",
-    marginVertical: 1,
+    marginVertical: 5,
     paddingHorizontal: 20,
-    paddingVertical: 30
+    paddingVertical: 20,
+    borderRadius: 5,
   },
   title: {
     ...GlobalStyles.text,

@@ -4,14 +4,14 @@ import { ScrollView, View } from 'react-native';
 import GlobalStyles from "../../styles/GlobalStyles";
 
 import LessonList from './LessonList';
-import Header from "../../components/Header";
+import Cover from "../../components/Cover";
 
 export default function LessonScreen(props: any) {
   return (
     <View style={GlobalStyles.mainContainer}>
-      <Header title="Lessons" />
+      <Cover />
 
-      <ScrollView style={GlobalStyles.container}>
+      <ScrollView style={GlobalStyles.mainWrapper}>
         <LessonList style={{ marginTop: 10 }}></LessonList>
       </ScrollView>
     </View>

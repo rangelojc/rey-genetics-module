@@ -36,7 +36,7 @@ export default function VideoList(props: any) {
         </Text>
 
         <LinkButton to={`/VideoOpen?videoTitle=${vid.title}&videoFileName=${vid.name}`}>
-          Open
+          Watch
         </LinkButton>
       </ View >
     )
@@ -57,9 +57,10 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     minHeight: 90,
     backgroundColor: "#ffffff",
-    marginVertical: 1,
+    marginVertical: 5,
     paddingHorizontal: 20,
-    paddingVertical: 30
+    paddingVertical: 20,
+    borderRadius: 5,
   },
   title: {
     ...GlobalStyles.text,

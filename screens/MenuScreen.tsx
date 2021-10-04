@@ -1,32 +1,45 @@
 import * as React from 'react';
-import { registerRootComponent } from 'expo';
-import { StyleSheet, View, Text, Button } from 'react-native';
+
+import { StyleSheet, View } from 'react-native';
+import { Text, Button } from '@ui-kitten/components';
 
 import GlobalStyles from "../styles/GlobalStyles";
-import { readDirectoryAsync } from 'expo-file-system';
+
+import Cover from "../components/Cover";
 
 const styles = StyleSheet.create({
+  buttons: {
+    borderRadius: 5,
+    marginBottom: 20,
+    // backgroundColor: "#fff",
+    // borderColor: "#fff",
+    // color: 'black'
+    // shadowOffset: { width: 10, height: 10, },
+    // shadowColor: 'black',
+    // shadowOpacity: 1.0,
+    // shadowRadius: 2,
+  }
 })
 
 export default function MenuScreen({ navigation }: any) {
   return (
     <View style={GlobalStyles.mainContainer}>
-      <Button
-        title="Lessons"
-        onPress={() => navigation.navigate('Main', { screen: 'Lessons' })}
-      />
-      <Button
-        title="Activities"
-        onPress={() => navigation.navigate('Main', { screen: 'Activities' })}
-      />
-      <Button
-        title="Videos"
-        onPress={() => navigation.navigate('Main', { screen: 'Videos' })}
-      />
-      <Button
-        title="Settings"
-        onPress={() => navigation.navigate('Main', { screen: 'Settings' })}
-      />
+      <Cover />
+
+      <View style={GlobalStyles.mainWrapper}>
+        <Button style={styles.buttons}
+          onPress={() => navigation.navigate('Main', { screen: 'Lessons' })}
+        >Lessons</Button>
+        <Button style={styles.buttons}
+          onPress={() => navigation.navigate('Main', { screen: 'Activities' })}
+        >Activities</Button>
+        <Button style={styles.buttons}
+          onPress={() => navigation.navigate('Main', { screen: 'Videos' })}
+        >Videos</Button>
+        <Button style={styles.buttons}
+          onPress={() => navigation.navigate('Main', { screen: 'Settings' })}
+        >Settings</Button>
+      </View>
     </View>
   )
 }

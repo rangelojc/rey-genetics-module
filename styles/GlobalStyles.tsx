@@ -1,5 +1,5 @@
 import { StyleSheet, Dimensions, Platform, StatusBar } from 'react-native';
-import Colors from "../styles/colors.json";
+// import Colors from "../styles/colors.json";
 
 export default StyleSheet.create({
     header: {
@@ -15,7 +15,11 @@ export default StyleSheet.create({
     mainContainer: {
         flex: 1,
         paddingTop: 0,
-        backgroundColor: "#ffffff",
+        backgroundColor: "#ff7072",
+    },
+    mainWrapper: {
+        flex: 1,
+        paddingHorizontal: 20,
     },
     container: {
         flex: 1,
