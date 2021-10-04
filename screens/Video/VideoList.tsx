@@ -61,6 +61,11 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
     paddingVertical: 20,
     borderRadius: 5,
+    shadowColor: '#171717',
+    shadowOffset: { width: 10, height: 10 },
+    shadowOpacity: 0.2,
+    shadowRadius: 10,
+    elevation: 3,
   },
   title: {
     ...GlobalStyles.text,

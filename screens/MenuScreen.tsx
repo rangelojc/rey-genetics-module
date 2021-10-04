@@ -41,6 +41,7 @@ export default function MenuScreen({ navigation }: any) {
       <Cover flat="true" />
 
       <View style={{ ...GlobalStyles.mainWrapper, ...styles.container }}>
+
         <View style={styles.buttonWrapper}>
           <Button style={styles.buttons} status='primary'
             onPress={() => navigation.navigate('Main', { screen: 'Lessons' })}
