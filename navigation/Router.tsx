@@ -28,7 +28,7 @@ export default class Router extends Component {
         <NavigationContainer linking={LinkingConfiguration}>
           <Stack.Navigator screenOptions={{ headerShown: false }}>
             <Stack.Screen name="FirstOpen" component={FirstOpenScreen} />
-            <Stack.Screen name="Start" component={StartScreen} />
+            {/* <Stack.Screen name="Start" component={StartScreen} /> */}
             <Stack.Screen name="Menu" component={MenuScreen} />
             <Stack.Screen name="Main" component={Main} />
             <Stack.Screen name="LessonView" component={LessonViewScreen} />
