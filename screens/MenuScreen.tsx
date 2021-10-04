@@ -3,6 +3,7 @@ import * as React from 'react';
 import { StyleSheet, View } from 'react-native';
 import { Text, Button } from '@ui-kitten/components';
 
+import theme from "../theme/theme.json";
 import GlobalStyles from "../styles/GlobalStyles";
 
 import Cover from "../components/Cover";
@@ -23,7 +24,7 @@ const styles = StyleSheet.create({
     width: '45%',
     marginHorizontal: 2,
     borderRadius: 5,
-    backgroundColor: "#ff7072",
+    backgroundColor: theme['color-primary-500'],
     borderColor: "transparent"
     // shadowOffset: { width: 10, height: 10, },
     // shadowColor: 'black',
@@ -59,9 +60,6 @@ export default function MenuScreen({ navigation }: any) {
             onPress={() => navigation.navigate('Settings')}
           >Settings</Button>
         </View>
-
-
-
       </View>
     </View>
   )

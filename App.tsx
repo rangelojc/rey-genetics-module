@@ -2,20 +2,31 @@ import { StatusBar } from 'expo-status-bar';
 
 import React from 'react';
 import 'react-native-gesture-handler';
-import { Text } from "react-native"
 
 import useCachedResources from './hooks/useCachedResources';
 import useColorScheme from './hooks/useColorScheme';
 
+//Theme
 import * as eva from '@eva-design/eva';
 import { EvaIconsPack } from '@ui-kitten/eva-icons';
 import { ApplicationProvider, IconRegistry } from '@ui-kitten/components';
 
-import Router from './navigation/Router';
+import ThemeContext from './theme/context';
+import themeJson from './theme/theme.json';
+
+//Route
+import AppNavigator from './navigation/AppNavigator';
 
 export default function App() {
   const isLoadingComplete = useCachedResources();
   const colorScheme = useColorScheme();
+
+  const [theme, setTheme] = React.useState('light');
+
+  const toggleTheme = () => {
+    const nextTheme = theme === 'light' ? 'dark' : 'light';
+    setTheme(nextTheme);
+  };
 
   if (!isLoadingComplete) {
     return null;
@@ -24,10 +35,13 @@ export default function App() {
     return (
       <>
         <IconRegistry icons={EvaIconsPack} />
-        <ApplicationProvider {...eva} theme={eva.light}>
-          <StatusBar style="dark" />
-          <Router />
-        </ApplicationProvider>
+
+        <ThemeContext.Provider value={{ theme, toggleTheme }}>
+          <ApplicationProvider {...eva} theme={{ ...eva, ...themeJson }}>
+            <StatusBar />
+            <AppNavigator />
+          </ApplicationProvider>
+        </ThemeContext.Provider>
       </>
     );
   }

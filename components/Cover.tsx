@@ -1,25 +1,28 @@
 import React, { useEffect, useState } from 'react';
 
 import { StyleSheet, View, Image } from 'react-native';
-import { Text } from '@ui-kitten/components';
+import { Text, withStyles } from '@ui-kitten/components';
 
 import Icons from "../components/Icons";
 import GlobalStyles from '../styles/GlobalStyles';
 import AsyncStorage from "../helpers/AsyncStorage"
 
+import theme from "../theme/theme.json";
+
+
 const styles = StyleSheet.create({
   container: {
     height: 275,
-    backgroundColor: "#ff7072",
     paddingHorizontal: 20,
     marginBottom: -75,
     borderBottomLeftRadius: 30,
-    borderBottomRightRadius: 30
+    borderBottomRightRadius: 30,
+    backgroundColor: theme['color-primary-500']
   },
   containerFlat: {
     height: 220,
-    backgroundColor: "#ff7072",
     paddingHorizontal: 20,
+    backgroundColor: theme['color-primary-500']
   },
   avatar: {
     height: 90,
