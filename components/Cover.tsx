@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
 import { StyleSheet, View, Image } from 'react-native';
-import { Text, withStyles } from '@ui-kitten/components';
+import { Text, Button } from '@ui-kitten/components';
 
 import Icons from "../components/Icons";
 import GlobalStyles from '../styles/GlobalStyles';
@@ -28,26 +28,6 @@ const styles = StyleSheet.create({
     backgroundColor: theme['color-primary-500'],
     overflow: 'hidden',
   },
-  polka1: {
-    position: "absolute",
-    zIndex: -1,
-    top: -100, right: 0,
-    height: 200,
-    width: 260,
-    borderTopLeftRadius: 200,
-    borderBottomLeftRadius: 200,
-    backgroundColor: theme['color-primary-600']
-  },
-  polka2: {
-    position: "absolute",
-    zIndex: -2,
-    bottom: -100, left: 0,
-    height: 200,
-    width: 320,
-    borderTopRightRadius: 200,
-    borderBottomRightRadius: 200,
-    backgroundColor: 'rgba(255,255,255,0.3)'
-  },
   avatar: {
     height: 90,
     width: 90,
@@ -72,8 +52,88 @@ const styles = StyleSheet.create({
     right: 10,
     height: 10,
     width: 10
-  }
+  },
+  menuButton: {
+    position: "absolute",
+    top: 20,
+    right: 20,
+    width: 50,
+    height: 50,
+    borderRadius: 8,
+    borderColor: 'transparent',
+    backgroundColor: "rgba(255,255,255,0.3)"
+  },
 })
+
+const polkaStyles = StyleSheet.create({
+  polka1: {
+    position: "absolute",
+    zIndex: -1,
+    top: -20, left: -30,
+    height: 300,
+    width: 200,
+    borderTopRightRadius: 200,
+    borderBottomRightRadius: 200,
+    backgroundColor: theme['color-primary-600']
+  },
+  polka2: {
+    position: "absolute",
+    zIndex: -2,
+    bottom: -40, right: 0,
+    height: 200,
+    width: 200,
+    borderTopLeftRadius: 250,
+    borderBottomLeftRadius: 0,
+    backgroundColor: 'rgba(255,255,255,0)'
+  },
+  polka3: {
+    position: "absolute",
+    zIndex: -3,
+    top: -220, right: -150,
+    height: 350,
+    width: 290,
+    borderRadius: 150,
+    backgroundColor: 'rgba(0,0,0,0.1)'
+  },
+  polkaMenu1: {
+    position: "absolute",
+    zIndex: -2,
+    top: -100, left: -20,
+    height: 150,
+    width: 300,
+    borderBottomRightRadius: 400,
+    backgroundColor: 'rgba(255,255,255,0.2)'
+  },
+  polkaMenu2: {
+    position: "absolute",
+    zIndex: -2,
+    bottom: -100, right: -20,
+    height: 150,
+    width: 300,
+    borderTopLeftRadius: 400,
+    backgroundColor: theme['color-primary-600']
+  },
+})
+
+const PolkaDots = (props: any) => {
+  return (
+    <>
+      {/* design polka dots */}
+      {
+        props.menu ?
+          <>
+            <View style={polkaStyles.polkaMenu1}></View>
+            <View style={polkaStyles.polkaMenu2}></View></>
+          :
+          (<>
+            <View style={polkaStyles.polka1}></View>
+            <View style={polkaStyles.polka2}></View>
+            <View style={polkaStyles.polka3}></View>
+          </>)
+      }
+    </>
+  )
+}
 
 export default function Cover(props: any) {
   const [firstName, setFirstName]: any = React.useState('');
@@ -91,10 +151,13 @@ export default function Cover(props: any) {
     initState();
   }, [])
 
+  const goToMenu = function () {
+    props.navigation.replace('Menu');
+  }
 
   return (
     <React.Fragment>
-      <View style={props.flat ? styles.containerFlat : styles.container}>
+      <View style={props.menu ? styles.containerFlat : styles.container}>
         {/* <Icons.Setting fill='#fff' styles={styles.setting}
           onPress={() => { props.navigation.navigate('Settings') }}
         /> */}
@@ -102,8 +165,11 @@ export default function Cover(props: any) {
         <Text style={styles.textHello}>Greetings,</Text>
         <Text style={styles.textName}>{`${firstName}!`}</Text>
 
-        <View style={styles.polka1}></View>
-        <View style={styles.polka2}></View>
+        {props.menu ? <></> :
+          <Button style={styles.menuButton} accessoryLeft={Icons.Menu}
+            onPress={goToMenu}>{""}</Button>
+        }
+        <PolkaDots menu={props.menu} />
       </View>
     </React.Fragment>
   )

@@ -10,7 +10,7 @@ import VideoList from './VideoList';
 export default function VideoScreen(props: any) {
   return (
     <ScrollView style={GlobalStyles.mainContainer}>
-      <Cover />
+      <Cover navigation={props.navigation} />
 
       <View style={GlobalStyles.mainWrapper}>
         <VideoList style={{ marginTop: 10 }}></VideoList>

@@ -35,6 +35,9 @@ const styles = StyleSheet.create({
     borderColor: 'transparent',
     backgroundColor: "rgba(255,255,255,0.3)"
   },
+})
+
+const polkaStyles = StyleSheet.create({
   polka1: {
     position: "absolute",
     zIndex: -2,
@@ -57,6 +60,15 @@ const styles = StyleSheet.create({
   },
 })
 
+const PolkaDots = () => {
+  return (
+    <>
+      <View style={polkaStyles.polka1}></View>
+      <View style={polkaStyles.polka2}></View>
+    </>
+  )
+}
+
 export default function CoverHeader(props: any) {
   const navigation = props.navigation;
 
@@ -71,8 +83,7 @@ export default function CoverHeader(props: any) {
           onPress={goBack}>{""}</Button>
         <Text style={styles.textLabel}>You are viewing,</Text>
         <Text style={styles.textHead}>{props.title}</Text>
-        <View style={styles.polka1}></View>
-        <View style={styles.polka2}></View>
+        <PolkaDots />
       </View>
     </React.Fragment>
   )

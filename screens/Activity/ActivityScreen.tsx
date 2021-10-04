@@ -10,7 +10,7 @@ import ActivityList from './ActivityList';
 export default function ActivityScreen(props: any) {
   return (
     <ScrollView style={GlobalStyles.mainContainer}>
-      <Cover />
+      <Cover navigation={props.navigation} />
 
       <View style={GlobalStyles.mainWrapper}>
         <ActivityList style={{ marginTop: 10 }}></ActivityList>

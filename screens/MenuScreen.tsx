@@ -39,7 +39,7 @@ const styles = StyleSheet.create({
 export default function MenuScreen({ navigation }: any) {
   return (
     <View style={GlobalStyles.mainContainer}>
-      <Cover flat="true" navigation={navigation} />
+      <Cover menu="true" navigation={navigation} />
 
       <View style={{ ...GlobalStyles.mainWrapper, ...styles.container }}>
 

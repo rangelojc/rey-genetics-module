@@ -9,4 +9,5 @@ export default {
   Back: (props: any) => <Icon {...props} name='arrow-back' />,
   Question: (props: any) => <Icon {...props} name='question-mark-outline' />,
   Video: (props: any) => <Icon {...props} name='film-outline' />,
+  Menu: (props: any) => <Icon {...props} name='menu-outline' />,
 }
