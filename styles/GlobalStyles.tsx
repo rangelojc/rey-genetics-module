@@ -15,7 +15,7 @@ export default StyleSheet.create({
     mainContainer: {
         flex: 1,
         paddingTop: 0,
-        backgroundColor: "#ff7072",
+        backgroundColor: "#f6f6f6", //ff7072
     },
     mainWrapper: {
         flex: 1,

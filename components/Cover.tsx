@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import { StyleSheet, View, Image } from 'react-native';
 import { Text } from '@ui-kitten/components';
@@ -9,9 +9,17 @@ import AsyncStorage from "../helpers/AsyncStorage"
 
 const styles = StyleSheet.create({
   container: {
-    height: 200,
-    backgroundColor: "transparent",
-    paddingHorizontal: 20
+    height: 275,
+    backgroundColor: "#ff7072",
+    paddingHorizontal: 20,
+    marginBottom: -75,
+    borderBottomLeftRadius: 30,
+    borderBottomRightRadius: 30
+  },
+  containerFlat: {
+    height: 220,
+    backgroundColor: "#ff7072",
+    paddingHorizontal: 20,
   },
   avatar: {
     height: 90,
@@ -44,12 +52,14 @@ export default function Cover(props: any) {
     setLastName(ln);
   }
 
-  initState();
+  useEffect(() => {
+    initState();
+  }, [])
 
   return (
     <React.Fragment>
 
-      <View style={styles.container}>
+      <View style={props.flat ? styles.containerFlat : styles.container}>
         <Image style={styles.avatar} source={require('../assets/images/avatars/avatar1.png')} />
         <Text style={styles.textHello}>Welcome back,</Text>
         <Text style={styles.textName}>{`${firstName}!`}</Text>
