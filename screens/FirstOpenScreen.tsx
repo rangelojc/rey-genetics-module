@@ -4,12 +4,40 @@ import { StyleSheet, View } from 'react-native';
 import { Text, Input, Button } from '@ui-kitten/components';
 
 import GlobalStyles from "../styles/GlobalStyles";
-import AsyncStorage from "../helpers/AsyncStorage"
+import AsyncStorage from "../helpers/AsyncStorage";
+
+import theme from "../theme/theme.json"
 
 const styles = StyleSheet.create({
-  startScreen: {
+  container: {
+    backgroundColor: theme['color-primary-500'],
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    justifyContent: "center"
+  },
+  welcome: {
+    alignSelf: 'center',
+    width: "100%",
+    paddingHorizontal: 20,
+    marginBottom: 20,
+    marginTop: 100
+  },
+  welcomeText: {
+    color: "#fff",
+    fontSize: 24
+  },
+  form: {
+    alignSelf: 'center',
+    width: "100%",
+    backgroundColor: "#fff",
+    paddingHorizontal: 20,
+    paddingVertical: 20,
+    borderRadius: 5,
+    elevation: 4,
   },
   inputBox: {
+    width: "100%",
     marginTop: 5,
     marginBottom: 10
   },
@@ -18,7 +46,7 @@ const styles = StyleSheet.create({
   }
 })
 
-export default function StartScreen({ navigation }: any) {
+export default function FirstOpenScreen({ navigation }: any) {
 
   const [firstName, setFirstName] = React.useState("");
   const [lastName, setLastName] = React.useState("");
@@ -29,7 +57,7 @@ export default function StartScreen({ navigation }: any) {
     await AsyncStorage.set('lastName', lastName);
     await AsyncStorage.set('firstOpen', "false");
 
-    navigation.navigate('Start');
+    navigation.navigate('Menu');
   }
 
   const onInput = function (stateSetter: any, val: string) {
@@ -48,31 +76,35 @@ export default function StartScreen({ navigation }: any) {
   }
 
   React.useEffect(() => {
-    evaluateFirstOpen();
+    evaluateFirstOpen(); //comment out for testing
+    //setFirstOpen("true"); //for testing purposes
   })
 
   const _content = (
-    <View>
-      <Text>Hi! Welcome to the App.</Text>
-      <Text>Tell us who you are:</Text>
+    <View style={{ ...GlobalStyles.mainContainer, ...styles.container }}>
 
-      <Text>First Name</Text>
-      <Input
-        placeholder='First Name'
-        defaultValue={firstName}
-        style={styles.inputBox}
-        onChangeText={val => onInput(setFirstName, val)}
-      />
+      <View style={styles.welcome}>
+        <Text style={styles.welcomeText}>Welcome!</Text>
+        <Text style={styles.welcomeText}>Please tell us who you are</Text>
+      </View>
 
-      <Text>Last Name</Text>
-      <Input
-        placeholder='Last Name'
-        defaultValue={lastName}
-        style={styles.inputBox}
-        onChangeText={val => onInput(setLastName, val)}
-      />
-
-      <Button onPress={submit}>Submit</Button>
+      <View style={GlobalStyles.mainWrapper}>
+        <View style={styles.form}>
+          <Input
+            placeholder='First Name'
+            defaultValue={firstName}
+            style={styles.inputBox}
+            onChangeText={val => onInput(setFirstName, val)}
+          />
+          <Input
+            placeholder='Last Name'
+            defaultValue={lastName}
+            style={styles.inputBox}
+            onChangeText={val => onInput(setLastName, val)}
+          />
+          <Button onPress={submit}>Submit</Button>
+        </View>
+      </View>
     </View>
   )
 
