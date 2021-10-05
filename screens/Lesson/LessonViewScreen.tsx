@@ -10,13 +10,6 @@ import * as Lessons from "../../assets/lessons/lessonModule";
 
 import CoverHeader from "../../components/CoverHeader";
 
-const EmptyLessonView = () => (
-  <View style={{ ...GlobalStyles.column, ...GlobalStyles.center, ...GlobalStyles.flex }}>
-    <Icons.Question style={{ height: 30, width: 30 }} />
-    <Text style={{ fontSize: 22 }}>Content not found.</Text>
-  </View>
-)
-
 const styles = StyleSheet.create({
   container: {
     paddingHorizontal: 10,
@@ -25,8 +18,20 @@ const styles = StyleSheet.create({
     elevation: 4,
     borderRadius: 10,
     fontSize: 20,
+  },
+  emptyContainer: {
+    height: 400,
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
   }
 })
+
+const EmptyLessonView = () => (
+  <View style={styles.emptyContainer}>
+    <Text>Content not found.</Text>
+  </View>
+)
 
 export default function LessonViewScreen({ route, navigation }: any) {
   let jsxTargetLesson = null;
