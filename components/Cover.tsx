@@ -166,7 +166,7 @@ export default function Cover(props: any) {
         <Text style={styles.textName}>{`${firstName}!`}</Text>
 
         {props.menu ? <></> :
-          <Button style={styles.menuButton} accessoryLeft={Icons.Menu}
+          <Button style={styles.menuButton} accessoryLeft={Icons.Home}
             onPress={goToMenu}>{""}</Button>
         }
         <PolkaDots menu={props.menu} />

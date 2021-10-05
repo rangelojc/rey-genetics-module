@@ -10,4 +10,7 @@ export default {
   Question: (props: any) => <Icon {...props} name='question-mark-outline' />,
   Video: (props: any) => <Icon {...props} name='film-outline' />,
   Menu: (props: any) => <Icon {...props} name='menu-outline' />,
+  Home: (props: any) => <Icon {...props} name='home-outline' />,
+  Close: (props: any) => <Icon {...props} name='close-outline' />,
+  Minimize: (props: any) => <Icon {...props} name='minimize-outline' />,
 }
