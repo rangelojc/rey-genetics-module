@@ -9,6 +9,9 @@ const STORE_KEYS: any = {
 };
 
 export default {
+  check: function (key: string) {
+    return STORE_KEYS[key] ? true : false;
+  },
   set: async function (key: string, value: string) {
     try {
       await AsyncStorage.setItem(STORE_NAME + STORE_KEYS[key], value)
