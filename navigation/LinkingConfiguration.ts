@@ -31,6 +31,11 @@ export default {
               ActivityScreen: 'Activities',
             },
           },
+          Quizzes: {
+            screens: {
+              ActivityScreen: 'Quizzes',
+            },
+          },
           Videos: {
             screens: {
               VideoScreen: 'Videos',
@@ -46,6 +51,11 @@ export default {
       ActivityOpen: {
         screens: {
           ActivityOpenScreen: 'ActivityOpen'
+        }
+      },
+      QuizOpen: {
+        screens: {
+          QuizOpenScreen: 'QuizOpen'
         }
       },
       VideoOpen: {

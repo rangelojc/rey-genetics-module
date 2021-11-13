@@ -90,6 +90,15 @@ export default function MenuScreen({ navigation }: any) {
             </View>
             <View>
               <Text style={styles.menuTitle}>Activities</Text>
+              <Text style={styles.menuDesc}>Exercise with learning tasks.</Text>
+            </View>
+          </TouchableOpacity >
+          <TouchableOpacity style={styles.menuItem} onPress={() => { navigate("Quizzes") }}>
+            <View style={styles.menuIcon}>
+              <Icons.BookOpen fill={theme['color-primary-500']} style={styles.menuIconImg} />
+            </View>
+            <View>
+              <Text style={styles.menuTitle}>Quizzes</Text>
               <Text style={styles.menuDesc}>Take an assessment.</Text>
             </View>
           </TouchableOpacity >

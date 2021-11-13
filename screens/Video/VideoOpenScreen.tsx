@@ -32,7 +32,8 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     elevation: 4,
     width: "100%",
-    marginBottom: 20
+    marginBottom: 20,
+    marginTop: 30,
   }
 });
 
@@ -64,8 +65,15 @@ const NoVideoFound = (props: any) => {
 export default function VideoOpenScreen({ route, navigation }: any) {
   const [videoFiles] = useAssets(
     [
-      require('../../assets/videos/video1.mp4'),
-      require('../../assets/videos/video2.mp4')
+      require('../../assets/videos/Topic1-Mendel_sLawsofInheritance-Part-1.mp4'),
+      require('../../assets/videos/Topic1-Mendel_sLawsofInheritance-Part-2.mp4'),
+      require('../../assets/videos/Topic2-SexLinkageandRecombination-Part-1.mp4'),
+      require('../../assets/videos/Topic2-SexLinkageandRecombination-Part-2.mp4'),
+      require('../../assets/videos/Topic3-CentralDogmaofMolecularBiology-Part-1.mp4'),
+      require('../../assets/videos/Topic3-CentralDogmaofMolecularBiology-Part-2.mp4'),
+      require('../../assets/videos/Topic4-RecombinantDNA-Part-1.mp4'),
+      require('../../assets/videos/Topic4-RecombinantDNA-Part-2.mp4'),
+      require('../../assets/videos/Topic4-RecombinantDNA-Part-3.mp4'),
     ]
   );
 
