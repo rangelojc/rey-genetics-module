@@ -34,7 +34,7 @@ export default function QuizOpenScreen({ route, navigation }: any) {
     <View style={GlobalStyles.mainContainer}>
       <CoverHeader title={quizTitle} navigation={navigation} />
 
-      <View style={GlobalStyles.mainWrapper}>
+      <View style={GlobalStyles.mainWrapperView}>
         <View style={styles.container}>
           <Text>No content</Text>
         </View>

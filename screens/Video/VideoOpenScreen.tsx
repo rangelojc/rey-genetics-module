@@ -91,7 +91,7 @@ export default function VideoOpenScreen({ route, navigation }: any) {
     <View style={GlobalStyles.mainContainer}>
       <CoverHeader title={videoTitle} navigation={navigation} />
 
-      <View style={GlobalStyles.mainWrapper}>
+      <View style={GlobalStyles.mainWrapperView}>
         <View style={{ ...GlobalStyles.column, ...GlobalStyles.center, ...GlobalStyles.flex }}>
           {
             Object.keys(videoFile).length ? <VideoComponent video={videoFile} /> : <NoVideoFound />

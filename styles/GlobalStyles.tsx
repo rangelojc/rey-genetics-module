@@ -21,6 +21,10 @@ export default StyleSheet.create({
         flex: 1,
         paddingHorizontal: 20,
     },
+    mainWrapperView: {
+        flex: 1,
+        paddingHorizontal: 8,
+    },
     container: {
         flex: 1,
         paddingHorizontal: 0,

@@ -58,7 +58,7 @@ export default function LessonViewScreen({ route, navigation }: any) {
     <View style={GlobalStyles.mainContainer}>
       {jsxHeader}
 
-      <View style={GlobalStyles.mainWrapper}>
+      <View style={GlobalStyles.mainWrapperView}>
         <View style={styles.container}>
           {jsxTargetLesson}
         </View>
