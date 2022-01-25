@@ -29,5 +29,8 @@ export default {
     catch (ex) {
       console.error(ex)
     }
+  },
+  clear: async function () {
+    AsyncStorage.clear();
   }
 }

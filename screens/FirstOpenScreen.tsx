@@ -1,12 +1,17 @@
 import * as React from 'react';
 import { StackActions } from '@react-navigation/native';
 import { StyleSheet, View } from 'react-native';
-import { Text, Input, Button } from '@ui-kitten/components';
+import { Text, Input, Button, IndexPath, Select, SelectItem } from '@ui-kitten/components';
 
 import GlobalStyles from "../styles/GlobalStyles";
 import AsyncStorage from "../helpers/AsyncStorage";
 
 import theme from "../theme/theme.json"
+
+const sexTypes = [
+  'Male',
+  'Female'
+];
 
 const styles = StyleSheet.create({
   container: {
@@ -41,6 +46,10 @@ const styles = StyleSheet.create({
     marginTop: 5,
     marginBottom: 10
   },
+  selectBox: {
+    marginTop: 5,
+    marginBottom: 10
+  },
   applyButton: {
     marginTop: 20
   }
@@ -50,11 +59,14 @@ export default function FirstOpenScreen({ navigation }: any) {
 
   const [firstName, setFirstName] = React.useState("");
   const [lastName, setLastName] = React.useState("");
+  const [sex, setSex] = React.useState("");
   const [firstOpen, setFirstOpen] = React.useState("");
+  const [selectedIndex, setSelectedIndex] = React.useState<any>(new IndexPath(0));
 
   const submit = async () => {
     await AsyncStorage.set('firstName', firstName);
     await AsyncStorage.set('lastName', lastName);
+    await AsyncStorage.set('sex', sexTypes[selectedIndex.row]);
     await AsyncStorage.set('firstOpen', "false");
 
     navigation.navigate('Menu');
@@ -66,12 +78,11 @@ export default function FirstOpenScreen({ navigation }: any) {
 
   const evaluateFirstOpen = async () => {
     const res = await AsyncStorage.get('firstOpen');
-    if (res === "true") {
-      setFirstOpen("true");
+    if (res === "false") {
+      navigation.replace('Menu');
     }
     else {
-      setFirstOpen("false");
-      navigation.replace('Menu');
+      setFirstOpen("true");
     }
   }
 
@@ -102,6 +113,15 @@ export default function FirstOpenScreen({ navigation }: any) {
             style={styles.inputBox}
             onChangeText={val => onInput(setLastName, val)}
           />
+          <Select
+            placeholder='Sex'
+            value={sexTypes[selectedIndex.row]}
+            selectedIndex={selectedIndex}
+            onSelect={index => setSelectedIndex(index)}
+            style={styles.selectBox}>
+            <SelectItem title='Male' />
+            <SelectItem title='Female' />
+          </Select>
           <Button onPress={submit}>Submit</Button>
         </View>
       </View>
