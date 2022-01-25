@@ -138,18 +138,21 @@ const PolkaDots = (props: any) => {
 export default function Cover(props: any) {
   const [firstName, setFirstName]: any = React.useState('');
   const [lastName, setLastName]: any = React.useState('');
-
-  const initState = async function () {
-    let fn: any = await AsyncStorage.get('firstName');
-    let ln: any = await AsyncStorage.get('lastName');
-
-    setFirstName(fn);
-    setLastName(ln);
-  }
+  const [sex, setSex]: any = React.useState<string>('');
 
   useEffect(() => {
     initState();
   }, [])
+
+  const initState = async function () {
+    let fn: any = await AsyncStorage.get('firstName');
+    let ln: any = await AsyncStorage.get('lastName');
+    let s: any = await AsyncStorage.get('sex');
+
+    setFirstName(fn);
+    setLastName(ln);
+    setSex(s);
+  }
 
   const goToMenu = function () {
     props.navigation.replace('Menu');
@@ -161,7 +164,10 @@ export default function Cover(props: any) {
         {/* <Icons.Setting fill='#fff' styles={styles.setting}
           onPress={() => { props.navigation.navigate('Settings') }}
         /> */}
-        <Image style={styles.avatar} source={require('../assets/images/avatars/avatar1.png')} />
+        {sex === "Male" ? <Image style={styles.avatar} source={require('../assets/images/avatars/male.png')} />
+          : <Image style={styles.avatar} source={require('../assets/images/avatars/female.png')} />
+        }
+
         <Text style={styles.textHello}>Greetings,</Text>
         <Text style={styles.textName}>{`${firstName}!`}</Text>
 

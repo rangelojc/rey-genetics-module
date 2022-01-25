@@ -57,7 +57,7 @@ const VideoComponent = (props: any) => {
 const NoVideoFound = (props: any) => {
   return (
     <View style={{ ...GlobalStyles.mainWrapper, ...styles.notFound }}>
-      <Text>Video not found</Text>
+      <Text>Loading video...</Text>
     </View>
   )
 }
