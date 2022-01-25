@@ -1,27 +1,22 @@
 [
   {
-    "title": "Activity 1",
-    "name": "act1",
-    "description": "Lorem ipsum"
+    "title": "Activity 1: Mendel's Law of Inheritance",
+    "name": "activity1",
+    "description": ""
   },
   {
-    "title": "Activity 2",
-    "name": "act2",
-    "description": "Quis nostrud exercitation"
+    "title": "Activity 2 : Sex Linkage",
+    "name": "activity2",
+    "description": ""
   },
   {
-    "title": "Activity 3",
-    "name": "act3",
-    "description": "Odo consequat."
+    "title": "Activity 3 : Central Dogma of Molecular Biology",
+    "name": "activity3",
+    "description": "."
   },
   {
-    "title": "Activity 4",
-    "name": "act4",
-    "description": "Quis nostrud exercitation"
-  },
-  {
-    "title": "Activity 5",
-    "name": "act5",
-    "description": "Lorem ipsum"
+    "title": "Activity 4 : Recombinant DNA",
+    "name": "activity4",
+    "description": ""
   }
 ]

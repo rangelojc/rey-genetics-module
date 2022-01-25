@@ -35,8 +35,8 @@ export default function ActivityList(props: any) {
           {act.description}
         </Text>
 
-        <LinkButton to={`/ActivityOpen?activityTitle=${act.title}`}>
-          Take
+        <LinkButton to={`/ActivityOpen?activityTitle=${act.title}&activityName=${act.name}`}>
+          Open
         </LinkButton>
       </ View >
     )

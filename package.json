@@ -42,7 +42,8 @@
     "react-native-screens": "~2.15.0",
     "react-native-svg": "12.1.0",
     "react-native-web": "^0.15.6",
-    "react-native-webview": "^11.4.3"
+    "react-native-webview": "^11.4.3",
+    "expo-intent-launcher": "~8.4.0"
   },
   "devDependencies": {
     "@babel/core": "^7.9.0",
