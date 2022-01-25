@@ -9,7 +9,7 @@ const styles = {
 
   }
 }
-export default class Lesson2 extends Component {
+export default class Topic2 extends Component {
   constructor(props: any) {
     super(props);
   }
