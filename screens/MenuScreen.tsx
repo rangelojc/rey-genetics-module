@@ -90,7 +90,7 @@ export default function MenuScreen({ navigation }: any) {
             </View>
             <View>
               <Text style={styles.menuTitle}>Activities</Text>
-              <Text style={styles.menuDesc}>Exercise with learning tasks.</Text>
+              <Text style={styles.menuDesc}>View learning tasks documents.</Text>
             </View>
           </TouchableOpacity >
           <TouchableOpacity style={styles.menuItem} onPress={() => { navigate("Quizzes") }}>

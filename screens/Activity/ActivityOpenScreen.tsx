@@ -1,15 +1,14 @@
 import React, { useEffect, useState } from 'react';
-import { useIsFocused } from '@react-navigation/native';
+import { useAssets } from 'expo-asset';
 
 import * as FileSystem from 'expo-file-system';
 import * as IntentLauncher from 'expo-intent-launcher';
 
-import { StyleSheet, View, Text } from 'react-native';
+import { StyleSheet, View, Text, Dimensions } from 'react-native';
 
 import GlobalStyles from "../../styles/GlobalStyles";
 import CoverHeader from "../../components/CoverHeader";
-import { WebView } from 'react-native-webview';
-import { useAssets } from 'expo-asset';
+import { Button } from '@ui-kitten/components';
 
 const styles = StyleSheet.create({
   container: {
@@ -27,10 +26,15 @@ const styles = StyleSheet.create({
     width: "100%"
   },
   webView: {
-    backgroundColor: "#fff",
+    backgroundColor: "transparent",
     height: "100%",
-    width: 370
-  }
+    width: Dimensions.get('window').width - 20,
+  },
+  btnOpen: {
+    marginTop: 10,
+    height: 60,
+    width: 200,
+  },
 })
 
 export default function ActivityScreen({ route, navigation }: any) {
@@ -44,24 +48,27 @@ export default function ActivityScreen({ route, navigation }: any) {
   );
 
   const [activityTitle, setActivityTitle] = useState<string>("")
+  const [activityName, setActivityName] = useState<string>("")
+  const [targetDoc, setTargetDoc] = useState<any>({})
 
   useEffect(() => {
     setActivityTitle(route.params.params.activityTitle);
 
-    const activityName: string = route.params.params.activityName;
-    const targetDoc: any = docFiles?.find(v => v.name === activityName) || {};
+    setActivityName(route.params.params.activityName);
+    setTargetDoc(docFiles?.find(v => v.name === activityName) || {});
+  }, [docFiles])
 
-    const uri: string = `../../assets/activities/${activityName}.pdf`;
-    loadFile(uri, targetDoc);
+  useEffect(() => {
+    loadFile();
+  }, [targetDoc])
 
-  }, [])
-
-  const loadFile = async (uri: string, doc: any) => {
+  const loadFile = async () => {
     try {
-      const cUri: any = await FileSystem.getContentUriAsync(uri);
+      // const uri: string = `file://assets/activities/${activityName}.pdf`;
+      const contentUri: any = await FileSystem.getContentUriAsync(targetDoc.localUri);
 
       await IntentLauncher.startActivityAsync('android.intent.action.VIEW', {
-        data: cUri,
+        data: contentUri,
         flags: 1,
         type: 'application/pdf'
       });
@@ -77,9 +84,13 @@ export default function ActivityScreen({ route, navigation }: any) {
       <View style={GlobalStyles.mainWrapperView}>
         <View style={styles.container}>
 
-          {/* <WebView
-            source={{ uri: `http://www.pscgames.co.uk/wp-content/uploads/2015/01/MILITO_RULEBOOK.pdf` }}
-            startInLoadingState={true} style={styles.webView} /> */}
+          <Button
+            onPress={loadFile}
+            style={styles.btnOpen}
+            size='small'
+          >
+            Open Again
+          </Button>
         </View>
       </View>
     </View>
