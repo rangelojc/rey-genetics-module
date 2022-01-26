@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useIsFocused } from '@react-navigation/native';
 
 import { StyleSheet, View, Text } from 'react-native';
@@ -22,13 +22,11 @@ const styles = StyleSheet.create({
 })
 
 export default function QuizOpenScreen({ route, navigation }: any) {
-  let quizTitle = '';
+  const [quizTitle, setQuizTitle] = useState<string>("");
 
-  const isFocused = useIsFocused();
-
-  if (isFocused) {
-    quizTitle = route.params.params.quizTitle;
-  }
+  useEffect(() => {
+    setQuizTitle(route.params.params.quizTitle);
+  }, [])
 
   return (
     <View style={GlobalStyles.mainContainer}>

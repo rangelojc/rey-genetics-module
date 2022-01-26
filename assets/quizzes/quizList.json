@@ -1,27 +1,22 @@
 [
   {
-    "title": "Quiz 1",
-    "name": "q1",
-    "description": "Lorem ipsum"
+    "title": "Quiz 1: Mendel's Law of Inheritance",
+    "name": "quiz1",
+    "description": ""
   },
   {
-    "title": "Quiz 2",
-    "name": "q2",
-    "description": "Quis nostrud exercitation"
+    "title": "Quiz 2 : Sex Linkage",
+    "name": "quiz2",
+    "description": ""
   },
   {
-    "title": "Quiz 3",
-    "name": "q3",
-    "description": "Odo consequat."
+    "title": "Quiz 3 : Central Dogma of Molecular Biology",
+    "name": "quiz3",
+    "description": "."
   },
   {
-    "title": "Quiz 4",
-    "name": "q4",
-    "description": "Quis nostrud exercitation"
-  },
-  {
-    "title": "Quiz 5",
-    "name": "q5",
-    "description": "Lorem ipsum"
+    "title": "Quiz 4 : Recombinant DNA",
+    "name": "quiz4",
+    "description": ""
   }
 ]
