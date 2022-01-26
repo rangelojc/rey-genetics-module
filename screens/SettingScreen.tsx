@@ -96,7 +96,7 @@ export default ({ navigation }: any) => {
     <View style={GlobalStyles.mainContainer}>
       <CoverHeader title={"Settings"} navigation={navigation} />
 
-      <View style={GlobalStyles.mainWrapper}>
+      <View style={GlobalStyles.mainWrapperView}>
         <View style={styles.container}>
           <Text style={styles.label}>First Name</Text>
           <Input

@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Asset, useAssets } from 'expo-asset';
 
-import { StyleSheet, View, Text } from 'react-native';
+import { StyleSheet, View, Text, Dimensions } from 'react-native';
 import { useIsFocused } from '@react-navigation/native';
 
 import { Video, AVPlaybackStatus } from 'expo-av';
@@ -32,8 +32,8 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     elevation: 4,
     width: "100%",
-    marginBottom: 20,
-    marginTop: 30,
+    marginTop: 100,
+    marginBottom: 20
   }
 });
 
@@ -91,7 +91,6 @@ export default function VideoOpenScreen({ route, navigation }: any) {
   return (
     <View style={GlobalStyles.mainContainer}>
       <CoverHeader title={videoTitle} navigation={navigation} />
-
       <View style={{ ...GlobalStyles.mainWrapperView, marginTop: -200 }}>
         <View style={{ ...GlobalStyles.column, ...GlobalStyles.center, ...GlobalStyles.flex }}>
           {
