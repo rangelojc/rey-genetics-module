@@ -19,7 +19,8 @@
       "**/*"
     ],
     "androidStatusBar": {
-      "backgroundColor": "#FFEBE2"
+      "backgroundColor": "#FFEBE2",
+      "barStyle": "light-content"
     },
     "ios": {
       "supportsTablet": true
