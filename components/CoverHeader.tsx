@@ -10,7 +10,6 @@ const styles = StyleSheet.create({
   container: {
     height: 300,
     paddingHorizontal: 20,
-    marginBottom: -90,
     borderBottomLeftRadius: 50,
     borderBottomRightRadius: 50,
     overflow: 'hidden',

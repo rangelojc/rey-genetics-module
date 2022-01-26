@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Asset, useAssets } from 'expo-asset';
 
 import { StyleSheet, View, Text } from 'react-native';
@@ -77,21 +77,22 @@ export default function VideoOpenScreen({ route, navigation }: any) {
     ]
   );
 
-  let videoTitle = '';
-  let videoFileName = '';
-  let videoFile = {};
+  const [videoTitle, setVideoTitle] = useState<string>("")
+  const [videoFile, setVideoFile] = useState<any>({})
 
-  if (useIsFocused()) {
-    videoTitle = route.params.params.videoTitle;
-    videoFileName = route.params.params.videoFileName;
-    videoFile = videoFiles?.find(v => v.name === videoFileName) || {};
-  }
+  useEffect(() => {
+    const videoTitleStr: string = route.params.params.videoTitle;
+    const videoFileName: string = route.params.params.videoFileName;
+
+    setVideoTitle(videoTitleStr);
+    setVideoFile(videoFiles?.find(v => v.name === videoFileName) || {});
+  }, [videoFiles])
 
   return (
     <View style={GlobalStyles.mainContainer}>
       <CoverHeader title={videoTitle} navigation={navigation} />
 
-      <View style={GlobalStyles.mainWrapperView}>
+      <View style={{ ...GlobalStyles.mainWrapperView, marginTop: -200 }}>
         <View style={{ ...GlobalStyles.column, ...GlobalStyles.center, ...GlobalStyles.flex }}>
           {
             Object.keys(videoFile).length ? <VideoComponent video={videoFile} /> : <NoVideoFound />
