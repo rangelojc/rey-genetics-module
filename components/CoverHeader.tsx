@@ -17,12 +17,12 @@ const styles = StyleSheet.create({
   },
   textLabel: {
     marginTop: 20,
-    fontSize: 20,
+    fontSize: 16,
     fontWeight: '300',
     color: '#f1f1f1'
   },
   textHead: {
-    fontSize: 30,
+    fontSize: 20,
     fontWeight: '300',
     color: '#f1f1f1'
   },

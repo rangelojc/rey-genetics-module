@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { View, StyleSheet } from 'react-native';
 import { useIsFocused } from '@react-navigation/native';
 import { Text } from '@ui-kitten/components';
@@ -34,29 +34,24 @@ const EmptyLessonView = () => (
 )
 
 export default function LessonViewScreen({ route, navigation }: any) {
-  let jsxTargetLesson = null;
-  let jsxHeader = null;
+  const [jsxTargetLesson, setJsxTargetLesson] = useState<any>(<></>);
+  const [lessonTitle, setLessonTitle] = useState<any>(<></>);
 
-  const isFocused = useIsFocused();
+  useEffect(() => {
+    setLessonTitle(route.params.params.lessonTitle);
 
-  if (isFocused) {
-    let lessonTitle = route.params.params.lessonTitle;
-    let lessonName = route.params.params.lessonName;
-
-    switch (lessonName) {
-      case "topic1": jsxTargetLesson = <Lessons.Topic1 />; break;
-      case "topic2": jsxTargetLesson = <Lessons.Topic2 />; break;
-      case "topic3": jsxTargetLesson = <Lessons.Topic3 />; break;
-      case "topic4": jsxTargetLesson = <Lessons.Topic4 />; break;
-      default: jsxTargetLesson = <EmptyLessonView />;
+    switch (route.params.params.lessonName) {
+      case "topic1": setJsxTargetLesson(<Lessons.Topic1 />); break;
+      case "topic2": setJsxTargetLesson(<Lessons.Topic2 />); break;
+      case "topic3": setJsxTargetLesson(<Lessons.Topic3 />); break;
+      case "topic4": setJsxTargetLesson(<Lessons.Topic4 />); break;
+      default: setJsxTargetLesson(<EmptyLessonView />);
     }
-
-    jsxHeader = <CoverHeader title={lessonTitle} navigation={navigation} />
-  }
+  }, [])
 
   return (
     <View style={GlobalStyles.mainContainer}>
-      {jsxHeader}
+      <CoverHeader title={lessonTitle} navigation={navigation} />
 
       <View style={GlobalStyles.mainWrapperView}>
         <View style={styles.container}>

@@ -30,17 +30,18 @@ export default StyleSheet.create({
     mainContainer: {
         flex: 1,
         paddingTop: 0,
-        backgroundColor: "#f6f6f6", //ff7072
+        backgroundColor: theme["color-secondary-200"], //ff7072
     },
     mainWrapper: {
         flex: 1,
         paddingHorizontal: 20,
-        backgroundColor: theme["color-secondary-200"]
+        // backgroundColor: theme["color-secondary-200"]
     },
     mainWrapperView: {
         flex: 1,
         paddingHorizontal: 8,
-        marginTop: -100,
+        marginTop: -130,
+
     },
     container: {
         flex: 1,
