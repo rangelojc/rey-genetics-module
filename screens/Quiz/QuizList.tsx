@@ -23,28 +23,25 @@ const LinkButton = ({ to, children }: any) => {
 }
 
 export default function QuizList(props: any) {
-  let count = 0;
-  let items = quizList.map(act => {
-    count++;
-
-    return (
-      <View style={styles.listItem} key={act.name}>
-        <Text style={styles.title}>{`${act.title}`}</Text>
-
-        <Text style={styles.description}>
-          {act.description}
-        </Text>
-
-        <LinkButton to={`/QuizOpen?quizTitle=${act.title}`}>
-          Take
-        </LinkButton>
-      </ View >
-    )
-  });
-
   return (
     <View style={props.style}>
-      {items}
+      {
+        quizList.map((quiz: any) => {
+          return (
+            <View style={styles.listItem} key={quiz.name}>
+              <Text style={styles.title}>{`${quiz.title}`}</Text>
+
+              <Text style={styles.description}>
+                {quiz.description}
+              </Text>
+
+              <LinkButton to={`/QuizOpen?quizTitle=${quiz.title}&quizName=${quiz.name}`}>
+                Take
+              </LinkButton>
+            </ View >
+          )
+        })
+      }
     </View>
   )
 }

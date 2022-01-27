@@ -11,6 +11,7 @@ export default StyleSheet.create({
   },
   title: {
     fontSize: 21,
+    color: "#111"
   },
   box: {
     borderWidth: 1,
@@ -26,15 +27,18 @@ export default StyleSheet.create({
   },
   boldText: {
     fontSize: 16,
-    fontWeight: "bold"
+    fontWeight: "bold",
+    color: "#111"
   },
   italicText: {
     fontSize: 16,
-    fontStyle: "italic"
+    fontStyle: "italic",
+    color: "#111"
   },
   text: {
     fontSize: 16,
     textAlign: "justify",
     marginBottom: 5,
+    color: "#111"
   }
 })

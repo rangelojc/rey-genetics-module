@@ -1,17 +1,17 @@
 {
-  "title": "Quiz 1",
-  "timer": 15,
+  "title": "Quiz 1: Mendel's Law of Inheritance",
+  "description": "Test your ability to predict genotypes and phenotypes of parents and offsprings using the laws of inheritance.",
   "items": [
     {
-      "type": "multiChoice",
-      "problem": "What is foo and bar?",
-      "selections": [
-        "a",
-        "b",
-        "c"
+      "question": "This is law states that some alleles are dominant while others are recessive; an organism with at least one dominant allele will display the effect of the dominant allele.",
+      "choices": [
+        "Law of dominance and uniformity",
+        "Law of Segregation",
+        "Law of independent assortment",
+        "Law of recessiveness"
       ],
-      "answer": 0,
-      "timer": 10
+      "answer": 1,
+      "explanation": "Blah blah"
     }
   ]
 }
