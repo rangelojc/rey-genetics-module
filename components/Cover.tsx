@@ -39,12 +39,14 @@ const styles = StyleSheet.create({
   textHello: {
     fontSize: 20,
     fontWeight: '300',
-    color: '#f1f1f1'
+    color: '#f1f1f1',
+    textAlign: "right"
   },
   textName: {
     fontSize: 30,
     fontWeight: '400',
-    color: '#f1f1f1'
+    color: '#f1f1f1',
+    textAlign: "right"
   },
   setting: {
     position: "absolute",
