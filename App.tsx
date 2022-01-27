@@ -38,7 +38,7 @@ export default function App() {
 
         <ThemeContext.Provider value={{ theme, toggleTheme }}>
           <ApplicationProvider {...eva} theme={{ ...eva, ...themeJson }}>
-            <StatusBar />
+            <StatusBar backgroundColor="#728544" style="light" />
             <AppNavigator />
           </ApplicationProvider>
         </ThemeContext.Provider>
