@@ -5,12 +5,34 @@
     {
       "question": "This is law states that some alleles are dominant while others are recessive; an organism with at least one dominant allele will display the effect of the dominant allele.",
       "choices": [
-        "Law of dominance and uniformity",
+        "Law of Dominance and Uniformity",
         "Law of Segregation",
-        "Law of independent assortment",
-        "Law of recessiveness"
+        "Law of Independent Assortment",
+        "Law of Recessiveness"
       ],
       "answer": 1,
+      "explanation": "Blah blah"
+    },
+    {
+      "question": "This is the law which states that during gamete formation, the alleles for each gene segregate from each other so that each gamete carries only one allele for each gene.",
+      "choices": [
+        "Law of Dominance and Uniformity",
+        "Law of Segregation",
+        "Law of Independent Assortment",
+        "Law of Recessiveness"
+      ],
+      "answer": 2,
+      "explanation": "Blah blah"
+    },
+    {
+      "question": "This law states that genes of different traits can segregate independently during the formation of gametes.",
+      "choices": [
+        "Law of Dominance and Uniformity",
+        "Law of Segregation",
+        "Law of Independent Assortment",
+        "Law of Recessiveness"
+      ],
+      "answer": 3,
       "explanation": "Blah blah"
     }
   ]

@@ -37,7 +37,7 @@ const styles = StyleSheet.create({
   quizContainer: {
     paddingHorizontal: 10,
     paddingVertical: 10,
-    backgroundColor: '#fff',
+    backgroundColor: "#fcfcfc",
     elevation: 4,
     borderRadius: 10,
     marginBottom: 20,
@@ -73,10 +73,10 @@ const styles = StyleSheet.create({
     minHeight: 30,
     marginVertical: 5,
     padding: 10,
-    borderRadius: 5,
-    backgroundColor: theme["color-secondary-100"],
+    borderRadius: 20,
+    backgroundColor: "#fcfcfc",
     borderWidth: 1,
-    borderColor: theme["color-secondary-300"],
+    borderColor: theme["color-secondary-300"]
   },
   quizChoiceText: {
     fontSize: 16,
@@ -119,6 +119,14 @@ export default function QuizOpenScreen({ route, navigation }: any) {
     setSelectedOpt(0);
   }
 
+  const submitAnswer = () => {
+    const target: any = activeQuiz.items[quizQuestionNo - 1];
+    if (target.answer === selectedOpt) setScore(score + 1);
+
+    setQuizQuestionNo(quizQuestionNo + 1);
+    setSelectedOpt(0);
+  }
+
   return (
     <View style={GlobalStyles.mainContainer}>
       <CoverHeader title={quizTitle} navigation={navigation} />
@@ -149,15 +157,18 @@ export default function QuizOpenScreen({ route, navigation }: any) {
                   <TouchableOpacity key={idx} onPress={() => setSelectedOpt(idx + 1)}>
                     <View style={{
                       ...styles.quizChoiceItem,
-                      borderColor: selectedOpt === idx + 1 ? theme["color-primary-500"] : theme["color-secondary-300"]
+                      borderColor: selectedOpt === idx + 1 ? theme["color-primary-500"] : theme["color-secondary-300"],
                     }}>
-                      <Text style={styles.quizChoiceText}>{choice}</Text>
+                      <Text style={{
+                        ...styles.quizChoiceText,
+                        color: selectedOpt === idx + 1 ? theme["color-primary-500"] : "#111",
+                      }}>{`${["A", "B", "C", "D"][idx]}. ${choice}`}</Text>
                     </View>
                   </TouchableOpacity>
                 )
               }
 
-              <Button style={styles.quizSubmit} size="medium" onPress={() => startQuiz()}>Final Answer</Button>
+              <Button style={styles.quizSubmit} size="medium" disabled={selectedOpt === 0} onPress={() => submitAnswer()}>Final Answer</Button>
 
             </View> : <></>
         }
