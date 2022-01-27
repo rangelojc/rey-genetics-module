@@ -1,5 +1,20 @@
 import { StyleSheet, Dimensions, Platform, StatusBar } from 'react-native';
-// import Colors from "../styles/colors.json";
+
+/*
+Sidecar
+#F5E3C9
+
+Dingley
+#728544
+
+Hippie Blue
+#4B9FA5
+
+Brandy Rose
+#B68071
+*/
+
+import theme from "../theme/theme.json"
 
 export default StyleSheet.create({
     header: {
@@ -20,11 +35,12 @@ export default StyleSheet.create({
     mainWrapper: {
         flex: 1,
         paddingHorizontal: 20,
+        backgroundColor: theme["color-secondary-200"]
     },
     mainWrapperView: {
         flex: 1,
         paddingHorizontal: 8,
-        marginTop: -100
+        marginTop: -100,
     },
     container: {
         flex: 1,

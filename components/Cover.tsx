@@ -15,7 +15,7 @@ const styles = StyleSheet.create({
     position: "relative",
     height: 300,
     paddingHorizontal: 20,
-    marginBottom: -100,
+    marginBottom: -90,
     borderBottomLeftRadius: 50,
     borderBottomRightRadius: 50,
     backgroundColor: theme['color-primary-500'],
@@ -37,7 +37,7 @@ const styles = StyleSheet.create({
     borderRadius: 50,
   },
   textHello: {
-    fontSize: 30,
+    fontSize: 20,
     fontWeight: '300',
     color: '#f1f1f1'
   },

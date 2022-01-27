@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { StyleSheet, View, TouchableOpacity, ScrollView, BackHandler } from 'react-native';
+import { StyleSheet, View, TouchableOpacity, ScrollView, BackHandler, Dimensions } from 'react-native';
 import { Text, Button } from '@ui-kitten/components';
 
 import theme from "../theme/theme.json";
@@ -11,13 +11,15 @@ import Icons from '../components/Icons';
 
 const styles = StyleSheet.create({
   container: {
-    paddingTop: 20
+    paddingTop: 20,
+    backgroundColor: theme["color-secondary-200"],
+    height: Dimensions.get("window").height,
   },
   menuItem: {
     width: '100%',
     marginBottom: 10,
     height: 70,
-    backgroundColor: '#fff',
+    backgroundColor: "#fff",
     elevation: 2,
     display: 'flex',
     flexDirection: 'row',
@@ -48,7 +50,7 @@ const styles = StyleSheet.create({
     display: "flex",
     flexDirection: "column",
     marginBottom: 4,
-    height: 100,
+    minHeight: 100,
   },
   buttons: {
     height: 50,
