@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useIsFocused } from '@react-navigation/native';
 
-import { StyleSheet, View, Text } from 'react-native';
+import { StyleSheet, View, Text, Modal, Dimensions, Touchable } from 'react-native';
 
 import GlobalStyles from "../../styles/GlobalStyles";
 import CoverHeader from "../../components/CoverHeader";
@@ -58,7 +58,7 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: '400',
     paddingHorizontal: 10,
-    color: "#d8bc1f",
+    color: "#ffc83d",
     marginLeft: "auto"
   },
   quizQuestion: {
@@ -73,7 +73,7 @@ const styles = StyleSheet.create({
     minHeight: 30,
     marginVertical: 5,
     padding: 10,
-    borderRadius: 20,
+    borderRadius: 30,
     backgroundColor: "#fcfcfc",
     borderWidth: 1,
     borderColor: theme["color-secondary-300"]
@@ -84,6 +84,43 @@ const styles = StyleSheet.create({
   },
   quizSubmit: {
     marginVertical: 20,
+    borderRadius: 30,
+    width: 200,
+    alignSelf: "center",
+  }
+});
+
+const modalStyles = StyleSheet.create({
+  backdrop: {
+    width: Dimensions.get("window").width,
+    height: Dimensions.get("window").height,
+    backgroundColor: "rgba(0,0,0,0.5)",
+
+    flex: 1,
+    flexDirection: "row",
+    justifyContent: "center",
+    alignItems: "center"
+  },
+  container: {
+    alignSelf: "center",
+    marginVertical: "auto",
+    width: Dimensions.get("window").width - 40,
+    height: "auto",
+    paddingHorizontal: 20,
+    paddingTop: 20,
+    backgroundColor: '#fff',
+    elevation: 4,
+    borderRadius: 5,
+  },
+  expText: {
+    fontSize: 16,
+    color: "#111",
+  },
+  btnGotIt: {
+    marginVertical: 20,
+    borderRadius: 30,
+    width: 200,
+    alignSelf: "center",
   }
 });
 
@@ -98,6 +135,9 @@ export default function QuizOpenScreen({ route, navigation }: any) {
   const [quizQuestionNo, setQuizQuestionNo] = useState<number>(1);
   const [score, setScore] = useState<number>(0);
   const [selectedOpt, setSelectedOpt] = useState<number>(0);
+
+  const [showAnswerModal, setAnswerModal] = useState<boolean>(false);
+  const [answerExplanation, setAnswerExplanation] = useState<string>("");
 
   useEffect(() => {
     setQuizTitle(route.params.params.quizTitle);
@@ -123,8 +163,17 @@ export default function QuizOpenScreen({ route, navigation }: any) {
     const target: any = activeQuiz.items[quizQuestionNo - 1];
     if (target.answer === selectedOpt) setScore(score + 1);
 
-    setQuizQuestionNo(quizQuestionNo + 1);
-    setSelectedOpt(0);
+    setAnswerModal(true);
+    setAnswerExplanation(target.explanation);
+  }
+
+  const navigate = () => {
+    const target: any = activeQuiz.items[quizQuestionNo - 1];
+
+    if (target) {
+      setQuizQuestionNo(quizQuestionNo + 1);
+      setSelectedOpt(0);
+    }
   }
 
   return (
@@ -147,7 +196,7 @@ export default function QuizOpenScreen({ route, navigation }: any) {
             <View style={styles.quizContainer}>
               <View style={styles.quizHead}>
                 <Text style={styles.quizNo}>{quizQuestionNo + "."}</Text>
-                <Text style={styles.quizScore}>{score + " pts"}</Text>
+                <Text style={styles.quizScore}>{"⭐ " + score}</Text>
               </View>
 
               <Text style={styles.quizQuestion}>{activeQuiz.items[quizQuestionNo - 1].question}</Text>
@@ -168,10 +217,19 @@ export default function QuizOpenScreen({ route, navigation }: any) {
                 )
               }
 
-              <Button style={styles.quizSubmit} size="medium" disabled={selectedOpt === 0} onPress={() => submitAnswer()}>Final Answer</Button>
+              <Button style={styles.quizSubmit} size="medium" disabled={selectedOpt === 0} onPress={() => submitAnswer()}>Submit</Button>
 
             </View> : <></>
         }
+
+        <Modal visible={showAnswerModal} transparent={true}>
+          <View style={modalStyles.backdrop}>
+            <View style={modalStyles.container}>
+              <Text style={modalStyles.expText}>{answerExplanation}</Text>
+              <Button size="medium" onPress={() => { navigate(); setAnswerModal(false); setAnswerExplanation(""); }} style={modalStyles.btnGotIt}>Got it!</Button>
+            </View>
+          </View>
+        </Modal>
 
       </View>
     </View>
