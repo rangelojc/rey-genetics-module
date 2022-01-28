@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-import { StyleSheet, View, Image } from 'react-native';
+import { StyleSheet, View, Image, ImageBackground, Dimensions } from 'react-native';
 import { Text, Button } from '@ui-kitten/components';
 
 import Icons from "../components/Icons";
@@ -9,15 +9,14 @@ import AsyncStorage from "../helpers/AsyncStorage"
 
 import theme from "../theme/theme.json";
 
-
 const styles = StyleSheet.create({
   container: {
     position: "relative",
     height: 300,
     paddingHorizontal: 20,
     marginBottom: -90,
-    borderBottomLeftRadius: 50,
-    borderBottomRightRadius: 50,
+    // borderBottomLeftRadius: 50,
+    // borderBottomRightRadius: 50,
     backgroundColor: theme['color-primary-500'],
     overflow: 'hidden',
   },
@@ -32,21 +31,23 @@ const styles = StyleSheet.create({
     height: 90,
     width: 90,
     marginTop: 20,
-    marginBottom: 5,
+    marginBottom: 25,
     backgroundColor: 'transparent',
     borderRadius: 50,
   },
   textHello: {
-    fontSize: 20,
+    fontSize: 16,
     fontWeight: '300',
     color: '#f1f1f1',
-    textAlign: "right"
+    textAlign: "left",
+    // backgroundColor: "rgba(0,0,0,0.1)",
   },
   textName: {
-    fontSize: 30,
+    fontSize: 26,
     fontWeight: '400',
     color: '#f1f1f1',
-    textAlign: "right"
+    textAlign: "left",
+    // backgroundColor: "rgba(0,0,0,0.1)"
   },
   setting: {
     position: "absolute",
@@ -63,7 +64,7 @@ const styles = StyleSheet.create({
     height: 50,
     borderRadius: 8,
     borderColor: 'transparent',
-    backgroundColor: "rgba(255,255,255,0.3)"
+    backgroundColor: "rgba(0,0,0,0.3)"
   },
 })
 
@@ -163,6 +164,9 @@ export default function Cover(props: any) {
   return (
     <React.Fragment>
       <View style={props.menu ? styles.containerFlat : styles.container}>
+        <Image source={require('../assets/images/bg1.jpg')} resizeMode="cover" style={GlobalStyles.headerBG}>
+        </Image>
+
         {/* <Icons.Setting fill='#fff' styles={styles.setting}
           onPress={() => { props.navigation.navigate('Settings') }}
         /> */}
@@ -177,7 +181,8 @@ export default function Cover(props: any) {
           <Button style={styles.menuButton} accessoryLeft={Icons.Home}
             onPress={goToMenu}>{""}</Button>
         }
-        <PolkaDots menu={props.menu} />
+        {/* <PolkaDots menu={props.menu} /> */}
+
       </View>
     </React.Fragment>
   )

@@ -27,6 +27,22 @@ export default StyleSheet.create({
         borderTopColor: "#d8d8d8",
         borderTopWidth: .3,
     },
+    headerBG: {
+        width: Dimensions.get("window").width,
+        height: "100%",
+        position: 'absolute',
+        zIndex: -1,
+        top: 0,
+        opacity: 0.5
+    },
+    mainBG: {
+        width: Dimensions.get("window").width,
+        height: "110%",
+        position: 'absolute',
+        zIndex: 0,
+        top: 0,
+        opacity: 0.7
+    },
     mainContainer: {
         flex: 1,
         paddingTop: 0,
