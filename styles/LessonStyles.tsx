@@ -22,6 +22,7 @@ export default StyleSheet.create({
     marginVertical: 10
   },
   image: {
+    marginVertical: 5,
     resizeMode: 'contain',
     alignSelf: "center"
   },
