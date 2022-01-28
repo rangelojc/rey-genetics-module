@@ -35,6 +35,11 @@ export default StyleSheet.create({
     fontStyle: "italic",
     color: "#111"
   },
+  underlineText: {
+    fontSize: 16,
+    textDecorationLine: "underline",
+    color: "#111"
+  },
   text: {
     fontSize: 16,
     textAlign: "justify",

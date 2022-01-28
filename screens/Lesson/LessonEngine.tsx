@@ -6,7 +6,7 @@ import GlobalStyles from "../../styles/GlobalStyles";
 
 const styles = {
   container: {
-    // minHeight: Dimensions.get("window").height,
+    //minHeight: Dimensions.get("window").height,
   },
   navWrapper: {
     display: "flex",
@@ -24,8 +24,6 @@ const LessonEngine = (props: any) => {
   const [pageComponents, setPageComponents] = useState<any>([]);
   const [jsxPage, setJsxPage] = useState<any>(<></>);
 
-  const scrollView: any = useRef(null);
-
   useEffect(() => {
     setPageComponents(props.pages);
   }, [props.pages])
@@ -42,11 +40,10 @@ const LessonEngine = (props: any) => {
   //functions
   const navigatePage = (pgno: number) => {
     setPage(pgno);
-    scrollView.current.scrollTo({ x: 0, y: 0 });
   }
 
   return (
-    <ScrollView style={styles.container} ref={scrollView}>
+    <View style={styles.container}>
       <View style={styles.navWrapper}>
         <Button size="small" disabled={page === 1} onPress={() => { navigatePage(page - 1) }}>Previous</Button>
         <Text>{"Page " + page}</Text>
@@ -54,7 +51,7 @@ const LessonEngine = (props: any) => {
       </View>
 
       {jsxPage}
-    </ScrollView >
+    </View >
   )
 }
 export default LessonEngine;

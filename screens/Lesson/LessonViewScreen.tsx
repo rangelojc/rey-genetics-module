@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { View, StyleSheet } from 'react-native';
+import { View, StyleSheet, ScrollView } from 'react-native';
 import { useIsFocused } from '@react-navigation/native';
 import { Text } from '@ui-kitten/components';
 
@@ -50,7 +50,7 @@ export default function LessonViewScreen({ route, navigation }: any) {
   }, [])
 
   return (
-    <View style={GlobalStyles.mainContainer}>
+    <ScrollView style={GlobalStyles.mainContainer}>
       <CoverHeader title={lessonTitle} navigation={navigation} />
 
       <View style={GlobalStyles.mainWrapperView}>
@@ -58,7 +58,7 @@ export default function LessonViewScreen({ route, navigation }: any) {
           {jsxTargetLesson}
         </View>
       </View>
-    </View >
+    </ScrollView >
   );
 }
 
