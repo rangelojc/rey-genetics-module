@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { StyleSheet, View, TouchableOpacity, ScrollView, BackHandler, Dimensions } from 'react-native';
+import { StyleSheet, View, TouchableOpacity, ScrollView, BackHandler, Dimensions, Image } from 'react-native';
 import { Text, Button } from '@ui-kitten/components';
 
 import theme from "../theme/theme.json";
@@ -75,6 +75,8 @@ export default function MenuScreen({ navigation }: any) {
       <Cover menu="true" navigation={navigation} />
 
       <View style={{ ...GlobalStyles.mainWrapper, ...styles.container }}>
+        <Image source={require('../assets/images/bg.jpg')} resizeMode="cover" style={GlobalStyles.mainBG}>
+        </Image>
 
         <ScrollView style={styles.buttonWrapper}>
           <TouchableOpacity style={styles.menuItem} onPress={() => { navigate("Lessons") }}>
@@ -84,6 +86,15 @@ export default function MenuScreen({ navigation }: any) {
             <View>
               <Text style={styles.menuTitle}>Lessons</Text>
               <Text style={styles.menuDesc}>Study any available lessons.</Text>
+            </View>
+          </TouchableOpacity >
+          <TouchableOpacity style={styles.menuItem} onPress={() => { navigate("Videos") }}>
+            <View style={styles.menuIcon}>
+              <Icons.Video fill={theme['color-primary-500']} style={styles.menuIconImg} />
+            </View>
+            <View>
+              <Text style={styles.menuTitle}>Videos</Text>
+              <Text style={styles.menuDesc}>Watch videos included in the lessons.</Text>
             </View>
           </TouchableOpacity >
           <TouchableOpacity style={styles.menuItem} onPress={() => { navigate("Activities") }}>
@@ -102,15 +113,6 @@ export default function MenuScreen({ navigation }: any) {
             <View>
               <Text style={styles.menuTitle}>Quizzes</Text>
               <Text style={styles.menuDesc}>Take an assessment.</Text>
-            </View>
-          </TouchableOpacity >
-          <TouchableOpacity style={styles.menuItem} onPress={() => { navigate("Videos") }}>
-            <View style={styles.menuIcon}>
-              <Icons.Video fill={theme['color-primary-500']} style={styles.menuIconImg} />
-            </View>
-            <View>
-              <Text style={styles.menuTitle}>Videos</Text>
-              <Text style={styles.menuDesc}>Watch videos included in the lessons.</Text>
             </View>
           </TouchableOpacity >
           <TouchableOpacity style={styles.menuItem} onPress={() => { navigate("Settings") }}>

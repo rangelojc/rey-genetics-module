@@ -25,9 +25,9 @@ function TabBar({ state, navigation }: any) {
             }>
 
             <BottomNavigationTab icon={Icons.Book} title="Lessons" />
+            <BottomNavigationTab icon={Icons.Video} title="Videos" />
             <BottomNavigationTab icon={Icons.Pen} title="Activities" />
             <BottomNavigationTab icon={Icons.BookOpen} title="Quizzes" />
-            <BottomNavigationTab icon={Icons.Video} title="Videos" />
         </BottomNavigation>
     )
 }
@@ -53,9 +53,9 @@ function TabNavigation() {
     return (
         <BottomTab.Navigator tabBar={(props) => <TabBar {...props} />}  >
             <BottomTab.Screen name='Lessons' component={LessonScreen} options={ScreenOptions("Lessons")} />
+            <BottomTab.Screen name='Videos' component={VideoScreen} options={ScreenOptions("Videos")} />
             <BottomTab.Screen name='Activities' component={ActivityScreen} options={ScreenOptions("Activities")} />
             <BottomTab.Screen name='Quizzes' component={QuizScreen} options={ScreenOptions("Quizzes")} />
-            <BottomTab.Screen name='Videos' component={VideoScreen} options={ScreenOptions("Videos")} />
         </BottomTab.Navigator>
     )
 }
