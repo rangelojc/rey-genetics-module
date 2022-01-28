@@ -23,7 +23,7 @@ let styles = StyleSheet.create({
     marginBottom: 10
   },
   applyButton: {
-    marginTop: 50
+    marginTop: 10
   },
   label: {
   },
@@ -32,6 +32,11 @@ let styles = StyleSheet.create({
     backgroundColor: '#d94b41',
     borderColor: '#d94b41',
     color: '#fff'
+  },
+  warning: {
+    color: "#555",
+    fontSize: 11,
+    marginTop: 10
   }
 })
 
@@ -85,11 +90,11 @@ export default ({ navigation }: any) => {
   let applyButton = null;
   switch (applyButtonState) {
     case "noChange": applyButton =
-      <Button disabled={true} onPress={applySettings}>No Changes</Button>; break;
+      <Button disabled={true} onPress={applySettings} style={styles.applyButton}>No Changes</Button>; break;
     case "hasChange": applyButton =
-      <Button disabled={false} onPress={applySettings}>Apply</Button>; break;
+      <Button disabled={false} onPress={applySettings} style={styles.applyButton}>Apply</Button>; break;
     case "saved": applyButton =
-      <Button disabled={true} onPress={applySettings}>Applied</Button>; break;
+      <Button disabled={true} onPress={applySettings} style={styles.applyButton}>Applied</Button>; break;
   }
 
   return (
@@ -115,6 +120,8 @@ export default ({ navigation }: any) => {
           />
 
           {applyButton}
+
+          <Text style={styles.warning}>Changes will appear next time you open the application.</Text>
         </View>
       </View>
     </View>

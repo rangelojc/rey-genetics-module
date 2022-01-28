@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-import { StyleSheet, View } from 'react-native';
+import { Platform, StatusBar, StyleSheet, View } from 'react-native';
 import { Text, Button } from '@ui-kitten/components';
 
 import Icons from "./Icons";
@@ -8,6 +8,7 @@ import theme from "../theme/theme.json";
 
 const styles = StyleSheet.create({
   container: {
+    paddingTop: Platform.OS === 'android' ? StatusBar.currentHeight : 0,
     height: 300,
     paddingHorizontal: 20,
     borderBottomLeftRadius: 50,

@@ -56,7 +56,7 @@ export default StyleSheet.create({
     mainWrapperView: {
         flex: 1,
         paddingHorizontal: 8,
-        marginTop: -130,
+        marginTop: -90,
 
     },
     container: {
@@ -88,7 +88,8 @@ export default StyleSheet.create({
     },
     safearea: {
         flex: 1,
-        paddingTop: Platform.OS === 'android' ? StatusBar.currentHeight : 0
+        backgroundColor: theme["color-primary-500"],
+        // paddingTop: Platform.OS === 'android' ? StatusBar.currentHeight : 0
     },
     scrollable: {
         height: Dimensions.get('window').height - 82

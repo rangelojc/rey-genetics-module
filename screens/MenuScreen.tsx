@@ -6,7 +6,7 @@ import { Text, Button } from '@ui-kitten/components';
 import theme from "../theme/theme.json";
 import GlobalStyles from "../styles/GlobalStyles";
 
-import Cover from "../components/Cover";
+import CoverMenu from "../components/CoverMenu";
 import Icons from '../components/Icons';
 
 const styles = StyleSheet.create({
@@ -71,14 +71,14 @@ export default function MenuScreen({ navigation }: any) {
   }
 
   return (
-    <View style={GlobalStyles.mainContainer}>
-      <Cover menu="true" navigation={navigation} />
+    <ScrollView style={GlobalStyles.mainContainer}>
+      <CoverMenu menu="true" navigation={navigation} />
 
       <View style={{ ...GlobalStyles.mainWrapper, ...styles.container }}>
         <Image source={require('../assets/images/bg.jpg')} resizeMode="cover" style={GlobalStyles.mainBG}>
         </Image>
 
-        <ScrollView style={styles.buttonWrapper}>
+        <View style={styles.buttonWrapper}>
           <TouchableOpacity style={styles.menuItem} onPress={() => { navigate("Lessons") }}>
             <View style={styles.menuIcon}>
               <Icons.Book fill={theme['color-primary-500']} style={styles.menuIconImg} />
@@ -133,8 +133,8 @@ export default function MenuScreen({ navigation }: any) {
               <Text style={styles.menuDesc}>Minimize the application.</Text>
             </View>
           </TouchableOpacity >
-        </ScrollView>
+        </View>
       </View>
-    </View >
+    </ScrollView >
   )
 }

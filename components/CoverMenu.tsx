@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { StyleSheet, View, Image, ImageBackground, Dimensions, StatusBar, Platform } from 'react-native';
 import { Text, Button } from '@ui-kitten/components';
 
-import Icons from "../components/Icons";
+import Icons from "./Icons";
 import GlobalStyles from '../styles/GlobalStyles';
 import AsyncStorage from "../helpers/AsyncStorage"
 
@@ -11,17 +11,6 @@ import theme from "../theme/theme.json";
 
 const styles = StyleSheet.create({
   container: {
-    // paddingTop: Platform.OS === 'android' ? StatusBar.currentHeight : 0,
-    position: "relative",
-    height: 300,
-    paddingHorizontal: 20,
-    marginBottom: -90,
-    borderBottomLeftRadius: 30,
-    borderBottomRightRadius: 30,
-    backgroundColor: theme['color-primary-500'],
-    overflow: 'hidden',
-  },
-  containerFlat: {
     // paddingTop: Platform.OS === 'android' ? StatusBar.currentHeight : 0,
     position: "relative",
     height: 220,
@@ -34,7 +23,7 @@ const styles = StyleSheet.create({
     alignSelf: "flex-end",
     width: 60,
     marginTop: Platform.OS === 'android' ? (StatusBar.currentHeight || 0) + 5 : 20,
-    marginBottom: 5,
+    marginBottom: 40,
     backgroundColor: 'transparent',
     borderRadius: 50,
   },
@@ -49,11 +38,10 @@ const styles = StyleSheet.create({
     // backgroundColor: "rgba(0,0,0,0.1)",
   },
   textName: {
-    fontSize: 12,
+    fontSize: 26,
     fontWeight: '400',
     color: '#f1f1f1',
-    textAlign: "right",
-    marginRight: 5,
+    textAlign: "left",
     textShadowColor: 'rgba(0, 0, 0, 0.75)',
     textShadowOffset: { width: -1, height: 1 },
     textShadowRadius: 10
@@ -184,12 +172,8 @@ export default function Cover(props: any) {
           : <Image style={styles.avatar} source={require('../assets/images/avatars/female.png')} />
         }
 
-        {/* <Text style={styles.textHello}>Greetings,</Text> */}
-        {/* <Text style={styles.textName}>{`${firstName} ${lastName.charAt(0)}.`}</Text> */}
-
-        <Button style={styles.menuButton} accessoryLeft={Icons.Home}
-          onPress={goToMenu}>{""}</Button>
-
+        <Text style={styles.textHello}>Greetings,</Text>
+        <Text style={styles.textName}>{`${firstName}!`}</Text>
       </View>
     </React.Fragment>
   )
