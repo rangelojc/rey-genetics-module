@@ -13,7 +13,7 @@ const Page1 = () => {
   return (
     <View style={LessonStyles.page}>
       <Text style={LessonStyles.text}>
-        In this Lesson, you will study and understand the sex linkage and recombination. It was designed and written to help you learn and master the Sex Linkage in Genetics.
+        In this Lesson, you will study and understand the processes involved in Genetic Engineering and you will be able to learn the applications of Recombinant DNA. It was designed and written to help you learn and master the Recombinant DNA.
       </Text>
 
       <View style={{ ...LessonStyles.box, marginVertical: 10 }}>
@@ -21,9 +21,8 @@ const Page1 = () => {
           Learning Competency:
         </Text>
         <Text>
-          Explain sex linkage and recombination. (STEM_BIO11/12 -IIIa-b-2)
-          Describe modifications to Mendel’s classic ratios (gene interaction)
-          (STEM_BIO11/12 -IIIa-b-3)
+          Outline the processes involved in genetic engineering (STEM_BIO11/12- IIIa-b-6)
+          Discuss the applications of recombinant DNA (STEM_BIO11/12- IIIa-b-7)
         </Text>
       </View>
 
@@ -31,20 +30,19 @@ const Page1 = () => {
         Study Questions:
       </Text>
       <Text style={LessonStyles.text}>
-        1. What is Sex Linkage and Recombination? How do they differ? How do these
-        processes occur?
+        1. What is genetic engineering?
       </Text>
       <Text style={LessonStyles.text}>
-        2. What is Homologous Chromosomes?
+        2. What are the basic steps used in the genetic engineering of a bacterial cell. What components are needed and why?
       </Text>
       <Text style={LessonStyles.text}>
-        3. How will you define Crossing Over?
+        3. How does the recombinant DNA is inserted into a cell or organism? Be able to provide specific examples.
       </Text>
       <Text style={LessonStyles.text}>
-        4. What is Gene Interaction?
+        4. How will you describe the techniques used in the manipulation of DNA? What are the essential components of each process?
       </Text>
       <Text style={LessonStyles.text}>
-        5. How will you describe the modifications to Mendel’s Classic Ratios?
+        5. What are the different applications of genetic engineering.
       </Text>
     </View>
   )

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useIsFocused } from '@react-navigation/native';
 
-import { StyleSheet, View, Text, Modal, Dimensions, Touchable } from 'react-native';
+import { StyleSheet, View, Text, Modal, Dimensions, Touchable, ScrollView } from 'react-native';
 
 import GlobalStyles from "../../styles/GlobalStyles";
 import CoverHeader from "../../components/CoverHeader";
@@ -177,7 +177,7 @@ export default function QuizOpenScreen({ route, navigation }: any) {
   }
 
   return (
-    <View style={GlobalStyles.mainContainer}>
+    <ScrollView style={GlobalStyles.mainContainer}>
       <CoverHeader title={quizTitle} navigation={navigation} />
 
       <View style={GlobalStyles.mainWrapperView}>
@@ -232,6 +232,6 @@ export default function QuizOpenScreen({ route, navigation }: any) {
         </Modal>
 
       </View>
-    </View>
+    </ScrollView>
   );
 }
