@@ -308,7 +308,7 @@ const Page9 = () => {
   const imageList1: any = [
     {
       props: {
-        source: require('./resources/lesson4image4.png')
+        source: require('./resources/lesson4image5.png')
       }
     }
   ]
@@ -326,15 +326,31 @@ const Page9 = () => {
         There can be numerous reasons to create a <Text style={LessonStyles.boldText}>genetically modified organism (GMO) or transgenic organism</Text>, defined as a genetically modified organism that contains a gene from a different organism. Typically the hope is that the GMO will provide needed information or a product of value to society.
       </Text>
 
+      <Text style={LessonStyles.boldText}>
+        Source of DNA
+      </Text>
+
+      <Text style={LessonStyles.text}>
+        Genetically engineered organisms can be made so that a piece of DNA can be easily replicated, providing a large source of that DNA. For example, a gene associated with breast cancer can be spliced into the genome of E. coli, allowing for the rapid production of the gene so that it may be sequenced, studied, and manipulated, without requiring repeated tissue donations from human volunteers.
+      </Text>
+
+      <Text style={LessonStyles.boldText}>
+        Source of RNA
+      </Text>
+
+      <Text style={LessonStyles.text}>
+        <Text style={LessonStyles.boldText}>Antisense RNA</Text> is RNA that is complementary to the mRNA that will code for a protein. In cells it is made as a way to control target genes. There has been increasing interest in the use of antisense RNA as a way to prevent diseases that are caused by the production of a particular protein.
+      </Text>
+
       <TouchableOpacity onPress={() => setOpenImage1Modal(true)}>
         <Image
           style={{ ...LessonStyles.image, height: 200, width: Dimensions.get("window").width - 50 }}
-          source={require('./resources/lesson4image4.png')}
+          source={require('./resources/lesson4image5.png')}
         />
       </TouchableOpacity>
 
       <Text style={LessonStyles.smallText}>
-        Polymerase Chain Reaction (PCR). By Enzoklop (Own work) [CC BY-SA 3.0], via Wikimedia Commons
+        Antisense RNA. By Robinson R [CC BY 2.5], via Wikimedia Commons
       </Text>
 
       <ImageModal visible={openImage1Modal} setVisibility={setOpenImage1Modal} images={imageList1} />
@@ -344,12 +360,62 @@ const Page9 = () => {
 }
 
 
+const Page10 = () => {
+  const imageList1: any = [
+    {
+      props: {
+        source: require('./resources/lesson4image6.png')
+      }
+    }
+  ]
+
+  const [openImage1Modal, setOpenImage1Modal] = useState<boolean>(false)
+
+  return (
+    <View style={LessonStyles.page}>
+
+      <Text style={LessonStyles.boldText}>
+        Source of Protein
+      </Text>
+
+      <Text style={LessonStyles.text}>
+        Since microbes replicate so rapidly, it can be extremely advantageous to use them to manufacture proteins of interest or value. Given the right promoters, bacteria will express genes for proteins that are not naturally found in bacteria, such as cytokine. Genetically engineered cells have been used to make a wide variety of proteins of use to humans, such as insulin or human growth hormone.
+      </Text>
+
+      <TouchableOpacity onPress={() => setOpenImage1Modal(true)}>
+        <Image
+          style={{ ...LessonStyles.image, height: 250, width: Dimensions.get("window").width - 50 }}
+          source={require('./resources/lesson4image6.png')}
+        />
+      </TouchableOpacity>
+
+      <ImageModal visible={openImage1Modal} setVisibility={setOpenImage1Modal} images={imageList1} />
+
+    </View>
+  )
+}
+
+
+const Page11 = () => {
+  return (
+    <View style={LessonStyles.page}>
+
+      <Text style={LessonStyles.boldText}>
+        Key Words
+      </Text>
+
+      <Text style={LessonStyles.text}>
+        genetic engineering, cloning, target DNA, green fluorescent protein (GFP), cloning vector, restriction endonuclease, sticky ends, DNA ligase, recombinant DNA, chimera, transformation, electroporation, genomic library, shotgun cloning, Agrobacterium tumefaciens, Ti plasmid, gene gun, microprojectiles, viral vector, gel electrophoresis, DNA ladder, polymerase chain reaction (PCR), template DNA, primer, nucleotide, DNA polymerase, denaturing, annealing, extending, genetically modified organism (GMO), transgenic organisms, antisense RNA.
+      </Text>
+    </View>
+  )
+}
 
 
 const Topic4 = () => {
   return (
     <LessonEngine pages={[
-      <Page1 />, <Page2 />, <Page3 />, <Page4 />, <Page5 />, <Page6 />, <Page7 />, <Page8 />, <Page9 />
+      <Page1 />, <Page2 />, <Page3 />, <Page4 />, <Page5 />, <Page6 />, <Page7 />, <Page8 />, <Page9 />, <Page10 />, <Page11 />
     ]} />
   )
 }
