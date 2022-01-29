@@ -47,6 +47,10 @@ export default ({ navigation }: any) => {
 
   const [applyButtonState, setApplyButtonState] = React.useState('noChange'); //noChange, hasChange, saved
 
+  React.useEffect(() => {
+    initState();
+  }, [])
+
   const onInput = function (stateSetter: any, val: string) {
     stateSetter(val);
     setApplyButtonState('hasChange');
@@ -60,6 +64,9 @@ export default ({ navigation }: any) => {
       firstName: fn,
       lastName: ln
     });
+
+    setFirstName(fn);
+    setLastName(ln);
   }
 
   const applySettings = async function () {
@@ -81,11 +88,6 @@ export default ({ navigation }: any) => {
     setFirstName("");
     setLastName("");
   }
-
-  React.useEffect(() => {
-    initState();
-  }, [])
-
 
   let applyButton = null;
   switch (applyButtonState) {
@@ -121,7 +123,7 @@ export default ({ navigation }: any) => {
 
           {applyButton}
 
-          <Text style={styles.warning}>Changes will appear next time you open the application.</Text>
+          <Text style={styles.warning}>Gender cannot be changed, please clear the application data to reset the app.</Text>
         </View>
       </View>
     </View>

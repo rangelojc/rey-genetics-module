@@ -8,6 +8,7 @@ import GlobalStyles from '../styles/GlobalStyles';
 import AsyncStorage from "../helpers/AsyncStorage"
 
 import theme from "../theme/theme.json";
+import { useIsFocused } from '@react-navigation/native';
 
 const styles = StyleSheet.create({
   container: {
@@ -141,9 +142,11 @@ export default function Cover(props: any) {
   const [lastName, setLastName]: any = React.useState('');
   const [sex, setSex]: any = React.useState<string>('');
 
+  const isFocused = useIsFocused();
+
   useEffect(() => {
     initState();
-  }, [])
+  }, [isFocused])
 
   const initState = async function () {
     let fn: any = await AsyncStorage.get('firstName');
