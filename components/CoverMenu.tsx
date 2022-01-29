@@ -173,7 +173,7 @@ export default function Cover(props: any) {
         }
 
         <Text style={styles.textHello}>Greetings,</Text>
-        <Text style={styles.textName}>{`${firstName}!`}</Text>
+        <Text style={styles.textName}>{`${firstName} ${lastName.charAt(0)}.`}</Text>
       </View>
     </React.Fragment>
   )
