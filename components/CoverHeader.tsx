@@ -11,8 +11,8 @@ const styles = StyleSheet.create({
     paddingTop: 20,
     height: 300,
     paddingHorizontal: 20,
-    borderBottomLeftRadius: 50,
-    borderBottomRightRadius: 50,
+    borderBottomLeftRadius: 30,
+    borderBottomRightRadius: 30,
     overflow: 'hidden',
     backgroundColor: theme['color-primary-500']
   },

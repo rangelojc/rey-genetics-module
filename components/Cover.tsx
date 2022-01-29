@@ -21,14 +21,6 @@ const styles = StyleSheet.create({
     backgroundColor: theme['color-primary-500'],
     overflow: 'hidden',
   },
-  containerFlat: {
-    // paddingTop: Platform.OS === 'android' ? StatusBar.currentHeight : 0,
-    position: "relative",
-    height: 220,
-    paddingHorizontal: 20,
-    backgroundColor: theme['color-primary-500'],
-    overflow: 'hidden',
-  },
   avatar: {
     height: 60,
     alignSelf: "flex-end",
