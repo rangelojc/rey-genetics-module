@@ -6,7 +6,7 @@ export default StyleSheet.create({
   //lessons
   page: {
     padding: 5,
-    minHeight: 200,
+    minHeight: 100,
     width: "100%"
   },
   title: {

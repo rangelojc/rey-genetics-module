@@ -58,8 +58,6 @@ const Page2 = () => {
         Processes Involved in Genetic Engineering
       </Text>
 
-      <View style={LessonStyles.spacer}></View>
-
       <Text style={LessonStyles.text}>
         <Text style={LessonStyles.boldText}>Genetic engineering </Text>
         is the deliberate manipulation of DNA, using techniques in the laboratory to alter genes in organisms. Even if the organisms being altered are not microbes, the substances and techniques used are often taken from microbes and adapted for use in more complex organisms.
