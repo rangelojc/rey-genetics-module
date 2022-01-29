@@ -28,6 +28,7 @@ export default StyleSheet.create({
   },
   boldText: {
     fontSize: 16,
+    marginBottom: 5,
     fontWeight: "bold",
     color: "#111"
   },
@@ -43,6 +44,12 @@ export default StyleSheet.create({
   },
   text: {
     fontSize: 16,
+    textAlign: "justify",
+    marginBottom: 5,
+    color: "#111"
+  },
+  smallText: {
+    fontSize: 12,
     textAlign: "justify",
     marginBottom: 5,
     color: "#111"

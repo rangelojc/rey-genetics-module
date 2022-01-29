@@ -1,49 +1,61 @@
-import React, { Component } from "react";
-import { View, Text } from "react-native";
-import SafeAreaView from "react-native-safe-area-view";
+import React, { Component, useEffect, useRef, useState } from "react";
+import { View, Text, ScrollView, Dimensions, Image, Modal, Button, Pressable } from "react-native";
+import ImageViewer from 'react-native-image-zoom-viewer';
 
-const styles = {
-  container: {
 
-  },
-  title: {
+import GlobalStyles from "../../styles/GlobalStyles";
+import LessonStyles from "../../styles/LessonStyles";
+import LessonEngine from "../../screens/Lesson/LessonEngine";
+import { TouchableOpacity } from "react-native-gesture-handler";
 
-  }
-}
-export default class Topic4 extends Component {
-  constructor(props: any) {
-    super(props);
-  }
 
-  public render() {
-    return (
-      <View style={styles.container}>
-        <Text style={styles.title}>Lesson 4 content</Text>
+const Page1 = () => {
+  return (
+    <View style={LessonStyles.page}>
+      <Text style={LessonStyles.text}>
+        In this Lesson, you will study and understand the sex linkage and recombination. It was designed and written to help you learn and master the Sex Linkage in Genetics.
+      </Text>
 
-        <Text>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      <View style={{ ...LessonStyles.box, marginVertical: 10 }}>
+        <Text style={LessonStyles.boldText}>
+          Learning Competency:
         </Text>
-
         <Text>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-        </Text>
-
-        <Text>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-        </Text>
-
-        <Text>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-        </Text>
-
-        <Text>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-        </Text>
-
-        <Text>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          Explain sex linkage and recombination. (STEM_BIO11/12 -IIIa-b-2)
+          Describe modifications to Mendel’s classic ratios (gene interaction)
+          (STEM_BIO11/12 -IIIa-b-3)
         </Text>
       </View>
-    );
-  }
+
+      <Text style={LessonStyles.boldText}>
+        Study Questions:
+      </Text>
+      <Text style={LessonStyles.text}>
+        1. What is Sex Linkage and Recombination? How do they differ? How do these
+        processes occur?
+      </Text>
+      <Text style={LessonStyles.text}>
+        2. What is Homologous Chromosomes?
+      </Text>
+      <Text style={LessonStyles.text}>
+        3. How will you define Crossing Over?
+      </Text>
+      <Text style={LessonStyles.text}>
+        4. What is Gene Interaction?
+      </Text>
+      <Text style={LessonStyles.text}>
+        5. How will you describe the modifications to Mendel’s Classic Ratios?
+      </Text>
+    </View>
+  )
 }
+
+
+const Topic4 = () => {
+  return (
+    <LessonEngine pages={[
+      <Page1 />
+    ]} />
+  )
+}
+export default Topic4;
