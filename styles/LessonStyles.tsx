@@ -46,7 +46,8 @@ export default StyleSheet.create({
     fontSize: 16,
     textAlign: "justify",
     marginBottom: 5,
-    color: "#111"
+    color: "#111",
+    lineHeight: 20,
   },
   smallText: {
     fontSize: 12,
