@@ -8,7 +8,7 @@ import theme from "../theme/theme.json";
 
 const styles = StyleSheet.create({
   container: {
-    paddingTop: Platform.OS === 'android' ? StatusBar.currentHeight : 0,
+    paddingTop: 20,
     height: 300,
     paddingHorizontal: 20,
     borderBottomLeftRadius: 50,
@@ -18,17 +18,17 @@ const styles = StyleSheet.create({
   },
   textLabel: {
     marginTop: 20,
-    fontSize: 16,
-    fontWeight: '300',
-    color: '#f1f1f1'
-  },
-  textHead: {
     fontSize: 20,
     fontWeight: '300',
     color: '#f1f1f1'
   },
+  textHead: {
+    fontSize: 24,
+    fontWeight: '300',
+    color: '#f1f1f1'
+  },
   backButton: {
-    marginTop: 20,
+    marginTop: 0,
     width: 50,
     height: 50,
     borderRadius: 8,

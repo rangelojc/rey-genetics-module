@@ -89,7 +89,7 @@ export default StyleSheet.create({
     safearea: {
         flex: 1,
         backgroundColor: theme["color-primary-500"],
-        // paddingTop: Platform.OS === 'android' ? StatusBar.currentHeight : 0
+        paddingTop: Platform.OS === 'android' ? StatusBar.currentHeight : 0
     },
     scrollable: {
         height: Dimensions.get('window').height - 82

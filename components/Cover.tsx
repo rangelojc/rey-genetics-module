@@ -33,7 +33,7 @@ const styles = StyleSheet.create({
     height: 60,
     alignSelf: "flex-end",
     width: 60,
-    marginTop: Platform.OS === 'android' ? (StatusBar.currentHeight || 0) + 5 : 20,
+    marginTop: 20,
     marginBottom: 5,
     backgroundColor: 'transparent',
     borderRadius: 50,
@@ -68,7 +68,7 @@ const styles = StyleSheet.create({
   },
   menuButton: {
     position: "absolute",
-    top: Platform.OS === 'android' ? (StatusBar.currentHeight || 0) + 5 : 20,
+    top: 20,
     left: 20,
     width: 50,
     height: 50,
