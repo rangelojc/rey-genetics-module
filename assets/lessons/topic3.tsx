@@ -420,11 +420,212 @@ const Page10 = () => {
   )
 }
 
+const Page11 = () => {
+  return (
+    <View style={LessonStyles.page}>
+      <Text style={LessonStyles.boldText}>
+        Transcription
+      </Text>
+
+      <Text style={LessonStyles.text}>
+        Transcription is the process by which DNA is copied (transcribed) to mRNA, which carries the information needed for protein synthesis. Transcription takes place in two broad steps. First, pre-messenger RNA is formed, with the involvement of RNA polymerase enzymes. The process relies on Watson-Crick base pairing, and the resultant single strand of RNA is the reverse-complement of the original DNA sequence. The pre-messenger RNA is then "edited" to produce the desired mRNA molecule in a process called RNA splicing.
+      </Text>
+
+      <Text style={LessonStyles.boldText}>
+        Formation of pre-messenger RNA
+      </Text>
+
+      <Text style={LessonStyles.text}>
+        The mechanism of transcription has parallels in that of DNA replication. As with DNA replication, partial unwinding of the double helix must occur before transcription can take place, and it is the RNA polymerase enzymes that catalyze this process.
+        Unlike DNA replication, in which both strands are copied, only one strand is transcribed. The strand that contains the gene is called the sense strand, while the complementary strand is the antisense strand. The mRNA produced in transcription is a copy of the sense strand, but it is the antisense strand that is transcribed.
+      </Text>
+    </View>
+  )
+}
+
+
+
+const Page12 = () => {
+  const imageList1: any = [
+    {
+      props: {
+        source: require('./resources/lesson3image8.png')
+      }
+    }
+  ]
+
+  const [openImage1Modal, setOpenImage1Modal] = useState<boolean>(false)
+
+  return (
+    <View style={LessonStyles.page}>
+      <Text style={LessonStyles.text}>
+        Ribonucleoside triphosphates (NTPs) align along the antisense DNA strand, with Watson-Crick base pairing (A pairs with U). RNA polymerase joins the ribonucleotides together to form a pre-messenger RNA molecule that is complementary to a region of the antisense DNA strand. Transcription ends when the RNA polymerase enzyme reaches a triplet of bases that is read as a "stop" signal. The DNA molecule re-winds to re-form the double helix.
+      </Text>
+
+      <TouchableOpacity onPress={() => setOpenImage1Modal(true)}>
+        <Image
+          style={{ ...LessonStyles.image, height: 250, width: Dimensions.get("window").width - 50 }}
+          source={require('./resources/lesson3image8.png')}
+        />
+      </TouchableOpacity>
+
+      <Text style={LessonStyles.smallText}>
+        Transcription | Simplified representation of the formation of pre-messenger RNA (orange) from double-stranded DNA (blue) in transcription.
+      </Text>
+
+
+
+      <ImageModal visible={openImage1Modal} setVisibility={setOpenImage1Modal} images={imageList1} />
+
+    </View>
+  )
+}
+
+
+const Page13 = () => {
+  const imageList1: any = [
+    {
+      props: {
+        source: require('./resources/lesson3image9.png')
+      }
+    }
+  ]
+
+  const [openImage1Modal, setOpenImage1Modal] = useState<boolean>(false)
+
+  return (
+    <View style={LessonStyles.page}>
+      <Text style={LessonStyles.boldText}>
+        RNA splicing
+      </Text>
+
+      <Text style={LessonStyles.text}>
+        The pre-messenger RNA thus formed contains introns which are not required for protein synthesis. The pre-messenger RNA is chopped up to remove the introns and create messenger RNA (mRNA) in a process called RNA splicing.
+      </Text>
+
+      <TouchableOpacity onPress={() => setOpenImage1Modal(true)}>
+        <Image
+          style={{ ...LessonStyles.image, height: 120, width: Dimensions.get("window").width - 50 }}
+          source={require('./resources/lesson3image9.png')}
+        />
+      </TouchableOpacity>
+
+      <Text style={LessonStyles.smallText}>
+        RNA splicing | Introns are spliced from the pre-messenger RNA to give messenger RNA (mRNA).
+      </Text>
+
+
+      <ImageModal visible={openImage1Modal} setVisibility={setOpenImage1Modal} images={imageList1} />
+
+    </View>
+  )
+}
+
+
+const Page14 = () => {
+  const imageList1: any = [
+    {
+      props: {
+        source: require('./resources/lesson3image10.png')
+      }
+    }
+  ]
+
+  const [openImage1Modal, setOpenImage1Modal] = useState<boolean>(false)
+
+  return (
+    <View style={LessonStyles.page}>
+      <Text style={LessonStyles.boldText}>
+        Alternative splicing
+      </Text>
+
+      <Text style={LessonStyles.text}>
+        In alternative splicing, individual exons are either spliced or included, giving rise to several different possible mRNA products. Each mRNA product codes for a different protein isoform; these protein isoforms differ in their peptide sequence and therefore their biological activity. It is estimated that up to 60% of human gene products undergo alternative splicing. Several different mechanisms of alternative splicing are known, two of which are illustrated.
+      </Text>
+
+      <TouchableOpacity onPress={() => setOpenImage1Modal(true)}>
+        <Image
+          style={{ ...LessonStyles.image, height: 250, width: Dimensions.get("window").width - 50 }}
+          source={require('./resources/lesson3image10.png')}
+        />
+      </TouchableOpacity>
+
+      <Text style={LessonStyles.smallText}>
+        Alternative splicing | Several different mechanisms of alternative splicing exist − a cassette exon can be either included in or excluded from the final RNA (top), or two cassette exons may be mutually exclusive (bottom).
+      </Text>
+
+      <Text style={LessonStyles.text}>
+        Alternative splicing contributes to protein diversity − a single gene transcript (RNA) can have thousands of different splicing patterns, and will therefore code for thousands of different proteins: a diverse proteome is generated from a relatively limited genome. Splicing is important in genetic regulation (alteration of the splicing pattern in response to cellular conditions changes protein expression). Perhaps not surprisingly, abnormal splicing patterns can lead to disease states including cancer.
+      </Text>
+
+
+      <ImageModal visible={openImage1Modal} setVisibility={setOpenImage1Modal} images={imageList1} />
+
+    </View>
+  )
+}
+
+
+
+const Page15 = () => {
+  return (
+    <View style={LessonStyles.page}>
+      <Text style={LessonStyles.boldText}>
+        Reverse transcription
+      </Text>
+
+      <Text style={LessonStyles.text}>
+        In reverse transcription, RNA is "reverse transcribed" into DNA. This process, catalyzed by reverse transcriptase enzymes, allows retroviruses, including the human immunodeficiency virus (HIV), to use RNA as their genetic material. Reverse transcriptase enzymes have also found applications in biotechnology, allowing scientists to convert RNA to DNA for techniques such as PCR.
+      </Text>
+
+    </View>
+  )
+}
+
+const Page16 = () => {
+  const imageList1: any = [
+    {
+      props: {
+        source: require('./resources/lesson3image11.png')
+      }
+    }
+  ]
+
+  const [openImage1Modal, setOpenImage1Modal] = useState<boolean>(false)
+
+  return (
+    <View style={LessonStyles.page}>
+      <Text style={LessonStyles.boldText}>
+        Translation
+      </Text>
+
+      <Text style={LessonStyles.text}>
+        The mRNA formed in transcription is transported out of the nucleus, into the cytoplasm, to the ribosome (the cell's protein synthesis factory). Here, it directs protein synthesis. Messenger RNA is not directly involved in protein synthesis − transfer RNA (tRNA) is required for this. The process by which mRNA directs protein synthesis with the assistance of tRNA is called translation.
+        The ribosome is a very large complex of RNA and protein molecules. Each three-base stretch of mRNA (triplet) is known as a codon, and one codon contains the information for a specific amino acid. As the mRNA passes through the ribosome, each codon interacts with the anticodon of a specific transfer RNA (tRNA) molecule by Watson-Crick base pairing. This tRNA molecule carries an amino acid at its 3′-terminus, which is incorporated into the growing protein chain. The tRNA is then expelled from the ribosome. Figure shows the steps involved in protein synthesis.
+      </Text>
+
+      <TouchableOpacity onPress={() => setOpenImage1Modal(true)}>
+        <Image
+          style={{ ...LessonStyles.image, height: 350, width: Dimensions.get("window").width - 50 }}
+          source={require('./resources/lesson3image11.png')}
+        />
+      </TouchableOpacity>
+
+      <Text style={LessonStyles.smallText}>
+        Translation | (a) and (b) tRNA molecules bind to the two binding sites of the ribosome, and by hydrogen bonding to the mRNA; (c) a peptide bond forms between the two amino acids to make a dipeptide, while the tRNA molecule is left uncharged; (d) the uncharged tRNA molecule leaves the ribosome, while the ribosome moves one codon to the right (the dipeptide is translocated from one binding site to the other); (e) another tRNA molecule binds; (f) a peptide bond forms between the two amino acids to make a tripeptide; (g) the uncharged tRNA molecule leaves the ribosome.
+      </Text>
+
+      <ImageModal visible={openImage1Modal} setVisibility={setOpenImage1Modal} images={imageList1} />
+
+    </View>
+  )
+}
 
 const Topic3 = () => {
   return (
     <LessonEngine pages={[
-      <Page1 />, <Page2 />, <Page3 />, <Page4 />, <Page5 />, <Page6 />, <Page7 />, <Page8 />, <Page9 />, <Page10 />
+      <Page1 />, <Page2 />, <Page3 />, <Page4 />, <Page5 />, <Page6 />, <Page7 />, <Page8 />, <Page9 />, <Page10 />,
+      <Page11 />, <Page12 />, <Page13 />, <Page14 />, <Page15 />, <Page16 />
     ]} />
   )
 }
