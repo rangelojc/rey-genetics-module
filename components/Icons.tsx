@@ -14,4 +14,8 @@ export default {
   Home: (props: any) => <Icon {...props} name='home-outline' />,
   Close: (props: any) => <Icon {...props} name='close-outline' />,
   Minimize: (props: any) => <Icon {...props} name='minimize-outline' />,
+
+  Next: (props: any) => <Icon {...props} name='arrow-right-outline' />,
+  Previous: (props: any) => <Icon {...props} name='arrow-left-outline' />,
+
 }

@@ -7,6 +7,7 @@ import GlobalStyles from "../../styles/GlobalStyles";
 import LessonStyles from "../../styles/LessonStyles";
 import LessonEngine from "../../screens/Lesson/LessonEngine";
 import { TouchableOpacity } from "react-native-gesture-handler";
+import ImageModal from "../../components/ImageModal";
 
 
 const Page1 = () => {
@@ -86,10 +87,7 @@ const Page2 = () => {
         Linkage analysis is also a key tool for discovering the location and ultimate identity of genes for inherited diseases.
       </Text>
 
-
-      <Modal visible={openImage1Modal} transparent={true}>
-        <ImageViewer imageUrls={imageList1} onCancel={() => setOpenImage1Modal(false)} enableSwipeDown={true} backgroundColor={"white"} />
-      </Modal>
+      <ImageModal visible={openImage1Modal} setVisibility={setOpenImage1Modal} images={imageList1} />
 
     </View>
   )
@@ -128,9 +126,7 @@ const Page3 = () => {
       </Text>
 
 
-      <Modal visible={openImage1Modal} transparent={true}>
-        <ImageViewer imageUrls={imageList1} onCancel={() => setOpenImage1Modal(false)} enableSwipeDown={true} backgroundColor={"white"} />
-      </Modal>
+      <ImageModal visible={openImage1Modal} setVisibility={setOpenImage1Modal} images={imageList1} />
 
     </View>
   )
@@ -243,13 +239,9 @@ const Page7 = () => {
       </Text>
 
 
-      <Modal visible={openImage1Modal} transparent={true}>
-        <ImageViewer imageUrls={imageList1} onCancel={() => setOpenImage1Modal(false)} enableSwipeDown={true} backgroundColor={"white"} />
-      </Modal>
+      <ImageModal visible={openImage1Modal} setVisibility={setOpenImage1Modal} images={imageList1} />
 
-      <Modal visible={openImage2Modal} transparent={true}>
-        <ImageViewer imageUrls={imageList2} onCancel={() => setOpenImage2Modal(false)} enableSwipeDown={true} backgroundColor={"white"} />
-      </Modal>
+      <ImageModal visible={openImage2Modal} setVisibility={setOpenImage2Modal} images={imageList2} />
 
     </View>
   )
@@ -319,9 +311,7 @@ const Page8 = () => {
         />
       </TouchableOpacity>
 
-      <Modal visible={openImage1Modal} transparent={true}>
-        <ImageViewer imageUrls={imageList1} onCancel={() => setOpenImage1Modal(false)} enableSwipeDown={true} backgroundColor={"white"} />
-      </Modal>
+      <ImageModal visible={openImage1Modal} setVisibility={setOpenImage1Modal} images={imageList1} />
 
     </View>
   )
@@ -379,9 +369,8 @@ const Page9 = () => {
         />
       </TouchableOpacity>
 
-      <Modal visible={openImage1Modal} transparent={true}>
-        <ImageViewer imageUrls={imageList1} onCancel={() => setOpenImage1Modal(false)} enableSwipeDown={true} backgroundColor={"white"} />
-      </Modal>
+      <ImageModal visible={openImage1Modal} setVisibility={setOpenImage1Modal} images={imageList1} />
+
 
     </View>
   )
@@ -450,14 +439,8 @@ const Page10 = () => {
         <Text style={LessonStyles.text}> Flower color in sweet pea</Text>
       </Text>
 
-      <Modal visible={openImage1Modal} transparent={true}>
-        <ImageViewer imageUrls={imageList1} onCancel={() => setOpenImage1Modal(false)} enableSwipeDown={true} backgroundColor={"white"} />
-      </Modal>
-
-      <Modal visible={openImage2Modal} transparent={true}>
-        <ImageViewer imageUrls={imageList2} onCancel={() => setOpenImage2Modal(false)} enableSwipeDown={true} backgroundColor={"white"} />
-      </Modal>
-
+      <ImageModal visible={openImage1Modal} setVisibility={setOpenImage1Modal} images={imageList1} />
+      <ImageModal visible={openImage2Modal} setVisibility={setOpenImage2Modal} images={imageList2} />
     </View>
   )
 }
@@ -515,14 +498,8 @@ const Page11 = () => {
         Because both genes are required for the correct phenotype, this epistatic interaction is called <Text style={LessonStyles.boldText}>complementary gene action.</Text>
       </Text>
 
-      <Modal visible={openImage1Modal} transparent={true}>
-        <ImageViewer imageUrls={imageList1} onCancel={() => setOpenImage1Modal(false)} enableSwipeDown={true} backgroundColor={"white"} />
-      </Modal>
-
-      <Modal visible={openImage2Modal} transparent={true}>
-        <ImageViewer imageUrls={imageList2} onCancel={() => setOpenImage2Modal(false)} enableSwipeDown={true} backgroundColor={"white"} />
-      </Modal>
-
+      <ImageModal visible={openImage1Modal} setVisibility={setOpenImage1Modal} images={imageList1} />
+      <ImageModal visible={openImage2Modal} setVisibility={setOpenImage2Modal} images={imageList2} />
     </View>
   )
 }
@@ -589,13 +566,8 @@ const Page12 = () => {
         Because the presence of the dominant W allele masks the effects of either the G or g allele, this type of interaction is called <Text style={LessonStyles.boldText}>dominant epistasis.</Text>
       </Text>
 
-      <Modal visible={openImage1Modal} transparent={true}>
-        <ImageViewer imageUrls={imageList1} onCancel={() => setOpenImage1Modal(false)} enableSwipeDown={true} backgroundColor={"white"} />
-      </Modal>
-
-      <Modal visible={openImage2Modal} transparent={true}>
-        <ImageViewer imageUrls={imageList2} onCancel={() => setOpenImage2Modal(false)} enableSwipeDown={true} backgroundColor={"white"} />
-      </Modal>
+      <ImageModal visible={openImage1Modal} setVisibility={setOpenImage1Modal} images={imageList1} />
+      <ImageModal visible={openImage2Modal} setVisibility={setOpenImage2Modal} images={imageList2} />
     </View>
   )
 }
@@ -643,9 +615,8 @@ const Page13 = () => {
         <Text style={LessonStyles.boldText}> dominant suppression epistasis.</Text>
       </Text>
 
-      <Modal visible={openImage1Modal} transparent={true}>
-        <ImageViewer imageUrls={imageList1} onCancel={() => setOpenImage1Modal(false)} enableSwipeDown={true} backgroundColor={"white"} />
-      </Modal>
+      <ImageModal visible={openImage1Modal} setVisibility={setOpenImage1Modal} images={imageList1} />
+
     </View>
   )
 }
@@ -681,9 +652,8 @@ const Page14 = () => {
         />
       </TouchableOpacity>
 
-      <Modal visible={openImage1Modal} transparent={true}>
-        <ImageViewer imageUrls={imageList1} onCancel={() => setOpenImage1Modal(false)} enableSwipeDown={true} backgroundColor={"white"} />
-      </Modal>
+      <ImageModal visible={openImage1Modal} setVisibility={setOpenImage1Modal} images={imageList1} />
+
     </View>
   )
 }

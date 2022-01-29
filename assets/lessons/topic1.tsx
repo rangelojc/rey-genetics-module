@@ -7,6 +7,7 @@ import GlobalStyles from "../../styles/GlobalStyles";
 import LessonStyles from "../../styles/LessonStyles";
 import LessonEngine from "../../screens/Lesson/LessonEngine";
 import { TouchableOpacity } from "react-native-gesture-handler";
+import ImageModal from "../../components/ImageModal";
 
 const styles = {
   container: {
@@ -126,9 +127,8 @@ const Page3 = () => {
         In the genotype 25 % are homozygous with the dominant trait, 50 % are heterozygous genetic carriers of the recessive trait, 25 % are homozygous with the recessive genetic trait and expressing the recessive character.
       </Text>
 
-      <Modal visible={openImage1Modal} transparent={true}>
-        <ImageViewer imageUrls={imageList1} onCancel={() => setOpenImage1Modal(false)} enableSwipeDown={true} backgroundColor={"white"} />
-      </Modal>
+      <ImageModal visible={openImage1Modal} setVisibility={setOpenImage1Modal} images={imageList1} />
+
     </View>
   )
 }
@@ -185,9 +185,8 @@ const Page5 = () => {
         The Law of Segregation of genes applies when two individuals, both heterozygous for a certain trait are crossed, for example hybrids of the F1-generation. The offspring in the F2-generation differ in genotype and phenotype, so that the characteristics of the grandparents (P-generation) regularly occur again. In a dominant-recessive inheritance an average of 25% are homozygous with the dominant trait, 50% are heterozygous showing the dominant trait in the phenotype (genetic carriers), 25% are homozygous with the recessive trait and therefore express the recessive trait in the phenotype. The genotypic ratio is 1 : 2 : 1, the phenotypic ratio is 3 : 1.
       </Text>
 
-      <Modal visible={openImage1Modal} transparent={true}>
-        <ImageViewer imageUrls={imageList1} onCancel={() => setOpenImage1Modal(false)} enableSwipeDown={true} backgroundColor={"white"} />
-      </Modal>
+      <ImageModal visible={openImage1Modal} setVisibility={setOpenImage1Modal} images={imageList1} />
+
     </View>
   )
 }
@@ -238,9 +237,8 @@ const Page7 = () => {
         Molecular proof of segregation of genes was subsequently found through observation of meiosis by two scientists independently, the German botanist Oscar Hertwig in 1876, and the Belgian zoologist Edouard Van Beneden in 1883. Most alleles are located in chromosomes in the cell nucleus. Paternal and maternal chromosomes get separated in meiosis, because during spermatogenesis the chromosomes are segregated on the four sperm cells that arise from one mother sperm cell, and during oogenesis the chromosomes are distributed between the polar bodies and the egg cell. Every individual organism contains two alleles for each trait. They segregate (separate) during meiosis such that each gamete contains only one of the alleles. When the gametes unite in the zygote the alleles—one from the mother one from the father—get passed on to the offspring. An offspring thus receives a pair of alleles for a trait by inheriting homologous chromosomes from the parent organisms: one allele for each trait from each parent. Heterozygous individuals with the dominant trait in the phenotype are genetic carriers of the recessive trait.
       </Text>
 
-      <Modal visible={openImage1Modal} transparent={true}>
-        <ImageViewer imageUrls={imageList1} onCancel={() => setOpenImage1Modal(false)} enableSwipeDown={true} backgroundColor={"white"} />
-      </Modal>
+      <ImageModal visible={openImage1Modal} setVisibility={setOpenImage1Modal} images={imageList1} />
+
     </View>
   )
 }
@@ -311,9 +309,8 @@ const Page10 = () => {
       </Text>
 
 
-      <Modal visible={openImage1Modal} transparent={true}>
-        <ImageViewer imageUrls={imageList1} onCancel={() => setOpenImage1Modal(false)} enableSwipeDown={true} backgroundColor={"white"} />
-      </Modal>
+      <ImageModal visible={openImage1Modal} setVisibility={setOpenImage1Modal} images={imageList1} />
+
 
     </View>
   )
@@ -346,9 +343,7 @@ const Page11 = () => {
         When the parents are homozygous for two different genetic traits (llSS and LL sP sP), their children in the F1 generation are heterozygous at both loci and only show the dominant phenotypes (Ll S sP). P-Generation: Each parent possesses one dominant and one recessive trait purebred (homozygous). In this example, solid coat color is indicated by S (dominant), Piebald spotting by sP (recessive), while fur length is indicated by L (short, dominant) or l (long, recessive). All individuals are equal in genotype and phenotype. In the F2 generation all combinations of coat color and fur length occur: 9 are short haired with solid colour, 3 are short haired with spotting, 3 are long haired with solid colour and 1 is long haired with spotting. The traits are inherited independently, so that new combinations can occur. Average number ratio of phenotypes 9:3:3:1
       </Text>
 
-      <Modal visible={openImage1Modal} transparent={true}>
-        <ImageViewer imageUrls={imageList1} onCancel={() => setOpenImage1Modal(false)} enableSwipeDown={true} backgroundColor={"white"} />
-      </Modal>
+      <ImageModal visible={openImage1Modal} setVisibility={setOpenImage1Modal} images={imageList1} />
 
 
     </View>
@@ -379,9 +374,8 @@ const Page12 = () => {
         For example 3 pairs of homologous chromosomes allow 8 possible combinations, all equally likely to move into the gamete during meiosis. This is the main reason for independent assortment. The equation to determine the number of possible combinations given the number of homologous pairs = 2x (x = number of homologous pairs)
       </Text>
 
-      <Modal visible={openImage1Modal} transparent={true}>
-        <ImageViewer imageUrls={imageList1} onCancel={() => setOpenImage1Modal(false)} enableSwipeDown={true} backgroundColor={"white"} />
-      </Modal>
+      <ImageModal visible={openImage1Modal} setVisibility={setOpenImage1Modal} images={imageList1} />
+
 
     </View>
   )

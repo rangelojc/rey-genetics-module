@@ -3,6 +3,8 @@ import { View, Text, ScrollView, Dimensions, Image } from "react-native";
 import { Button } from '@ui-kitten/components';
 
 import GlobalStyles from "../../styles/GlobalStyles";
+import useSwipe from "../../hooks/useSwipe";
+import Icons from "../../components/Icons";
 
 const styles = {
   container: {
@@ -45,9 +47,9 @@ const LessonEngine = (props: any) => {
   return (
     <View style={styles.container}>
       <View style={styles.navWrapper}>
-        <Button size="small" disabled={page === 1} onPress={() => { navigatePage(page - 1) }}>Previous</Button>
+        <Button size="small" disabled={page === 1} onPress={() => { navigatePage(page - 1) }} accessoryLeft={Icons.Previous}>{ }</Button>
         <Text>{"Page " + page}</Text>
-        <Button size="small" disabled={page === maxPage} onPress={() => { navigatePage(page + 1) }} > Next</Button>
+        <Button size="small" disabled={page === maxPage} onPress={() => { navigatePage(page + 1) }} accessoryLeft={Icons.Next}>{ }</Button>
       </View>
 
       {jsxPage}
