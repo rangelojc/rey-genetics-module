@@ -46,7 +46,8 @@ export default StyleSheet.create({
     mainContainer: {
         flex: 1,
         paddingTop: 0,
-        backgroundColor: theme["color-secondary-200"], //ff7072
+        //backgroundColor: theme["color-secondary-200"], //ff7072
+        backgroundColor: "#f9f9f9"
     },
     mainWrapper: {
         flex: 1,

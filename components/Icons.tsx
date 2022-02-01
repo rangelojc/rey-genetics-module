@@ -17,5 +17,5 @@ export default {
 
   Next: (props: any) => <Icon {...props} name='arrow-right-outline' />,
   Previous: (props: any) => <Icon {...props} name='arrow-left-outline' />,
-
+  Star: (props: any) => <Icon {...props} name='star' />,
 }

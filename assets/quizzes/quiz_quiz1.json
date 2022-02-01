@@ -1,6 +1,7 @@
 {
   "title": "Quiz 1: Mendel's Law of Inheritance",
   "description": "Test your ability to predict genotypes and phenotypes of parents and offsprings using the laws of inheritance.",
+  "passingScore": 1,
   "items": [
     {
       "question": "This is law states that some alleles are dominant while others are recessive; an organism with at least one dominant allele will display the effect of the dominant allele.",
@@ -34,6 +35,39 @@
       ],
       "answer": 3,
       "explanation": "Blah blah"
+    },
+    {
+      "question": "Random question # 4",
+      "choices": [
+        "Red",
+        "Potato",
+        "Car",
+        "John"
+      ],
+      "answer": 3,
+      "explanation": "Explanation here foo bar baz baz baz law which states that during gamete formation, the alleles for each gene segregate from each other so that each gamete carries only one allele "
+    },
+    {
+      "question": "Random question # 5",
+      "choices": [
+        "Red",
+        "Potato",
+        "Car",
+        "John"
+      ],
+      "answer": 4,
+      "explanation": "Explanation here foo bar baz baz baz law which states that during gamete formation, the alleles for each gene segregate from each other so that each gamete carries only one allele "
+    },
+    {
+      "question": "Random question # 6",
+      "choices": [
+        "Red",
+        "Potato",
+        "Car",
+        "John"
+      ],
+      "answer": 2,
+      "explanation": "Explanation here foo bar baz baz baz law which states that during gamete formation, the alleles for each gene segregate from each other so that each gamete carries only one allele "
     }
   ]
 }
