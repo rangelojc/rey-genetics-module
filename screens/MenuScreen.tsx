@@ -11,9 +11,9 @@ import Icons from '../components/Icons';
 
 const styles = StyleSheet.create({
   container: {
-    paddingTop: 20,
+    paddingTop: 15,
     backgroundColor: theme["color-secondary-200"],
-    height: Dimensions.get("window").height,
+    height: Dimensions.get("window").height - 220,
   },
   menuItem: {
     width: '100%',
