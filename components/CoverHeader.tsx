@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react';
 
-import { Platform, StatusBar, StyleSheet, View } from 'react-native';
+import { Image, Platform, StatusBar, StyleSheet, View } from 'react-native';
 import { Text, Button } from '@ui-kitten/components';
+
+import AsyncStorage from "../helpers/AsyncStorage"
 
 import Icons from "./Icons";
 import theme from "../theme/theme.json";
@@ -28,12 +30,23 @@ const styles = StyleSheet.create({
     color: '#f1f1f1'
   },
   backButton: {
-    marginTop: 0,
+    position: "absolute",
+    top: 20,
+    left: 20,
     width: 50,
     height: 50,
     borderRadius: 8,
     borderColor: 'transparent',
     backgroundColor: "rgba(255,255,255,0.3)"
+  },
+  avatar: {
+    height: 60,
+    alignSelf: "flex-end",
+    width: 60,
+    marginTop: 0,
+    marginBottom: 0,
+    backgroundColor: 'transparent',
+    borderRadius: 50,
   },
 })
 
@@ -70,17 +83,29 @@ const PolkaDots = () => {
 }
 
 export default function CoverHeader(props: any) {
-  const navigation = props.navigation;
 
-  const goBack = function () {
-    navigation.goBack();
+  const [sex, setSex]: any = React.useState<string>('');
+
+
+  useEffect(() => {
+    initState();
+  }, [])
+
+  const initState = async function () {
+    let s: any = await AsyncStorage.get('sex');
+    setSex(s);
   }
 
   return (
     <React.Fragment>
       <View style={styles.container}>
         <Button style={styles.backButton} accessoryLeft={Icons.Back}
-          onPress={goBack}>{""}</Button>
+          onPress={props.navigation.goBack}>{""}</Button>
+
+        {sex === "Male" ? <Image style={styles.avatar} source={require('../assets/images/avatars/male.png')} />
+          : <Image style={styles.avatar} source={require('../assets/images/avatars/female.png')} />
+        }
+
         <Text style={styles.textLabel}>You are viewing,</Text>
         <Text style={styles.textHead}>{props.title}</Text>
         <PolkaDots />
