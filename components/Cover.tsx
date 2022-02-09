@@ -13,11 +13,11 @@ const styles = StyleSheet.create({
   container: {
     // paddingTop: Platform.OS === 'android' ? StatusBar.currentHeight : 0,
     position: "relative",
-    height: 220,
+    height: 220, //300
     paddingHorizontal: 20,
-    marginBottom: -90,
-    borderBottomLeftRadius: 30,
-    borderBottomRightRadius: 30,
+    marginBottom: -50,
+    // borderBottomLeftRadius: 30,
+    // borderBottomRightRadius: 30,
     backgroundColor: theme['color-primary-500'],
     overflow: 'hidden',
   },
@@ -70,7 +70,8 @@ const styles = StyleSheet.create({
   },
   headerBG: {
     left: -10,
-    width: "120%"
+    width: "120%",
+    opacity: 0.8
   }
 })
 
