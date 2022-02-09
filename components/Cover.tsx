@@ -13,7 +13,7 @@ const styles = StyleSheet.create({
   container: {
     // paddingTop: Platform.OS === 'android' ? StatusBar.currentHeight : 0,
     position: "relative",
-    height: 300,
+    height: 220,
     paddingHorizontal: 20,
     marginBottom: -90,
     borderBottomLeftRadius: 30,
@@ -68,6 +68,10 @@ const styles = StyleSheet.create({
     borderColor: 'transparent',
     backgroundColor: "rgba(0,0,0,0.3)"
   },
+  headerBG: {
+    left: -10,
+    width: "120%"
+  }
 })
 
 const polkaStyles = StyleSheet.create({
@@ -144,9 +148,12 @@ export default function Cover(props: any) {
   const [firstName, setFirstName]: any = React.useState('');
   const [lastName, setLastName]: any = React.useState('');
   const [sex, setSex]: any = React.useState<string>('');
+  const [coverImg, setCoverImg]: any = React.useState<any>({});
 
   useEffect(() => {
     initState();
+
+    initBg();
   }, [])
 
   const initState = async function () {
@@ -159,6 +166,14 @@ export default function Cover(props: any) {
     setSex(s);
   }
 
+  const initBg = () => {
+    if (props.type === "Lessons") setCoverImg(require('../assets/images/lessons.png'));
+    if (props.type === "Quizzes") setCoverImg(require('../assets/images/quizzes.png'))
+    if (props.type === "Activities") setCoverImg(require('../assets/images/activities.png'))
+    if (props.type === "Videos") setCoverImg(require('../assets/images/videos.png'))
+    if (props.type === "Setting") setCoverImg(require('../assets/images/settings.png'))
+  }
+
   const goToMenu = function () {
     props.navigation.replace('Menu');
   }
@@ -166,8 +181,9 @@ export default function Cover(props: any) {
   return (
     <React.Fragment>
       <View style={styles.container}>
-        <Image source={require('../assets/images/bg1.jpg')} resizeMode="cover" style={GlobalStyles.headerBG}>
-        </Image>
+
+
+        <Image source={coverImg} resizeMode="cover" style={{ ...GlobalStyles.headerBG, ...styles.headerBG }} />
 
         {/* <Icons.Setting fill='#fff' styles={styles.setting}
           onPress={() => { props.navigation.navigate('Settings') }}
