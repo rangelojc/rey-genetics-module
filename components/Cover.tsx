@@ -172,7 +172,7 @@ export default function Cover(props: any) {
     if (props.type === "Quizzes") setCoverImg(require('../assets/images/quizzes.png'))
     if (props.type === "Activities") setCoverImg(require('../assets/images/activities.png'))
     if (props.type === "Videos") setCoverImg(require('../assets/images/videos.png'))
-    if (props.type === "Setting") setCoverImg(require('../assets/images/settings.png'))
+    if (props.type === "Settings") setCoverImg(require('../assets/images/settings.png'))
   }
 
   const goToMenu = function () {

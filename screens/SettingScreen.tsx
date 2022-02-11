@@ -8,6 +8,7 @@ import theme from "../theme/theme.json";
 import AsyncStorage from "../helpers/AsyncStorage"
 import GlobalStyles from "../styles/GlobalStyles";
 import CoverHeader from "../components/CoverHeader";
+import Cover from '../components/Cover';
 
 
 let styles = StyleSheet.create({
@@ -101,9 +102,9 @@ export default ({ navigation }: any) => {
 
   return (
     <View style={GlobalStyles.mainContainer}>
-      <CoverHeader title={"Settings"} navigation={navigation} />
+      <Cover navigation={navigation} type="Settings" />
 
-      <View style={GlobalStyles.mainWrapperView}>
+      <View style={GlobalStyles.mainWrapper}>
         <View style={styles.container}>
           <Text style={styles.label}>First Name</Text>
           <Input
