@@ -1,9 +1,10 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { useAssets } from 'expo-asset';
 
-import { StyleSheet, View, Text, ScrollView } from 'react-native';
+import { StyleSheet, View, Text, ScrollView, Dimensions } from 'react-native';
 
 import { Video, AVPlaybackStatus } from 'expo-av';
+import * as ScreenOrientation from 'expo-screen-orientation';
 
 import GlobalStyles from "../../styles/GlobalStyles";
 import CoverHeader from "../../components/CoverHeader";
@@ -43,6 +44,15 @@ const VideoComponent = (props: any) => {
   const video = useRef(null);
   const [status, setStatus] = useState();
 
+  function setOrientation() {
+    if (Dimensions.get('window').height > Dimensions.get('window').width) {
+      ScreenOrientation.lockAsync(ScreenOrientation.OrientationLock.LANDSCAPE);
+    }
+    else {
+      ScreenOrientation.lockAsync(ScreenOrientation.OrientationLock.PORTRAIT);
+    }
+  }
+
   return (
     <Video
       ref={video}
@@ -52,6 +62,7 @@ const VideoComponent = (props: any) => {
       resizeMode="contain"
       isLooping={false}
       shouldPlay={true}
+      onFullscreenUpdate={setOrientation}
     //onPlaybackStatusUpdate={status => setStatus(status)}
     />
   )
