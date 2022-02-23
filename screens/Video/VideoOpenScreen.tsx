@@ -1,8 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { Asset, useAssets } from 'expo-asset';
+import { useAssets } from 'expo-asset';
 
-import { StyleSheet, View, Text, Dimensions, ScrollView } from 'react-native';
-import { useIsFocused } from '@react-navigation/native';
+import { StyleSheet, View, Text, ScrollView } from 'react-native';
 
 import { Video, AVPlaybackStatus } from 'expo-av';
 
@@ -85,8 +84,8 @@ export default function VideoOpenScreen({ route, navigation }: any) {
   const [videoFile, setVideoFile] = useState<any>({})
 
   useEffect(() => {
-    const videoTitleStr: string = route.params.params.videoTitle;
-    const videoFileName: string = route.params.params.videoFileName;
+    const videoTitleStr: string = route.params.videoTitle;
+    const videoFileName: string = route.params.videoFileName;
 
     setVideoTitle(videoTitleStr);
     setVideoFile(videoFiles?.find(v => v.name === videoFileName) || {});

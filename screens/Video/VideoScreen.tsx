@@ -13,7 +13,7 @@ export default function VideoScreen(props: any) {
       <Cover navigation={props.navigation} type="Videos" />
 
       <View style={GlobalStyles.mainWrapper}>
-        <VideoList style={{ marginTop: 10 }}></VideoList>
+        <VideoList style={{ marginTop: 10 }} navigation={props.navigation}></VideoList>
       </View>
     </ScrollView>
   );
