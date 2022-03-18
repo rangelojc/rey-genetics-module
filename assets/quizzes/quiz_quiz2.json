@@ -1,0 +1,117 @@
+{
+  "title": "Quiz 2: Sex Linkage",
+  "description": "Test your knowledge about sex linkage and recombination and how these processes occur.",
+  "passingScore": 7,
+  "items": [
+    {
+      "question": "This refers to the association and co-inheritance of two DNA segments because they reside close together on the same chromosome.",
+      "choices": [
+        "Sex Linkage",
+        "X-Linked Traits",
+        "Y-Linked Traits",
+        "Crossing Over"
+      ],
+      "answer": 1,
+      "explanation": "Sex Linkage refers to the association and co-inheritance of two DNA segments because they reside close together on the same chromosome. . The existence of linkage and the frequency of recombination allow chromosomes to be mapped to determine the relative positions and distances of the genes and other DNA sequences on them."
+    },
+    {
+      "question": "This is the process by which chromosome become separated during crossing over, which occurs during meiosis.",
+      "choices": [
+        "Sex Linkage",
+        "X-Linked Traits",
+        "Y-Linked Traits",
+        "Recombination"
+      ],
+      "answer": 4,
+      "explanation": "Recombination is the process by which they become separated during crossing over, which  occurs during meiosis . The existence of linkage and the frequency of recombination allow chromosomes to be mapped to determine the relative positions and distances of the genes and other DNA sequences on them. Linkage analysis is also a key tool for discovering the location and ultimate identity of genes for inherited diseases.      "
+    },
+    {
+      "question": "Why does the existence of genetics and the frequency of recombination allow chromosomes to be mapped?",
+      "choices": [
+        "to determine the arrangement of the genes and other DNA sequences on them",
+        "to determine the relative positions and distances of the genes and other DNA sequences on them",
+        "to determine the processes of the genes and other DNA sequences on them",
+        " to determine the components of the genes and other DNA sequences on them"
+      ],
+      "answer": 2,
+      "explanation": "The existence of linkage and the frequency of recombination allow chromosomes to be mapped to determine the relative positions and distances of the genes and other DNA sequences on them. Linkage analysis is also a key tool for discovering the location and ultimate identity of genes for inherited diseases."
+    },
+    {
+      "question": "Why are humans called diploid organisms?",
+      "choices": [
+        "because they have one allele at each genetic locus, with one allele inherited from each parent",
+        "because they have two alleles at each genetic locus, with one allele inherited from each parent",
+        "because they have three alleles at each genetic locus, with one allele inherited from each parent",
+        "because they have two pairs of alleles at each genetic locus, with one allele inherited from each parent"
+      ],
+      "answer": 2,
+      "explanation": "An allele is a variant form of a gene. Some genes have a variety of different forms, which are located at the same position, or genetic locus, on a chromosome. Humans are called diploid organisms because they have two alleles at each genetic locus, with one allele inherited from each parent."
+    },
+    {
+      "question": "What do you think will happen during crossing over to genetic material?",
+      "choices": [
+        "Genetic material will be swapped which occurs in the germ line.",
+        "Genetic material will be not swapped which occurs in the germ line.",
+        "Genetic material will be stopped which occurs in the germ line.",
+        "Genetic material will not be stopped which occurs in the germ line."
+      ],
+      "answer": 1,
+      "explanation": "Crossing over is the swapping of genetic material that occurs in the germ line. During the formation of egg and sperm cells, also known as meiosis, paired chromosomes from each parent align so that similar DNA sequences from the paired chromosomes cross over one another."
+    },
+    {
+      "question": "The loci examined in linkage analysis need not be genes of functional significance; indeed, anonymous segments of DNA called _________.",
+      "choices": [
+        "genetic markers",
+        "genetic initiators",
+        "genetic terminators",
+        "genetic loci"
+      ],
+      "answer": 1,
+      "explanation": "A genetic marker is a gene or DNA sequence with a known location on a chromosome that can be used to identify individuals or species. It can be described as a variation (which may arise due to mutation or alteration in the genomic loci) that can be observed."
+    },
+    {
+      "question": "What is the interaction between two or more genes to control a single phenotype?",
+      "choices": [
+        "Epistasis",
+        "Recombination",
+        "Crossing Over",
+        "Epictasis"
+      ],
+      "answer": 1,
+      "explanation": "Epistasis is a circumstance where the expression of one gene is affected by the expression of one or more independently inherited genes. For example, if the expression of gene #2 depends on the expression of gene #1, but gene #1 becomes inactive, then the expression of gene #2 will not occur.      "
+    },
+    {
+      "question": "Why does the suppressor - genetic factor prevents the expression of alleles at a second locus?",
+      "choices": [
+        "because suppressor is an example of epistatic interaction",
+        "because suppressor does not express alleles",
+        "because suppressor is not an example of epistatic interaction",
+        "because suppressor does express alleles"
+      ],
+      "answer": 1,
+      "explanation": "Suppressor is a genetic factor that prevents the expression of alleles at a second locus; this is an example of epistatic interaction. Remember that epistasis is the interaction between different genes. If one allele or allelic pair masks the expression of an allele at the second gene, that allele or allelic pair is epistatic to the second gene. Therefore, the following table summarizes the four epistatic interactions discussed above.      "
+    },
+    {
+      "question": "If a pure line pea plant with colored flowers (genotype = CCPP) is crossed to pure line, homozygous recessive plant with white flowers, what will be the F1 plant genotype?",
+      "choices": [
+        "Ccpp",
+        "ccPp",
+        "CcPp",
+        "CCPP"
+      ],
+      "answer": 3,
+      "explanation": " If a pure line pea plant with colored flowers (genotype = CCPP) is crossed to pure line, homozygous recessive plant with white flowers, the F1 plant will have colored flowers and a CcPp genotype. The normal ratio from selfing dihybrid is 9:3:3:1, but epistatic interactions of the C and P genes will give a modified 9:7 ratio. The following table describes the interactions for each genotype and how the ratio occurs."
+    },
+    {
+      "question": "What do you infer if one allele or allelic pair masks the expression of an allele at the second gene?",
+      "choices": [
+        "that allele or allelic pair is not epistatic to the second gene",
+        "that allele or allelic pair is epistatic to the second gene",
+        "that allele or allelic is not epistatic to the second gene.",
+        "that allele or allelic is suppressed to the second gene."
+      ],
+      "answer": 2,
+      "explanation": "Remember that epistasis is the interaction between different genes. If one allele or allelic pair masks the expression of an allele at the second gene, that allele or allelic pair is epistatic to the second gene. Therefore, the following table summarizes the four epistatic interactions discussed above."
+    }
+  ]
+}

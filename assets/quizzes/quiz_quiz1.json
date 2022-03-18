@@ -1,10 +1,10 @@
 {
   "title": "Quiz 1: Mendel's Law of Inheritance",
   "description": "Test your ability to predict genotypes and phenotypes of parents and offsprings using the laws of inheritance.",
-  "passingScore": 1,
+  "passingScore": 7,
   "items": [
     {
-      "question": "This is law states that some alleles are dominant while others are recessive; an organism with at least one dominant allele will display the effect of the dominant allele.",
+      "question": "This law states that some alleles are dominant while others are recessive; an organism with at least one dominant allele will display the effect of the dominant allele.",
       "choices": [
         "Law of Dominance and Uniformity",
         "Law of Segregation",
@@ -12,7 +12,7 @@
         "Law of Recessiveness"
       ],
       "answer": 1,
-      "explanation": "Explanation here foo bar baz baz baz law which states that during gamete formation, the alleles for each gene segregate from each other so that each gamete carries only one allele "
+      "explanation": "The principle of dominant inheritance discovered by Mendel states that in a heterozygote the dominant allele will cause the recessive allele to be 'masked': that is, not expressed in the phenotype. Only if an individual is homozygous with respect to the recessive allele will the recessive trait be expressed. Therefore, a cross between a homozygous dominant and a homozygous recessive organism yields a heterozygous organism whose phenotype displays only the dominant trait."
     },
     {
       "question": "This is the law which states that during gamete formation, the alleles for each gene segregate from each other so that each gamete carries only one allele for each gene.",
@@ -23,10 +23,10 @@
         "Law of Recessiveness"
       ],
       "answer": 2,
-      "explanation": "Blah blah"
+      "explanation": "The Law of Segregation of genes applies when two individuals, both heterozygous for a certain trait are crossed, for example hybrids of the F1-generation."
     },
     {
-      "question": "This law states that genes of different traits can segregate independently during the formation of gametes.",
+      "question": "This law states that genes of different traits can segregate independently during the formation of gametes.      ",
       "choices": [
         "Law of Dominance and Uniformity",
         "Law of Segregation",
@@ -34,40 +34,84 @@
         "Law of Recessiveness"
       ],
       "answer": 3,
-      "explanation": "Blah blah"
+      "explanation": "The Law of Independent Assortment states that alleles for separate traits are passed independently of one another. That is, the biological selection of an allele for one trait has nothing to do with the selection of an allele for any other trait. Mendel found support for this law in his dihybrid cross experiments."
     },
     {
-      "question": "Random question # 4",
+      "question": "If two parents are mated with each other who differ in one genetic characteristic for which they are both _____________ (each pure-bred), all offspring in the first generation (F1) are equal to the examined characteristic in genotype and phenotype showing the dominant trait.",
       "choices": [
-        "Red",
-        "Potato",
-        "Car",
-        "John"
-      ],
-      "answer": 3,
-      "explanation": "Explanation here foo bar baz baz baz law which states that during gamete formation, the alleles for each gene segregate from each other so that each gamete carries only one allele "
-    },
-    {
-      "question": "Random question # 5",
-      "choices": [
-        "Red",
-        "Potato",
-        "Car",
-        "John"
-      ],
-      "answer": 4,
-      "explanation": "Explanation here foo bar baz baz baz law which states that during gamete formation, the alleles for each gene segregate from each other so that each gamete carries only one allele "
-    },
-    {
-      "question": "Random question # 6",
-      "choices": [
-        "Red",
-        "Potato",
-        "Car",
-        "John"
+        "Heterozygous",
+        "Homozygous",
+        "Dominant",
+        "Recessive"
       ],
       "answer": 2,
-      "explanation": "Explanation here foo bar baz baz baz law which states that during gamete formation, the alleles for each gene segregate from each other so that each gamete carries only one allele "
+      "explanation": "Homozygous describes the genetic condition or the genetic state where an individual has inherited the same DNA sequence for a particular gene from both their biological mother and their biological father."
+    },
+    {
+      "question": "Why does Mendel states that in a heterozygote, the dominant allele will cause the recessive allele to be masked?",
+      "choices": [
+        "The principle of dominant inheritance discovered by Mendel states that in a heterozygote the dominant allele will cause the recessive allele to be 'masked': that is, not expressed in the phenotype.",
+        "The principle of dominant inheritance discovered by Mendel states that in a heterozygote the dominant allele will cause the recessive allele to be 'revealed': that is, not expressed in the phenotype.",
+        "The principle of dominant inheritance discovered by Mendel states that in a heterozygote the dominant allele will cause the recessive allele to be 'half-concealed': that is, not expressed in the phenotype.",
+        "The principle of dominant inheritance discovered by Mendel states that in a heterozygote the dominant allele will cause the recessive allele to be 'fully-concealed': that is, not expressed in the phenotype."
+      ],
+      "answer": 1,
+      "explanation": "The principle of dominant inheritance discovered by Mendel states that in a heterozygote the dominant allele will cause the recessive allele to be 'masked': that is, not expressed in the phenotype. Only if an individual is homozygous with respect to the recessive allele will the recessive trait be expressed. Therefore, a cross between a homozygous dominant and a homozygous recessive organism yields a heterozygous organism whose phenotype displays only the dominant trait."
+    },
+    {
+      "question": " A cross between two four o'clock (Mirabilis jalapa) plants shows an exception to Mendel's principle, called __________.",
+      "choices": [
+        "Codominance",
+        "Recessiveness",
+        "Incomplete Dominance",
+        "Incomplete Recessiveness"
+      ],
+      "answer": 3,
+      "explanation": "In Mirabilis jalapa and Antirrhinum majus are examples for intermediate inheritance which is incomplete dominance."
+    },
+    {
+      "question": "In a dominant-recessive inheritance an average of 25% are homozygous with the dominant trait, 50% are heterozygous showing the dominant trait in the phenotype (genetic carriers), 25% are homozygous with the recessive trait and therefore express the recessive trait in the phenotype, what will be the genotypic and phenotypic ratio?",
+      "choices": [
+        "The genotypic ratio is 1 : 2 : 1, the phenotypic ratio is 3 : 1",
+        "The genotypic ratio is 2 : 2 : 1, the phenotypic ratio is 3 : 1",
+        "The genotypic ratio is 2 : 1 : 3, the phenotypic ratio is 3 : 1",
+        "The genotypic ratio is 2 : 1 : 2, the phenotypic ratio is 3 : 1"
+      ],
+      "answer": 1,
+      "explanation": "The Law of Segregation of genes applies when two individuals, both heterozygous for a certain trait are crossed, for example hybrids of the F1-generation. The offspring in the F2-generation differ in genotype and phenotype, so that the characteristics of the grandparents (P-generation) regularly occur again. In a dominant-recessive inheritance an average of 25% are homozygous with the dominant trait, 50% are heterozygous showing the dominant trait in the phenotype (genetic carriers), 25% are homozygous with the recessive trait and therefore express the recessive trait in the phenotype. The genotypic ratio is 1 : 2 : 1, the phenotypic ratio is 3 : 1."
+    },
+    {
+      "question": "Why do Paternal and maternal chromosomes get separated in Meiosis?",
+      "choices": [
+        "because after spermatogenesis and oogenesis the chromosomes are segregated on the four cells that arise from one mother cell",
+        "because during spermatogenesis and oogenesis the chromosomes are segregated on the four cells that arise from one mother cell",
+        "because before spermatogenesis and oogenesis the chromosomes are segregated on the four cells that arise from one mother cell",
+        "None of the above"
+      ],
+      "answer": 2,
+      "explanation": "Independent assortment occurs in eukaryotic organisms during meiotic metaphase I, and produces a gamete with a mixture of the organism's chromosomes. The physical basis of the independent assortment of chromosomes is the random orientation of each bivalent chromosome along the metaphase plate with respect to the other bivalent chromosomes. Along with crossing over, independent assortment increases genetic diversity by producing novel genetic combinations."
+    },
+    {
+      "question": "Independent assortment occurs in which type of organisms during Meiotic Phase I?",
+      "choices": [
+        "prokaryotic organisms",
+        "eukaryotic organisms",
+        "unicellular organisms",
+        "multicellular organisms"
+      ],
+      "answer": 2,
+      "explanation": "Independent assortment occurs in eukaryotic organisms during meiotic metaphase I, and produces a gamete with a mixture of the organism's chromosomes. The physical basis of the independent assortment of chromosomes is the random orientation of each bivalent chromosome along the metaphase plate with respect to the other bivalent chromosomes. Along with crossing over, independent assortment increases genetic diversity by producing novel genetic combinations."
+    },
+    {
+      "question": "For human gametes, with 23 chromosomes, which of the following is the number of possible combinations.",
+      "choices": [
+        "8,388,600",
+        "8,308,608",
+        "8,368,608",
+        "8,388,608"
+      ],
+      "answer": 4,
+      "explanation": "In independent assortment, the chromosomes that result are randomly sorted from all possible maternal and paternal chromosomes. Because zygotes end up with a mix instead of a pre-defined 'set' from either parent, chromosomes are therefore considered assorted independently. As such, the zygote can end up with any combination of paternal or maternal chromosomes. For human gametes, with 23 chromosomes, the number of possibilities is 223 or 8,388,608 possible combinations. This contributes to the genetic variability of progeny. Generally, the recombination of genes has important implications for many evolutionary processes."
     }
   ]
 }
