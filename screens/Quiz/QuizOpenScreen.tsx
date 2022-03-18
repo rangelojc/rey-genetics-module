@@ -7,6 +7,7 @@ import GlobalStyles from "../../styles/GlobalStyles";
 import CoverHeader from "../../components/CoverHeader";
 
 import Quiz1Json from "../../assets/quizzes/quiz_quiz1.json"
+import Quiz2Json from "../../assets/quizzes/quiz_quiz2.json"
 import { Button } from '@ui-kitten/components';
 
 import theme from "../../theme/theme.json"
@@ -131,6 +132,18 @@ const modalStyles = StyleSheet.create({
     elevation: 4,
     borderRadius: 5,
   },
+  containerAnswer: {
+    alignSelf: "center",
+    marginVertical: "auto",
+    width: Dimensions.get("window").width - 40,
+    height: "auto",
+    maxHeight: 600,
+    paddingHorizontal: 20,
+    paddingTop: 20,
+    backgroundColor: '#fff',
+    elevation: 4,
+    borderRadius: 5,
+  },
   expText: {
     fontSize: 16,
     color: "#111",
@@ -201,6 +214,7 @@ export default function QuizOpenScreen({ route, navigation }: any) {
   useEffect(() => {
     switch (quizName) {
       case "quiz1": setActiveQuiz(Quiz1Json); break;
+      case "quiz2": setActiveQuiz(Quiz2Json); break;
     }
   }, [quizName])
 
@@ -317,7 +331,7 @@ export default function QuizOpenScreen({ route, navigation }: any) {
 
         <Modal visible={showAnswerModal} transparent={true}>
           <View style={modalStyles.backdrop}>
-            <View style={modalStyles.container}>
+            <ScrollView style={modalStyles.containerAnswer}>
               <Text style={modalStyles.expText}>{answerExplanation}</Text>
 
               <Text style={modalStyles.correctAnswerText}>
@@ -356,7 +370,7 @@ export default function QuizOpenScreen({ route, navigation }: any) {
                   setAnswerModal(false);
                   setAnswerExplanation("");
                 }}>OK</Button>
-            </View>
+            </ScrollView>
           </View>
         </Modal>
 
@@ -364,7 +378,7 @@ export default function QuizOpenScreen({ route, navigation }: any) {
           <View style={modalStyles.backdrop}>
             <View style={modalStyles.container}>
               <Text style={modalStyles.scoreText}>{`You got ${score} ${score === 1 ? "point" : "points"}`}</Text>
-              <Text style={modalStyles.scoreMsgText}>{score >= activeQuiz.passingScore ? "Good job!" : "Try again next time!"}</Text>
+              <Text style={modalStyles.scoreMsgText}>{score >= activeQuiz.passingScore ? "Congratulations! You have passed the quiz!" : "Try again next time!"}</Text>
 
               <Button size="medium"
                 style={{
