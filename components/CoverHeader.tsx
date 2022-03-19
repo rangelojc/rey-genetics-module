@@ -106,7 +106,7 @@ export default function CoverHeader(props: any) {
           : <Image style={styles.avatar} source={require('../assets/images/avatars/female.png')} />
         }
 
-        <Text style={styles.textLabel}>You are viewing,</Text>
+        <Text style={styles.textLabel}>You are {props.quiz ? "taking" : "viewing"},</Text>
         <Text style={styles.textHead}>{props.title}</Text>
         <PolkaDots />
       </View>

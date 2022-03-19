@@ -1,18 +1,117 @@
 {
-  "title": "Quiz 2: Sex Linkage",
-  "description": "Test your knowledge about sex linkage and recombination and how these processes occur.",
+  "title": "Quiz 4: Sex Linkage",
+  "description": "Evaluate your knowledge in the processes involved in genetic engineering.",
   "passingScore": 7,
   "items": [
     {
-      "question": "",
+      "question": "This is the deliberate manipulation of DNA, using techniques in the laboratory to alter genes in organisms.",
       "choices": [
-        "",
-        "",
-        "",
-        ""
+        "Genetic Engineering",
+        "Cloning",
+        "Electroporation",
+        "Ligation"
       ],
       "answer": 1,
-      "explanation": ""
+      "explanation": "Genetic engineering is the deliberate manipulation of DNA, using techniques in the laboratory to alter genes in organisms. Even if the organisms being altered are not microbes, the substances and techniques used are often taken from microbes and adapted for use in more complex organisms."
+    },
+    {
+      "question": "Which of the following is not one of the steps in cloning?",
+      "choices": [
+        "Isolate DNA of interest",
+        "Cut DNA with restriction endonucleases",
+        "Combine target and vector DNA",
+        "None of the above"
+      ],
+      "answer": 4,
+      "explanation": "The steps in cloning are: Isolate DNA of interest, Cut DNA with restriction endonucleases and Combine target and vector DNA"
+    },
+    {
+      "question": "Why do scientists utilize a natural process to do genetic engineering of plants by inserting foreign DNA into the Ti plasmid and removing the genes necessary for disease?",
+      "choices": [
+        "It allows the production of transgenic plants",
+        "It does not allow the production of transgenic plants",
+        "It replaces the production of transgenic plants",
+        "It does not replace the production of transgenic plants"
+      ],
+      "answer": 1,
+      "explanation": "Scientists utilize this natural process to do genetic engineering of plants by inserting foreign DNA into the Ti plasmid and removing the genes necessary for disease, allowing for the production of transgenic plants."
+    },
+    {
+      "question": "You are a Genetic Engineer, what would you do to deliver exogenous DNA, RNA, or protein to cells?",
+      "choices": [
+        "Use a gene gun or biolistic particle delivery system",
+        "Use a genetic clothing",
+        "Use a viral vector",
+        "Use a Gel Electrophoresis"
+      ],
+      "answer": 1,
+      "explanation": "In genetic engineering, a gene gun or biolistic particle delivery system is a device used to deliver exogenous DNA, RNA, or protein to cells. "
+    },
+    {
+      "question": "Why do we use Gel electrophoresis to separate mixtures of DNA, RNA, or proteins according to molecular size?",
+      "choices": [
+        "In gel electrophoresis, the molecules to be separated are pulled by an electrical field through a gel that contains small pores.",
+        "In gel electrophoresis, the molecules to be separated are not pulled by an electrical field through a gel that contains small pores.",
+        "In gel electrophoresis, the molecules to be separated are pushed by an electrical field through a gel that contains small pores.",
+        "In gel electrophoresis, the molecules to be separated are not pushed by an electrical field through a gel that contains small pores."
+      ],
+      "answer": 3,
+      "explanation": "Gel electrophoresis is a laboratory method used to separate mixtures of DNA, RNA, or proteins according to molecular size. In gel electrophoresis, the molecules to be separated are pushed by an electrical field through a gel that contains small pores."
+    },
+    {
+      "question": "This is a method used to copy or amplify DNA in vitro.",
+      "choices": [
+        "Polymerase Chain Reaction",
+        "genetic cloning",
+        "viral vector",
+        "Gel Electrophoresis"
+      ],
+      "answer": 1,
+      "explanation": "Polymerase chain reaction is a method widely used to rapidly make millions to billions of copies of a specific DNA sample, allowing scientists to take a very small sample of DNA and amplify it to a large enough amount to study in detail."
+    },
+    {
+      "question": "This is defined as an organism that contains a gene from a different organism.",
+      "choices": [
+        "Genetically Modified Organism",
+        "Genetically Non-Modified Organism",
+        "Viral Vector",
+        "Genetic Cloning"
+      ],
+      "answer": 1,
+      "explanation": "A genetically modified organism (GMO) is an animal, plant, or microbe whose DNA has been altered using genetic engineering techniques. For thousands of years, humans have used breeding methods to modify organisms. Corn, cattle, and even dogs have been selectively bred over generations to have certain desired traits."
+    },
+    {
+      "question": "Why does antisense oligonucleotide,  as a single stranded RNA, should be complementary to a protein coding messenger RNA (mRNA)? ",
+      "choices": [
+        "It hybridizes, and thereby blocks its translation into protein.",
+        "It does not hybridizes its translation into protein.",
+        "It hybridizes, but does not block its translation into protein.",
+        "It only blocks its translation into protein."
+      ],
+      "answer": 1,
+      "explanation": "Antisense RNA (asRNA), also referred to as antisense transcript, natural antisense transcript (NAT) or antisense oligonucleotide,  is a single stranded RNA that is complementary to a protein coding messenger RNA (mRNA) with which it hybridizes, and thereby blocks its translation into protein."
+    },
+    {
+      "question": "Why do viral vectors are used as tools by molecular biologists to deliver genetic material into cells?",
+      "choices": [
+        "Because this process can be performed outside a living organism or in cell culture.",
+        "Because this process can be performed on the environment of a living organism or in cell culture.",
+        "Because this process can be performed inside a living organism or in cell culture.",
+        "Because this process can be performed on the habitat of a living organism or in cell culture."
+      ],
+      "answer": 3,
+      "explanation": "Viral vectors are tools commonly used by molecular biologists to deliver genetic material into cells. This process can be performed inside a living organism or in cell culture."
+    },
+    {
+      "question": "Do you think it is helpful if you use a cloning vector , a plasmid to carry the target DNA from one location to another?",
+      "choices": [
+        "No. It is not helpful to use a cloning vector, typically a plasmid or virus, it is not capable of independent replication.",
+        "No. It is not helpful to use a cloning vector, typically a plasmid or virus, it is not able in capable replication that will stably carry the target DNA from one location to another.",
+        "Yes. It is helpful to use a cloning vector, typically a plasmid or virus, capable of independent replication that will stably carry the target DNA from one location to another.",
+        "Yes. It is helpful to use a cloning vector, typically a plasmid or virus, though it is not capable of independent replication, it is still helpful."
+      ],
+      "answer": 3,
+      "explanation": "The green fluorescent protein (GFP) commonly used as an expression marker in molecular techniques was originally isolated from jellyfish. In cloning a gene it is helpful to use a cloning vector, typically a plasmid or virus, capable of independent replication that will stably carry the target DNA from one location to another. Plasmid vectors are available from both bacteria and yeast."
     }
   ]
 }

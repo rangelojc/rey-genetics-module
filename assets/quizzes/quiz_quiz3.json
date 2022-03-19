@@ -1,10 +1,98 @@
 {
-  "title": "Quiz 2: Sex Linkage",
-  "description": "Test your knowledge about sex linkage and recombination and how these processes occur.",
+  "title": "Quiz 3: Central Dogma of Molecular Biology",
+  "description": "Assess your understanding of the molecular structure of DNA, RNA and proteins.",
   "passingScore": 7,
   "items": [
     {
-      "question": "",
+      "question": "This consists of two long polynucleotide chains composed of four types of nucleotide subunits.",
+      "choices": [
+        "RNA molecule",
+        "DNA molecule",
+        "Polysaccharide",
+        "Central Dogma"
+      ],
+      "answer": 2,
+      "explanation": "Deoxyribonucleic acid is a polymer composed of two polynucleotide chains that coil around each other to form a double helix carrying genetic instructions for the development, functioning, growth and reproduction of all known organisms and many viruses. DNA and ribonucleic acid are nucleic acids.      "
+    },
+    {
+      "question": "Which of the following are the nitrogen bases of a DNA molecule?",
+      "choices": [
+        "Adenine, Thymine, Guanine and Cytosine",
+        "Adenine, Uracil, Guanine and Cytosine",
+        "Adenine, Uracil, Thymine and Cytosine",
+        "Adenine, Uracil, Guanine and Thymine"
+      ],
+      "answer": 1,
+      "explanation": "There are four nucleotides, or bases, in DNA: adenine (A), cytosine (C), guanine (G), and thymine (T). These bases form specific pairs (A with T, and G with C)."
+    },
+    {
+      "question": "Why does Messenger RNA (mRNA) plays as a transcript copy of a gene? ",
+      "choices": [
+        "mRNA does not provide codes to a specific polypeptide.",
+        "mRNA provides arrangement to a specific polypeptide.",
+        "mRNA provides codes to a specific polypeptide.",
+        "mRNA does not provide codes to a specific polypeptide."
+      ],
+      "answer": 3,
+      "explanation": "Messenger RNA (mRNA) is a single-stranded RNA molecule that is complementary to one of the DNA strands of a gene which provides codes to a specific polypeptide."
+    },
+    {
+      "question": "Why does the messenger RNA (mRNA) molecule leaves the cell nucleus and enters the cytoplasm?",
+      "choices": [
+        "It leaves the cell nucleus and enters the cytoplasm, where it prepares the breaking down of the protein, which it encodes.",
+        "It leaves the cell nucleus and enters the cytoplasm, where it directs the synthesis of the protein, which it encodes.",
+        "It leaves the cell nucleus and enters the cytoplasm, where it degrades the protein, which it encodes.",
+        "It leaves the cell nucleus and enters the cytoplasm, where it polymerizes the protein, which it encodes."
+      ],
+      "answer": 2,
+      "explanation": "Transcription is the process of making an RNA copy of a gene sequence. This copy, called a messenger RNA (mRNA) molecule, leaves the cell nucleus and enters the cytoplasm, where it directs the synthesis of the protein, which it encodes."
+    },
+    {
+      "question": "What do you think will happen to proteins as the end products of the decoding process that starts with the information in cellular DNA?",
+      "choices": [
+        "they will not serve as the catalysts for virtually every biochemical reaction that occurs in living things.",
+        "they will serve as the catalysts for virtually every biochemical reaction that occurs in living things.",
+        "they will prepare the catalysts for virtually every biochemical reaction that occurs in living things.",
+        "they will not prepare the catalysts for virtually every biochemical reaction that occurs in living things."
+      ],
+      "answer": 2,
+      "explanation": "Proteins are the end products of the decoding process that starts with the information in cellular DNA. As workhorses of the cell, proteins compose structural and motor elements in the cell, and they serve as the catalysts for virtually every biochemical reaction that occurs in living things."
+    },
+    {
+      "question": "Which of the following is considered as the building blocks of proteins?",
+      "choices": [
+        "amino acids",
+        "nucleotides",
+        "nitrogen bases",
+        "carboxyl group"
+      ],
+      "answer": 1,
+      "explanation": "Amino acids are molecules that combine to form proteins. Amino acids and proteins are the building blocks of life. When proteins are digested or broken down, amino acids are left."
+    },
+    {
+      "question": "Which of the following links together the amino acids?",
+      "choices": [
+        "Peptide Bonds",
+        "Polysaccharide Bonds",
+        "Carboxyl Bonds",
+        "Hydrogen Bonds"
+      ],
+      "answer": 1,
+      "explanation": "A peptide bond is basically an amide-type of covalent chemical bond. This bond links two consecutive alpha-amino acids from C1 (carbon number one) of one alpha-amino acid and N2 (nitrogen number two) of another. This linkage is found along a peptide or protein chain."
+    },
+    {
+      "question": "Why does the process on how the DNA makes proteins is called the “Central Dogma”?",
+      "choices": [
+        "because Central Dogma's goal is to use instructions in the DNA to convert it into a tRNA",
+        "because Central Dogma's goal is to use instructions in the DNA to convert it into a not a functional product",
+        "because Central Dogma's goal is to use instructions in the DNA to convert it into a functional product",
+        "because Central Dogma's goal is to use instructions in the DNA to convert it into a rRNA"
+      ],
+      "answer": 3,
+      "explanation": "The 'Central Dogma' is the process by which the instructions in DNA are converted into a functional product."
+    },
+    {
+      "question": "Which of the following best illustrates the Messenger RNA (mRNA)?",
       "choices": [
         "",
         "",
@@ -12,7 +100,18 @@
         ""
       ],
       "answer": 1,
-      "explanation": ""
+      "explanation": "Messenger RNA (mRNA) is a single-stranded RNA molecule that is complementary to one of the DNA strands of a gene."
+    },
+    {
+      "question": "What do you think will happen if in alternative splicing, individual exons are neither spliced nor included?",
+      "choices": [
+        "it will give rise to several different possible mRNA products",
+        "it will not give rise to several different possible mRNA products",
+        "it will not give rise to several different possible transcriptions",
+        "it will not give rise to several different possible translations"
+      ],
+      "answer": 2,
+      "explanation": "In alternative splicing, individual exons are either spliced or included, giving rise to several different possible mRNA products. Each mRNA product codes for a different protein isoform; these protein isoforms differ in their peptide sequence and therefore their biological activity. It is estimated that up to 60% of human gene products undergo alternative splicing.      "
     }
   ]
 }

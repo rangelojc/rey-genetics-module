@@ -8,6 +8,9 @@ import CoverHeader from "../../components/CoverHeader";
 
 import Quiz1Json from "../../assets/quizzes/quiz_quiz1.json"
 import Quiz2Json from "../../assets/quizzes/quiz_quiz2.json"
+import Quiz3Json from "../../assets/quizzes/quiz_quiz3.json"
+import Quiz4Json from "../../assets/quizzes/quiz_quiz4.json"
+
 import { Button } from '@ui-kitten/components';
 
 import theme from "../../theme/theme.json"
@@ -215,6 +218,9 @@ export default function QuizOpenScreen({ route, navigation }: any) {
     switch (quizName) {
       case "quiz1": setActiveQuiz(Quiz1Json); break;
       case "quiz2": setActiveQuiz(Quiz2Json); break;
+      case "quiz3": setActiveQuiz(Quiz3Json); break;
+      case "quiz4": setActiveQuiz(Quiz4Json); break;
+
     }
   }, [quizName])
 
@@ -280,7 +286,7 @@ export default function QuizOpenScreen({ route, navigation }: any) {
   }
   return (
     <ScrollView style={GlobalStyles.mainContainer}>
-      <CoverHeader title={quizTitle} navigation={navigation} />
+      <CoverHeader title={quizTitle} navigation={navigation} quiz={true} />
 
       <View style={GlobalStyles.mainWrapperView}>
 
