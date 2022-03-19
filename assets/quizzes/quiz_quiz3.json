@@ -92,15 +92,15 @@
       "explanation": "The 'Central Dogma' is the process by which the instructions in DNA are converted into a functional product."
     },
     {
-      "question": "Which of the following best illustrates the Messenger RNA (mRNA)?",
+      "question": "Some events that take place during the synthesis of a specific protein are listed below. A.) Messenger RNA attaches to a ribosome. B.) DNA serves as a template for RNA production. C.) TransferRNA bonds to a specific codon. D.) Amino acids are bonded together. E.) RNA moves from the nucleus to the cytoplasm. ",
       "choices": [
-        "",
-        "",
-        "",
-        ""
+        "BEACD",
+        "DAECB",
+        "BCEDA",
+        "CBAED"
       ],
       "answer": 1,
-      "explanation": "Messenger RNA (mRNA) is a single-stranded RNA molecule that is complementary to one of the DNA strands of a gene."
+      "explanation": "Protein synthesis actually consists of two processes — transcription and translation. In eukaryotic cells, transcription takes place in the nucleus. During transcription, DNA is used as a template to make a molecule of messenger RNA (mRNA). The molecule of mRNA then leaves the nucleus and goes to a ribosome in the cytoplasm, where translation occurs. During translation, the genetic code in mRNA is read and used to make a protein. These two processes are summed up by the central dogma of molecular biology: DNA → RNA → Protein."
     },
     {
       "question": "What do you think will happen if in alternative splicing, individual exons are neither spliced nor included?",

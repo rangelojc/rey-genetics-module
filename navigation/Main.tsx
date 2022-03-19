@@ -11,6 +11,7 @@ import QuizScreen from "../screens/Quiz/QuizScreen"
 
 //Icons
 import Icons from "../components/Icons";
+import ReferenceScreen from '../screens/ReferenceScreen';
 
 function TabBar({ state, navigation }: any) {
     return (
@@ -28,6 +29,7 @@ function TabBar({ state, navigation }: any) {
             <BottomNavigationTab icon={Icons.Video} title="Videos" />
             <BottomNavigationTab icon={Icons.Pen} title="Activities" />
             <BottomNavigationTab icon={Icons.BookOpen} title="Quizzes" />
+            <BottomNavigationTab icon={Icons.Bookmark} title="References" />
         </BottomNavigation>
     )
 }
@@ -56,6 +58,7 @@ function TabNavigation() {
             <BottomTab.Screen name='Videos' component={VideoScreen} options={ScreenOptions("Videos")} />
             <BottomTab.Screen name='Activities' component={ActivityScreen} options={ScreenOptions("Activities")} />
             <BottomTab.Screen name='Quizzes' component={QuizScreen} options={ScreenOptions("Quizzes")} />
+            <BottomTab.Screen name='References' component={ReferenceScreen} options={ScreenOptions("References")} />
         </BottomTab.Navigator>
     )
 }

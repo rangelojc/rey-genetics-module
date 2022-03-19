@@ -5,6 +5,7 @@ import { Icon } from '@ui-kitten/components';
 export default {
   Book: (props: any) => <Icon  {...props} name='book-outline' />,
   BookOpen: (props: any) => <Icon  {...props} name='book-open-outline' />,
+  Bookmark: (props: any) => <Icon  {...props} name='bookmark-outline' />,
   Setting: (props: any) => <Icon  {...props} name='settings-outline' />,
   Pen: (props: any) => <Icon  {...props} name='edit-outline' />,
   Back: (props: any) => <Icon {...props} name='arrow-back' />,

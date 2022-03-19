@@ -17,6 +17,7 @@ import MenuScreen from '../screens/MenuScreen';
 import FirstOpenScreen from '../screens/FirstOpenScreen';
 import SettingScreen from '../screens/SettingScreen';
 import QuizOpenScreen from '../screens/Quiz/QuizOpenScreen';
+import ReferenceScreen from '../screens/ReferenceScreen';
 
 const Stack = createStackNavigator();
 export default class Router extends Component {
@@ -38,6 +39,7 @@ export default class Router extends Component {
             <Stack.Screen name="QuizOpen" component={QuizOpenScreen} />
             <Stack.Screen name="VideoOpen" component={VideoOpenScreen} />
             <Stack.Screen name="Settings" component={SettingScreen} />
+            <Stack.Screen name="References" component={ReferenceScreen} />
 
           </Stack.Navigator>
         </NavigationContainer>

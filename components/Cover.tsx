@@ -30,6 +30,14 @@ const styles = StyleSheet.create({
     backgroundColor: 'transparent',
     borderRadius: 50,
   },
+  textTitle: {
+    marginTop: 20,
+    marginLeft: 5,
+    fontSize: 26,
+    color: '#f1f1f1',
+    textAlign: "left",
+    // backgroundColor: "rgba(0,0,0,0.1)",
+  },
   textHello: {
     fontSize: 16,
     fontWeight: '300',
@@ -182,23 +190,19 @@ export default function Cover(props: any) {
   return (
     <React.Fragment>
       <View style={styles.container}>
+        {props.type ? <Image source={coverImg} resizeMode="cover" style={{ ...GlobalStyles.headerBG, ...styles.headerBG }} /> : <PolkaDots />}
 
-
-        <Image source={coverImg} resizeMode="cover" style={{ ...GlobalStyles.headerBG, ...styles.headerBG }} />
-
-        {/* <Icons.Setting fill='#fff' styles={styles.setting}
-          onPress={() => { props.navigation.navigate('Settings') }}
-        /> */}
         {sex === "Male" ? <Image style={styles.avatar} source={require('../assets/images/avatars/male.png')} />
           : <Image style={styles.avatar} source={require('../assets/images/avatars/female.png')} />
         }
+
+        {props.type ? <></> : <Text style={styles.textTitle}>References</Text>}
 
         {/* <Text style={styles.textHello}>Greetings,</Text> */}
         {/* <Text style={styles.textName}>{`${firstName} ${lastName.charAt(0)}.`}</Text> */}
 
         <Button style={styles.menuButton} accessoryLeft={Icons.Home}
           onPress={goToMenu}>{""}</Button>
-
       </View>
     </React.Fragment>
   )

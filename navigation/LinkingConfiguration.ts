@@ -38,7 +38,12 @@ export default {
           },
           Quizzes: {
             screens: {
-              ActivityScreen: 'Quizzes',
+              QuizScreen: 'Quizzes',
+            },
+          },
+          References: {
+            screens: {
+              ReferenceScreen: 'References',
             },
           }
         },
