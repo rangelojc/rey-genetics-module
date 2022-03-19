@@ -9,6 +9,8 @@ import LessonEngine from "../../screens/Lesson/LessonEngine";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import ImageModal from "../../components/ImageModal";
 
+import quizList from '../../assets/quizzes/quizList.json';
+
 const styles = {
   container: {
     // minHeight: Dimensions.get("window").height,
@@ -44,7 +46,7 @@ const Page1 = () => {
         1. What is Mendelian Inheritance?
       </Text>
       <Text style={LessonStyles.text}>
-        2. How will you describe the Mendel’s Laws of Inheritance?
+        2. How will you describe the Mendel's Laws of Inheritance?
       </Text>
       <Text style={LessonStyles.text}>
         3. What is Genotype? What is Phenotype?
@@ -350,7 +352,7 @@ const Page11 = () => {
   )
 }
 
-const Page12 = () => {
+const Page12 = ({ navigation, quiz }: any) => {
   const imageList1: any = [
     {
       props: {
@@ -359,7 +361,7 @@ const Page12 = () => {
     }
   ]
 
-  const [openImage1Modal, setOpenImage1Modal] = useState<boolean>(false)
+  const [openImage1Modal, setOpenImage1Modal] = useState<boolean>(false);
 
   return (
     <View style={LessonStyles.page}>
@@ -374,19 +376,31 @@ const Page12 = () => {
         For example 3 pairs of homologous chromosomes allow 8 possible combinations, all equally likely to move into the gamete during meiosis. This is the main reason for independent assortment. The equation to determine the number of possible combinations given the number of homologous pairs = 2x (x = number of homologous pairs)
       </Text>
 
+      <TouchableOpacity style={{ marginTop: 50 }} onPress={() => navigation.navigate("Videos")}>
+        <Text style={{ color: "green", textDecorationLine: "underline" }}>Watch a video lesson</Text>
+      </TouchableOpacity>
+
+      <TouchableOpacity onPress={() => navigation.navigate("Activities")}>
+        <Text style={{ color: "green", textDecorationLine: "underline" }}>View an activity</Text>
+      </TouchableOpacity>
+
+      <TouchableOpacity onPress={() => navigation.navigate("QuizOpen", { quizTitle: quiz.title, quizName: quiz.name })}>
+        <Text style={{ color: "green", textDecorationLine: "underline" }}>Or take an assessment about this topic.</Text>
+      </TouchableOpacity>
+
       <ImageModal visible={openImage1Modal} setVisibility={setOpenImage1Modal} images={imageList1} />
 
 
-    </View>
+    </View >
   )
 }
 
 
-const Topic1 = () => {
+const Topic1 = ({ navigation }: any) => {
   return (
     <LessonEngine pages={[
       <Page1 />, <Page2 />, <Page3 />, <Page4 />, <Page5 />, <Page6 />, <Page7 />, <Page8 />, <Page9 />, <Page10 />,
-      <Page11 />, <Page12 />
+      <Page11 />, <Page12 navigation={navigation} quiz={quizList.find((q: any) => q.name === "quiz1")} />
     ]} />
   )
 }

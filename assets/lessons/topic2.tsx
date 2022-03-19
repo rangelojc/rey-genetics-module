@@ -9,6 +9,7 @@ import LessonEngine from "../../screens/Lesson/LessonEngine";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import ImageModal from "../../components/ImageModal";
 
+import quizList from '../../assets/quizzes/quizList.json';
 
 const Page1 = () => {
   return (
@@ -622,7 +623,7 @@ const Page13 = () => {
 }
 
 
-const Page14 = () => {
+const Page14 = ({ navigation, quiz }: any) => {
   const imageList1: any = [
     {
       props: {
@@ -652,17 +653,30 @@ const Page14 = () => {
         />
       </TouchableOpacity>
 
+
+      <TouchableOpacity style={{ marginTop: 50 }} onPress={() => navigation.navigate("Videos")}>
+        <Text style={{ color: "green", textDecorationLine: "underline" }}>Watch a video lesson</Text>
+      </TouchableOpacity>
+
+      <TouchableOpacity onPress={() => navigation.navigate("Activities")}>
+        <Text style={{ color: "green", textDecorationLine: "underline" }}>View an activity</Text>
+      </TouchableOpacity>
+
+      <TouchableOpacity onPress={() => navigation.navigate("QuizOpen", { quizTitle: quiz.title, quizName: quiz.name })}>
+        <Text style={{ color: "green", textDecorationLine: "underline" }}>Or take an assessment about this topic.</Text>
+      </TouchableOpacity>
+
       <ImageModal visible={openImage1Modal} setVisibility={setOpenImage1Modal} images={imageList1} />
 
     </View>
   )
 }
 
-const Topic2 = () => {
+const Topic2 = ({ navigation }: any) => {
   return (
     <LessonEngine pages={[
       <Page1 />, <Page2 />, <Page3 />, <Page4 />, <Page5 />, <Page6 />, <Page7 />, <Page8 />, <Page9 />, <Page10 />,
-      <Page11 />, <Page12 />, <Page13 />, <Page14 />
+      <Page11 />, <Page12 />, <Page13 />, <Page14 navigation={navigation} quiz={quizList.find((q: any) => q.name === "quiz2")} />
     ]} />
   )
 }

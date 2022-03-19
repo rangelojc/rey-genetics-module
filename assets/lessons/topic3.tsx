@@ -9,6 +9,7 @@ import LessonEngine from "../../screens/Lesson/LessonEngine";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import ImageModal from "../../components/ImageModal";
 
+import quizList from '../../assets/quizzes/quizList.json';
 
 const Page1 = () => {
   return (
@@ -582,7 +583,7 @@ const Page15 = () => {
   )
 }
 
-const Page16 = () => {
+const Page16 = ({ navigation, quiz }: any) => {
   const imageList1: any = [
     {
       props: {
@@ -615,17 +616,29 @@ const Page16 = () => {
         Translation | (a) and (b) tRNA molecules bind to the two binding sites of the ribosome, and by hydrogen bonding to the mRNA; (c) a peptide bond forms between the two amino acids to make a dipeptide, while the tRNA molecule is left uncharged; (d) the uncharged tRNA molecule leaves the ribosome, while the ribosome moves one codon to the right (the dipeptide is translocated from one binding site to the other); (e) another tRNA molecule binds; (f) a peptide bond forms between the two amino acids to make a tripeptide; (g) the uncharged tRNA molecule leaves the ribosome.
       </Text>
 
+      <TouchableOpacity style={{ marginTop: 50 }} onPress={() => navigation.navigate("Videos")}>
+        <Text style={{ color: "green", textDecorationLine: "underline" }}>Watch a video lesson</Text>
+      </TouchableOpacity>
+
+      <TouchableOpacity onPress={() => navigation.navigate("Activities")}>
+        <Text style={{ color: "green", textDecorationLine: "underline" }}>View an activity</Text>
+      </TouchableOpacity>
+
+      <TouchableOpacity onPress={() => navigation.navigate("QuizOpen", { quizTitle: quiz.title, quizName: quiz.name })}>
+        <Text style={{ color: "green", textDecorationLine: "underline" }}>Or take an assessment about this topic.</Text>
+      </TouchableOpacity>
+
       <ImageModal visible={openImage1Modal} setVisibility={setOpenImage1Modal} images={imageList1} />
 
     </View>
   )
 }
 
-const Topic3 = () => {
+const Topic3 = ({ navigation }: any) => {
   return (
     <LessonEngine pages={[
       <Page1 />, <Page2 />, <Page3 />, <Page4 />, <Page5 />, <Page6 />, <Page7 />, <Page8 />, <Page9 />, <Page10 />,
-      <Page11 />, <Page12 />, <Page13 />, <Page14 />, <Page15 />, <Page16 />
+      <Page11 />, <Page12 />, <Page13 />, <Page14 />, <Page15 />, <Page16 navigation={navigation} quiz={quizList.find((q: any) => q.name === "quiz3")} />
     ]} />
   )
 }

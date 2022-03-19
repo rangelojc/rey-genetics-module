@@ -210,8 +210,10 @@ export default function QuizOpenScreen({ route, navigation }: any) {
   const [answerExplanation, setAnswerExplanation] = useState<string>("");
 
   useEffect(() => {
-    setQuizTitle(route.params.params.quizTitle);
-    setQuizName(route.params.params.quizName);
+    setQuizTitle(route.params?.params?.quizTitle || route.params?.quizTitle);
+    setQuizName(route.params?.params?.quizName || route.params?.quizName);
+
+    console.log(route)
   }, [])
 
   useEffect(() => {

@@ -41,10 +41,10 @@ export default function LessonViewScreen({ route, navigation }: any) {
     setLessonTitle(route.params.params.lessonTitle);
 
     switch (route.params.params.lessonName) {
-      case "topic1": setJsxTargetLesson(<Lessons.Topic1 />); break;
-      case "topic2": setJsxTargetLesson(<Lessons.Topic2 />); break;
-      case "topic3": setJsxTargetLesson(<Lessons.Topic3 />); break;
-      case "topic4": setJsxTargetLesson(<Lessons.Topic4 />); break;
+      case "topic1": setJsxTargetLesson(<Lessons.Topic1 navigation={navigation} />); break;
+      case "topic2": setJsxTargetLesson(<Lessons.Topic2 navigation={navigation} />); break;
+      case "topic3": setJsxTargetLesson(<Lessons.Topic3 navigation={navigation} />); break;
+      case "topic4": setJsxTargetLesson(<Lessons.Topic4 navigation={navigation} />); break;
       default: setJsxTargetLesson(<EmptyLessonView />);
     }
   }, [])

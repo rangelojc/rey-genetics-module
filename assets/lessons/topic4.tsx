@@ -8,6 +8,7 @@ import LessonStyles from "../../styles/LessonStyles";
 import LessonEngine from "../../screens/Lesson/LessonEngine";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import ImageModal from "../../components/ImageModal";
+import quizList from '../../assets/quizzes/quizList.json';
 
 
 const Page1 = () => {
@@ -394,7 +395,7 @@ const Page10 = () => {
 }
 
 
-const Page11 = () => {
+const Page11 = ({ navigation, quiz }: any) => {
   return (
     <View style={LessonStyles.page}>
 
@@ -405,15 +406,28 @@ const Page11 = () => {
       <Text style={LessonStyles.text}>
         genetic engineering, cloning, target DNA, green fluorescent protein (GFP), cloning vector, restriction endonuclease, sticky ends, DNA ligase, recombinant DNA, chimera, transformation, electroporation, genomic library, shotgun cloning, Agrobacterium tumefaciens, Ti plasmid, gene gun, microprojectiles, viral vector, gel electrophoresis, DNA ladder, polymerase chain reaction (PCR), template DNA, primer, nucleotide, DNA polymerase, denaturing, annealing, extending, genetically modified organism (GMO), transgenic organisms, antisense RNA.
       </Text>
+
+      <TouchableOpacity style={{ marginTop: 50 }} onPress={() => navigation.navigate("Videos")}>
+        <Text style={{ color: "green", textDecorationLine: "underline" }}>Watch a video lesson</Text>
+      </TouchableOpacity>
+
+      <TouchableOpacity onPress={() => navigation.navigate("Activities")}>
+        <Text style={{ color: "green", textDecorationLine: "underline" }}>View an activity</Text>
+      </TouchableOpacity>
+
+      <TouchableOpacity onPress={() => navigation.navigate("QuizOpen", { quizTitle: quiz.title, quizName: quiz.name })}>
+        <Text style={{ color: "green", textDecorationLine: "underline" }}>Or take an assessment about this topic.</Text>
+      </TouchableOpacity>
+
     </View>
   )
 }
 
 
-const Topic4 = () => {
+const Topic4 = ({ navigation }: any) => {
   return (
     <LessonEngine pages={[
-      <Page1 />, <Page2 />, <Page3 />, <Page4 />, <Page5 />, <Page6 />, <Page7 />, <Page8 />, <Page9 />, <Page10 />, <Page11 />
+      <Page1 />, <Page2 />, <Page3 />, <Page4 />, <Page5 />, <Page6 />, <Page7 />, <Page8 />, <Page9 />, <Page10 />, <Page11 navigation={navigation} quiz={quizList.find((q: any) => q.name === "quiz4")} />
     ]} />
   )
 }
