@@ -48,6 +48,8 @@ export default function ActivityList(props: any) {
   }
 
   const loadFile = async () => {
+    if (Object.keys(targetDoc).length === 0) return;
+
     try {
       // const uri: string = `file://assets/activities/${activityName}.pdf`;
       const contentUri: any = await FileSystem.getContentUriAsync(targetDoc.localUri);
@@ -57,6 +59,8 @@ export default function ActivityList(props: any) {
         flags: 1,
         type: 'application/pdf'
       });
+
+      setTargetDoc({});
     } catch (e: any) {
       console.log(e.message);
     }
